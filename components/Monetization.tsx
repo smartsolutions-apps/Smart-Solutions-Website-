@@ -10,7 +10,7 @@ const Monetization: React.FC = () => {
   ];
 
   return (
-    <section id="monetization" className="py-32 bg-slate-50 px-6">
+    <section id="monetization" className="py-32 bg-white px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -21,7 +21,7 @@ const Monetization: React.FC = () => {
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {models.map((m, i) => (
-                <div key={i} className="p-6 rounded-3xl bg-white border border-slate-100 hover:shadow-lg hover:border-indigo-100 transition-all group cursor-pointer hover:-translate-y-1 transform">
+                <div key={i} className="p-6 rounded-3xl bg-slate-50/50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-indigo-100 transition-all group cursor-pointer hover:-translate-y-1 transform">
                   <div className="text-2xl mb-3 group-hover:scale-110 transition-transform">{m.icon}</div>
                   <h4 className="font-bold text-slate-900 text-sm mb-2">{m.title}</h4>
                   <p className="text-slate-400 text-[11px] leading-relaxed font-semibold">{m.desc}</p>
@@ -31,35 +31,35 @@ const Monetization: React.FC = () => {
           </div>
           
           <div className="relative group">
-            {/* VIBRANT LIGHT-THEME DASHBOARD VISUAL */}
-            <div className="aspect-[1.1/1] rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(79,70,229,0.15)] bg-white p-2 relative border border-white">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50"></div>
+            {/* VIBRANT LIGHT-THEME DASHBOARD VISUAL - REMOVED ALL BLACK */}
+            <div className="aspect-[1.1/1] rounded-[4rem] overflow-hidden shadow-[0_60px_100px_-20px_rgba(79,70,229,0.12)] bg-gradient-to-br from-indigo-500 to-purple-600 p-1 relative">
+              <div className="absolute inset-0 bg-white/20 backdrop-blur-2xl"></div>
               
-              <div className="relative h-full w-full bg-white/40 backdrop-blur-xl rounded-[3.8rem] p-10 flex flex-col gap-8 overflow-hidden border border-white">
+              <div className="relative h-full w-full bg-white/90 backdrop-blur-md rounded-[3.8rem] p-10 flex flex-col gap-8 overflow-hidden border border-white">
                 {/* Header Section */}
                 <div className="flex justify-between items-start">
                   <div className="space-y-2">
-                    <div className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400">Revenue Stream</div>
-                    <div className="text-5xl font-black text-slate-900 tracking-tighter">$1.2M<span className="text-base text-green-500 font-bold ml-2">+24%</span></div>
+                    <div className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-500">Revenue Analytics</div>
+                    <div className="text-5xl font-black text-slate-900 tracking-tighter">$1,240,000<span className="text-base text-green-500 font-bold ml-2">↑ 24%</span></div>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-200">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                  <div className="w-14 h-14 rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-xl shadow-indigo-200">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                   </div>
                 </div>
 
-                {/* Growth Chart Visualization */}
-                <div className="flex-1 flex items-end justify-between gap-2 px-2 relative">
-                  <div className="absolute inset-0 flex flex-col justify-between py-2 pointer-events-none">
-                    {[...Array(4)].map((_, i) => <div key={i} className="border-t border-slate-100 w-full"></div>)}
+                {/* Growth Chart Visualization - High Vibrancy */}
+                <div className="flex-1 flex items-end justify-between gap-3 px-2 relative">
+                  <div className="absolute inset-x-0 top-0 bottom-0 flex flex-col justify-between py-2 pointer-events-none opacity-20">
+                    {[...Array(5)].map((_, i) => <div key={i} className="border-t-2 border-dashed border-indigo-200 w-full"></div>)}
                   </div>
-                  {[40, 65, 50, 90, 75, 85, 100, 80].map((h, i) => (
-                    <div key={i} className="flex-1 relative group/bar">
+                  {[45, 70, 55, 95, 80, 88, 100, 85].map((h, i) => (
+                    <div key={i} className="flex-1 relative group/bar z-10">
                       <div 
-                        className="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 rounded-2xl transition-all duration-1000 ease-out shadow-lg" 
-                        style={{ height: `${h}%`, transitionDelay: `${i * 50}ms` }}
+                        className="w-full bg-gradient-to-t from-indigo-600 via-indigo-400 to-cyan-300 rounded-2xl transition-all duration-1000 ease-out shadow-lg" 
+                        style={{ height: `${h}%`, transitionDelay: `${i * 60}ms` }}
                       >
-                        <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-slate-900 text-white text-[9px] font-black px-2 py-1.5 rounded-lg shadow-xl whitespace-nowrap z-20">
-                          {h}% GROWTH
+                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-all bg-slate-900 text-white text-[9px] font-black px-3 py-2 rounded-xl shadow-2xl whitespace-nowrap z-20">
+                           Q{i+1} GROWTH: {h}%
                         </div>
                       </div>
                     </div>
@@ -68,22 +68,22 @@ const Monetization: React.FC = () => {
 
                 {/* Metric Footer */}
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-indigo-50/50 p-6 rounded-[2rem] border border-indigo-100/50">
-                    <div className="text-[9px] uppercase font-black text-indigo-400 mb-1 tracking-widest">Active Yield</div>
-                    <div className="text-2xl font-black text-indigo-900">94%</div>
+                  <div className="bg-indigo-50 p-6 rounded-[2.5rem] border border-indigo-100/50">
+                    <div className="text-[9px] uppercase font-black text-indigo-400 mb-2 tracking-widest">Active Yield</div>
+                    <div className="text-3xl font-black text-indigo-900">94.2%</div>
                   </div>
-                  <div className="bg-slate-50 p-6 rounded-[2rem] border border-slate-100">
-                    <div className="text-[9px] uppercase font-black text-slate-400 mb-1 tracking-widest">User Value</div>
-                    <div className="text-2xl font-black text-slate-900">$48.5</div>
+                  <div className="bg-purple-50 p-6 rounded-[2.5rem] border border-purple-100/50">
+                    <div className="text-[9px] uppercase font-black text-purple-400 mb-2 tracking-widest">User Value</div>
+                    <div className="text-3xl font-black text-purple-900">$48.50</div>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Floating Branded Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-white p-8 rounded-[2.5rem] shadow-2xl border border-indigo-50 z-30 transform group-hover:scale-105 transition-transform">
-              <div className="text-indigo-600 font-black text-3xl mb-1 tracking-tighter uppercase italic">REVENUE</div>
-              <p className="text-[9px] font-black uppercase tracking-[0.4em] text-slate-400">Scale Architecture</p>
+            <div className="absolute -bottom-8 -right-8 bg-indigo-600 p-10 rounded-[3rem] shadow-[0_20px_50px_rgba(79,70,229,0.3)] border-4 border-white z-30 transform group-hover:scale-105 transition-transform">
+              <div className="text-white font-black text-4xl mb-1 tracking-tighter uppercase italic">SCALED</div>
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-200">Revenue Architecture</p>
             </div>
           </div>
         </div>
