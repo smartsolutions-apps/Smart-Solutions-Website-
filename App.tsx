@@ -28,7 +28,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'monetization', 'design-thinking', 'performance', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
+      const sections = ['home', 'about', 'industry', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'design-thinking', 'performance', 'monetization', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -62,7 +62,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen selection:bg-indigo-100 selection:text-indigo-900 bg-white">
       <Navbar activeTab={activeTab} />
       <main>
         <section id="home">
