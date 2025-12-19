@@ -4,8 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google Search Console Verification (MUST BE FIRST) -->
+    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="DwkuNqqXroQ7iepldPOfW3rWeqk70-xOQFra1NhUI4g" />
+
+    <!-- JSON-LD Structured Data (SEO Masterclass) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Smart Solutions",
+      "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+      "@id": "https://smartsolutions-eg.vercel.app",
+      "url": "https://smartsolutions-eg.vercel.app",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "District 5, Marakez",
+        "addressLocality": "New Cairo",
+        "addressRegion": "Cairo",
+        "addressCountry": "EG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.0074,
+        "longitude": 31.4472
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/smart-solutions-eg",
+        "https://github.com/smartsolutions-app"
+      ],
+      "description": "Premier app engineering studio in New Cairo specializing in EdTech and Gaming. Creators of the My Wonder Books platform.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "App Engineering Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Educational Platform Engineering"
+            }
+          }
+        ]
+      }
+    }
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNFW1K1T0F"></script>
@@ -13,19 +75,20 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-YNFW1K1T0F');
     </script>
 
     <!-- Vercel Web Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
 
-    <!-- SEO Masterclass -->
+    <!-- SEO Metadata -->
     <title>Smart Solutions | Premium App Engineering Studio | New Cairo</title>
     <meta name="description" content="Smart Solutions is a world-class app engineering studio based in New Cairo. We specialize in high-performance mobile applications for education and gaming, including the award-winning My Wonder Books. Engineering digital excellence for 500k+ global users." />
     <meta name="keywords" content="App Development Egypt, New Cairo Tech Studio, My Wonder Books, Mobile App Engineering, EdTech Egypt, Gaming Studio Cairo, AI App Development, Software Architecture Cairo" />
     
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Favicon (Inline SVG to ensure it works without external files) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%234f46e5'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='900' font-size='65'>S</text></svg>" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
