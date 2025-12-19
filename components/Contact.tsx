@@ -3,14 +3,20 @@ import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
+  const [copied, setCopied] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    // Simulate API call
     setTimeout(() => {
       setStatus('success');
     }, 1500);
+  };
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('hello@smartsolutions-eg.vercel.app');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -34,7 +40,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1 uppercase text-[10px] tracking-widest">Studio HQ</h4>
-                  <p className="text-slate-500 text-sm">District 5, New Cairo, Egypt</p>
+                  <p className="text-slate-500 text-sm font-medium">District 5, Marakez, New Cairo</p>
                 </div>
               </div>
 
@@ -44,9 +50,17 @@ const Contact: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <div>
+                <div className="flex flex-col">
                   <h4 className="font-bold text-slate-900 mb-1 uppercase text-[10px] tracking-widest">Inquiries</h4>
-                  <p className="text-slate-500 text-sm">hello@smartsolutions.app</p>
+                  <div className="flex items-center gap-3">
+                    <p className="text-slate-500 text-sm font-medium">hello@smartsolutions-eg.vercel.app</p>
+                    <button 
+                      onClick={copyEmail}
+                      className="text-[9px] font-black uppercase tracking-tighter text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md hover:bg-indigo-600 hover:text-white transition-all shadow-sm"
+                    >
+                      {copied ? 'COPIED' : 'COPY'}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -74,25 +88,30 @@ const Contact: React.FC = () => {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Name</label>
-                    <input required type="text" placeholder="John Doe" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm" />
+                    <input required type="text" placeholder="John Doe" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm font-medium" />
                   </div>
                   <div>
                     <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Email</label>
-                    <input required type="email" placeholder="john@company.com" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm" />
+                    <input required type="email" placeholder="john@company.com" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm font-medium" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Project Category</label>
-                  <select className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm appearance-none">
-                    <option>Mobile App Development</option>
-                    <option>Gaming Engine</option>
-                    <option>Educational Platform</option>
-                    <option>AI Implementation</option>
-                  </select>
+                  <div className="relative">
+                    <select className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm font-medium appearance-none">
+                      <option>Mobile App Development</option>
+                      <option>Gaming Engine</option>
+                      <option>Educational Platform</option>
+                      <option>AI Implementation</option>
+                    </select>
+                    <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Message</label>
-                  <textarea required rows={4} placeholder="Tell us about your vision..." className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm resize-none"></textarea>
+                  <textarea required rows={4} placeholder="Tell us about your vision..." className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm font-medium resize-none"></textarea>
                 </div>
                 <button 
                   disabled={status === 'sending'}

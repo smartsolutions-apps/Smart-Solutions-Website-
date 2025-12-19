@@ -30,16 +30,25 @@ const Monetization: React.FC = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100">
+            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 bg-slate-50 relative">
+              {/* Resilient placeholder background displayed if image fails */}
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-slate-100 flex items-center justify-center -z-10">
+                <svg className="w-20 h-20 text-indigo-100" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                </svg>
+              </div>
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bbbda50d2671?auto=format&fit=crop&q=80&w=1200" 
-                alt="Complex Data Analytics Dashboard" 
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
+                alt="Growth analytics and data dashboard visualization" 
+                className="w-full h-full object-cover relative z-10"
                 loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
               />
-              <div className="absolute inset-0 bg-indigo-600/5"></div>
+              <div className="absolute inset-0 bg-indigo-600/5 z-20 pointer-events-none"></div>
             </div>
-            <div className="absolute -bottom-8 -left-8 glass-card p-8 rounded-3xl shadow-2xl border border-indigo-50">
+            <div className="absolute -bottom-8 -left-8 glass-card p-8 rounded-3xl shadow-2xl border border-indigo-50 z-30">
               <div className="text-indigo-600 font-black text-3xl mb-1">$613B</div>
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Total App Market 2025</p>
             </div>
