@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
     email: '', 
     countryCode: '+20',
     phone: '',
-    category: 'Mobile App Development', 
+    category: t.contact.cat1, 
     message: '' 
   });
 
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
       });
       
       setStatus('success');
-      window.scrollTo({ top: document.getElementById('contact')?.offsetTop - 100, behavior: 'smooth' });
+      window.scrollTo({ top: (document.getElementById('contact')?.offsetTop || 0) - 100, behavior: 'smooth' });
     } catch (err) {
       console.error("Submission error:", err);
       setStatus('success');
@@ -143,9 +143,9 @@ const Contact: React.FC = () => {
                     onChange={e => setFormData({...formData, category: e.target.value})}
                     className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20"
                   >
-                    <option>{locale === 'ar' ? 'تطوير تطبيقات الموبايل' : 'Mobile App Development'}</option>
-                    <option>{locale === 'ar' ? 'منصة تعليمية' : 'Educational Platform'}</option>
-                    <option>{locale === 'ar' ? 'محرك ألعاب' : 'Gaming Engine'}</option>
+                    <option value={t.contact.cat1}>{t.contact.cat1}</option>
+                    <option value={t.contact.cat2}>{t.contact.cat2}</option>
+                    <option value={t.contact.cat3}>{t.contact.cat3}</option>
                   </select>
                 </div>
                 <div className="space-y-2 text-start">

@@ -140,7 +140,8 @@ const en = {
     portal: 'Engineering Portal', title: 'Initiate Project.', subtitle: 'Discuss vision with our Lead.',
     successTitle: 'Brief Logged', successDesc: 'Transmitted to our Google Sheets.',
     newSub: 'New Submission', fullName: 'Full Name', email: 'Email', mobile: 'Mobile', category: 'Category', brief: 'Brief',
-    briefPlaceholder: 'Describe your vision...', submit: 'Initiate', transmitting: 'Sending...'
+    briefPlaceholder: 'Describe your vision...', submit: 'Initiate', transmitting: 'Sending...',
+    cat1: 'Mobile App Development', cat2: 'Educational Platform', cat3: 'Gaming Engine'
   },
   footer: {
     desc: 'Premier engineering studio in New Cairo.',
@@ -290,7 +291,8 @@ const ar = {
     portal: 'بوابة الهندسة', title: 'ابدأ مشروعك', subtitle: 'ناقش رؤيتك مع قائد الاستوديو لدينا.',
     successTitle: 'تم تسجيل الملخص', successDesc: 'تم إرسال البيانات بنجاح إلى جداول بيانات جوجل.',
     newSub: 'إرسال جديد', fullName: 'الاسم بالكامل', email: 'البريد الإلكتروني', mobile: 'رقم الهاتف', category: 'الفئة', brief: 'الملخص',
-    briefPlaceholder: 'صف رؤيتك للمشروع...', submit: 'بدء المشروع', transmitting: 'جاري الإرسال...'
+    briefPlaceholder: 'صف رؤيتك للمشروع...', submit: 'بدء المشروع', transmitting: 'جاري الإرسال...',
+    cat1: 'تطوير تطبيقات الموبايل', cat2: 'منصة تعليمية', cat3: 'محرك ألعاب'
   },
   footer: {
     desc: 'استوديو هندسي رائد مقره القاهرة الجديدة، متخصص في البنية التحتية الرقمية.',
@@ -304,229 +306,230 @@ const ar = {
 const ru = {
   nav: { home: 'Главная', lifecycle: 'Цикл', tech: 'Технологии', ecosystem: 'Экосистема', anatomy: 'Анатомия', connect: 'Связь', start: 'Начать проект' },
   hero: { 
-    badge: 'Инновации в Новом Каире', title: 'Цифровое Совершенство.', 
-    subtitle: 'Smart Solutions — ведущая студия мобильной разработки. Мы создаем цифровой опыт, который определяет целые отрасли.',
+    badge: 'Лидеры инноваций в Новом Каире', 
+    title: 'Цифровое превосходство через дизайн.', 
+    subtitle: 'Smart Solutions — ведущая студия разработки приложений. Мы не просто создаем приложения; мы проектируем цифровой опыт.',
     ctaWork: 'Наши работы', ctaStory: 'Наша история', flagship: 'Флагман', downloads: '500k+ Загрузок', appTitle: 'My Wonder Books',
-    appDesc: 'Ведущая мировая платформа образовательного сторителлинга для детей.', partner: 'Глобальный партнер', partnerDetail: 'Harvard Innovation Invite'
+    appDesc: 'Ведущая в мире образовательная платформа для детей.', partner: 'Глобальный партнер', partnerDetail: 'Инновации Гарварда'
   },
   about: {
-    identity: 'Наша Идентичность', title: 'Инженерия Точности.',
-    desc: 'Smart Solutions — премиальная инженерная студия в Новом Каире. Мы специализируемся на высокопроизводительной инфраструктуре для глобального образования.',
-    scale: 'Масштаб', scaleDesc: 'Миллионы взаимодействий обрабатываются ежедневно.',
-    trust: 'Доверие', trustDesc: 'Стандарты защиты данных банковского уровня.'
+    identity: 'Наша идентичность', title: 'Инженерия точности.',
+    desc: 'Smart Solutions — ведущая инженерная студия в Новом Каире. Мы специализируемся на цифровой инфраструктуре для образования.',
+    scale: 'Масштаб', scaleDesc: 'Миллионы взаимодействий ежедневно.',
+    trust: 'Доверие', trustDesc: 'Стандарты безопасности банковского уровня.'
   },
   values: {
-    v1Title: 'Чистая Архитектура', v1Desc: 'Мы строим структуры. Принципы SOLID гарантируют скорость приложений даже при их масштабировании.',
-    v2Title: 'Логика для Пользователя', v2Desc: 'Доступность вшита в каждый пиксель наших интерфейсов для безупречного опыта.',
-    v3Title: 'Безопасность', v3Desc: 'Защита пользовательских данных с использованием продвинутого шифрования для каждой платформы.'
+    v1Title: 'Чистая архитектура', v1Desc: 'Мы строим структуры. Наши принципы SOLID гарантируют скорость приложений при масштабировании.',
+    v2Title: 'Логика для пользователя', v2Desc: 'Доступность заложена в каждый пиксель для безупречного опыта.',
+    v3Title: 'Безопасность', v3Desc: 'Защита пользовательских данных с использованием продвинутого шифрования.'
   },
   stats: {
-    badge: 'Цифровая Революция', title: 'Процветающая Экосистема', desc: 'Индустрия приложений меняет мир. Мы находимся в авангарде этого сдвига.',
+    badge: 'Цифровая революция', title: 'Процветающая экосистема', desc: 'Индустрия приложений меняет мир. Мы находимся в авангарде этого сдвига.',
     s1: 'Рост', s1V: '15% в год', s1D: 'Расширение цифровой экономики',
-    s2: 'Загрузки', s2V: '+250 млрд', s2D: 'Приложений скачивается ежегодно',
-    s3: 'Время в день', s3V: '4.8 Часа', s3D: 'Среднее время пользователя в приложениях',
-    s4: 'Мировой доход', s4V: '+$600 млрд', s4D: 'Прогнозируемый объем рынка',
+    s2: 'Загрузки', s2V: '+250 млрд', s2D: 'Загрузок приложений в год',
+    s3: 'Время в день', s3V: '4.8 часа', s3D: 'Среднее время в приложениях',
+    s4: 'Мировой доход', s4V: '+$600 млрд', s4D: 'Прогноз объема рынка',
     quote: '"Будущее принадлежит тем, кто его создает."',
     insight: 'К 2030 году приложения станут основным каналом для глобального образования и коммерции.'
   },
   innovation: {
-    badge: 'Инновационный Хаб', title: 'Инструменты Будущего',
+    badge: 'Инновационный хаб', title: 'Инструменты будущего',
     tabDev: 'Разработка', tabDes: 'Дизайн', tabInt: 'Интеллект',
-    devH4: 'Высокоскоростной Фронтенд', devP: 'Спроектирован для нативной производительности на всех мобильных устройствах с использованием архитектур React.',
-    desH4: 'Дизайн Опыта', desP: 'Проектирование точных микро-взаимодействий для обеспечения абсолютного восторга пользователя.',
-    intH4: 'Движки Искусственного Интеллекта', intP: 'Интеграция Gemini для адаптивного обучения, которое развивается вместе с пользователем.',
+    devH4: 'Высокоскоростной фронтенд', devP: 'Нативная производительность на всех устройствах с использованием модульного React',
+    desH4: 'Проектирование опыта', desP: 'Точные микро-взаимодействия для абсолютного восторга пользователей',
+    intH4: 'Движки на базе ИИ', intP: 'Интеграция Gemini для адаптивного обучения, которое развивается вместе с вами',
     intQuote: '"Проектируем логику завтрашнего дня."'
   },
   lifecycle: {
-    badge: 'Инженерный Поток', title: 'Жизненный Цикл Приложения',
-    p1T: 'Чертеж', p1D: 'Вайрфреймы и проектирование технической архитектуры.',
-    p2T: 'Сборка', p2D: 'Спринты и гибкие циклы разработки.',
-    p3T: 'Полировка', p3D: 'Строгий контроль качества и аудит доступности.',
-    p4T: 'Запуск', p4D: 'ASO и стратегия развертывания в продакшн.',
-    phase: 'ФАЗА'
+    badge: 'Инженерный поток', title: 'Жизненный цикл приложения',
+    p1T: 'Чертеж', p1D: 'Проектирование технической архитектуры',
+    p2T: 'Сборка', p2D: 'Гибкие циклы разработки на основе спринтов',
+    p3T: 'Полировка', p3D: 'Строгий контроль качества и аудит доступности',
+    p4T: 'Запуск', p4D: 'Стратегия ASO и промышленного развертывания',
+    phase: 'ЭТАП'
   },
   techComparison: {
-    badge: 'Архитектурная Логика', title: 'Нативная vs. Кроссплатформа', desc: 'Выбор между Swift/Kotlin или React Native зависит от ваших конкретных целей.',
-    nativeT: 'Когда выбирать натив?', nativeD: 'Сложный доступ к оборудованию, интенсивная графика и максимальная производительность устройства.',
-    crossT: 'Когда выбирать кросс?', crossD: 'Скорость выхода на рынок, единая кодовая база для iOS/Android и приложения с контентом.',
-    questionNative: 'Когда выбирать натив?', questionCross: 'Когда выбирать кросс?'
+    badge: 'Архитектурная логика', title: 'Нативная vs Кроссплатформа', desc: 'Выбор между Swift/Kotlin или React Native зависит от ваших целей',
+    nativeT: 'Когда выбирать натив?', nativeD: 'Сложный доступ к оборудованию, тяжелая графика и максимальная скорость',
+    crossT: 'Когда выбирать кросс?', crossD: 'Скорость выхода на рынок, единый код для iOS/Android'
   },
   anatomy: {
-    badge: 'Образовательный Анализ', title: 'Анатомия Производительности',
-    l1T: 'Интерфейс', l1D: 'Фронтенд на React для мгновенного отклика.', l1L: ['UI Компоненты', 'Управление стейтом', 'Анимации'],
+    badge: 'Образовательный анализ', title: 'Анатомия производительности.',
+    l1T: 'Интерфейс', l1D: 'Фронтенд на React для мгновенного отклика.', l1L: ['Компоненты UI', 'Управление состоянием', 'Анимации'],
     l2T: 'Мозг', l2D: 'Безопасная логика и сложные алгоритмы.', l2L: ['Слой API', 'Бизнес-логика', 'Микросервисы'],
-    l3T: 'Память', l3D: 'Распределенное масштабируемое хранилище.', l3L: ['Синхронизация', 'Шифрование', 'Облако']
+    l3T: 'Память', l3D: 'Распределенное хранилище с синхронизацией.', l3L: ['Синхронизация', 'Шифрование', 'Облако']
   },
   portfolio: {
-    badge: 'Кейсы', title: 'Инженерное Совершенство.', desc: 'Точная архитектура в каждом продукте.',
-    app1: { cat: 'Образование', title: 'My Wonder Books', desc: 'Интерактивная библиотека для детей.', stat: '500K Пользователей' },
-    app2: { cat: 'Игры', title: 'Engine Quest', desc: 'Когнитивный движок для развития ума.', stat: 'Рейтинг 4.9' },
+    badge: 'Кейсы', title: 'Инженерное совершенство.', desc: 'Точная архитектура в каждом продукте.',
+    app1: { cat: 'Обучение', title: 'My Wonder Books', desc: 'Интерактивная библиотека для детей.', stat: '500k пользователей' },
+    app2: { cat: 'Игры', title: 'Engine Quest', desc: 'Движок для развития детского мышления.', stat: 'Рейтинг 4.9' },
     app3: { cat: 'Творчество', title: 'Canvas Pro', desc: 'Векторный движок для рисования.', stat: 'Премиум-приложение' }
   },
   monetization: {
-    badge: 'Бизнес-логика', title: 'Масштабирование и Доход.', desc: 'Стратегии устойчивого роста.',
+    badge: 'Бизнес-логика', title: 'Масштабирование и доход.', desc: 'Стратегии устойчивого роста и удержания.',
     m1T: 'SaaS', m1D: 'Модели регулярной ценности для стабильности.',
     m2T: 'Freemium', m2D: 'Стратегия продажи премиум-функций.',
-    m3T: 'In-App', m3D: 'Цифровые товары и микротранзакции.',
-    m4T: 'Реклама', m4D: 'Огромный охват через показы.',
-    dashTitle: 'Аналитика доходов', dashGrowth: '↑ Рост 24%', metric1: 'Активный доход', metric2: 'Ценность пользователя', badgeLabel: 'МАСШТАБ', badgeSub: 'Архитектура доходов'
+    m3T: 'In-App', m3D: 'Цифровые товары и транзакции.',
+    m4T: 'Реклама', m4D: 'Охват через показы.',
+    dashTitle: 'Аналитика доходов', dashGrowth: '↑ Рост 24%', metric1: 'Активный доход', metric2: 'Ценность пользователя', badgeLabel: 'РОСТ', badgeSub: 'Архитектура доходов'
   },
   designThinking: {
-    badge: 'Продуктовая Стратегия', title: 'Дизайн-мышление.', desc: 'Инженерия, основанная на человеческой логике.',
+    badge: 'Продуктовая стратегия', title: 'Дизайн-мышление.', desc: 'Инженерия на основе человеческой логики. Начинаем с людей.',
     p1: 'Эмпатия', p1D: 'Наблюдение за реальными людьми.',
-    p2: 'Определение', p2D: 'Синтез наблюдений в четкую задачу.',
-    p3: 'Идея', p3D: 'Генерация смелых идей без критики.',
+    p2: 'Определение', p2D: 'Формулировка четкой проблемы.',
+    p3: 'Идеи', p3D: 'Генерация смелых идей без критики.',
     p4: 'Прототип', p4D: 'Создание моделей для быстрого обучения.'
   },
   performance: {
     badge: 'Оптимизация', title: 'Скорость — это фича.',
     s1: '100мс', s1D: 'Задержка убивает конверсию.',
-    s2: '60 FPS', s2D: 'Плавные анимации строят доверие.',
-    s3: '< 16мс', s3D: 'Мгновенный отклик на взаимодействие.',
+    s2: '60 FPS', s2D: 'Плавная анимация строит доверие.',
+    s3: '< 16мс', s3D: 'Мгновенная реакция на нажатие.',
     encrypted: 'Зашифровано'
   },
   security: {
-    badge: 'Протокол Безопасности', title: 'Приватность в Архитектуре.', desc: 'В образовании защита детских данных — наш главный приоритет.',
-    f1: 'Шифрование AES-256', f2: 'Соответствие COPPA и GDPR', f3: 'Биометрическая аутентификация'
+    badge: 'Протоколы безопасности', title: 'Приватность в архитектуре.', desc: 'Защита данных детей — наш приоритет.',
+    f1: 'Шифрование данных AES-256', f2: 'Соответствие COPPA и GDPR', f3: 'Биометрическая аутентификация'
   },
   timeline: {
-    badge: 'Наш Контекст', title: 'Эволюция Прогресса.',
-    e1T: 'Эра WAP', e1D: 'Текстовые простые интерфейсы.',
-    e2T: 'Большой Взрыв', e2D: 'Запуск App Store и мощь ПО.',
-    e3T: 'Облачный Сдвиг', e3D: 'Движки синхронизации в реальном времени.',
+    badge: 'Наш контекст', title: 'Эволюция прогресса.',
+    e1T: 'Genesis WAP', e1D: 'Текстовые интерфейсы простых утилит.',
+    e2T: 'Большой взрыв', e2D: 'Запуск App Store и мощь ПО.',
+    e3T: 'Облачный сдвиг', e3D: 'Синхронизация в реальном времени.',
     e4T: 'AI-Native', e4D: 'Адаптивные системы на базе ИИ.'
   },
   globalImpact: {
-    badge: 'Наш След', title: 'Активные Глобальные Умы.', subtitle: 'Ежемесячный охват пользователей.',
+    badge: 'Наш след', title: 'Глобальный охват.', subtitle: 'Активных пользователей в месяц.',
     s1: 'Страны', s1V: '45+', s2: 'Рейтинг', s2V: '4.9/5', s3: 'Истории', s3V: '12M+', s4: 'Аптайм', s4V: '99.9%'
   },
   futureTrends: {
-    badge: 'Горизонт', title: 'Архитектуры Будущего.', quote: '"Экран исчезает в окружающей среде."',
-    t1: 'Пространственные Вычисления', t1D: 'Слияние приложений с физическим пространством.',
-    t2: 'Edge AI', t2D: 'Сложные нейросети, работающие локально.',
+    badge: 'Горизонт', title: 'Архитектуры будущего.', quote: '"Экран исчезает, сливаясь с окружением."',
+    t1: 'Пространственные вычисления', t1D: 'Слияние приложений с реальностью.',
+    t2: 'Edge AI', t2D: 'Нейросети, работающие локально.',
     t3: 'Zero-UI', t3D: 'Управление голосом и жестами.'
   },
   process: {
-    badge: 'Путь', title: 'Воплощение Идей.', desc: 'Баланс творчества и инженерной дисциплины.',
-    ctaT: 'Нужен наш воркфлоу?', ctaD: 'Прозрачная документация на каждом этапе.', ctaB: 'Связаться',
-    s1T: 'Глубокое Исследование', s1D: 'Понимание психологии пользователя.',
-    s2T: 'UI/UX Архитектура', s2D: 'Интуитивные доступные интерфейсы.',
-    s3T: 'Точное Программирование', s3D: 'Оптимизированный код с нулевой задержкой.',
-    s4T: 'Строгий QA', s4D: 'Тестирование каждого случая.'
+    badge: 'Путь', title: 'Воплощение идей.', desc: 'Баланс творчества и дисциплины.',
+    ctaT: 'Нужен наш рабочий процесс?', ctaD: 'Прозрачная документация для всех этапов.', ctaB: 'Контакты',
+    s1T: 'Исследование', s1D: 'Понимание психологии пользователей.',
+    s2T: 'UI/UX Архитектура', s2D: 'Интуитивно понятные интерфейсы.',
+    s3T: 'Прецизионный код', s3D: 'Код с нулевой задержкой.',
+    s4T: 'Строгий QA', s4D: 'Тестирование всех крайних случаев.'
   },
   techStack: {
-    badge: 'Наши Технологии', title: 'React и Сила ИИ.', desc: 'Быстрый, модульный интеллект.',
-    t1: 'React Native', t1D: 'Нативная скорость на кроссплатформе.',
-    t2: 'TypeScript', t2D: 'Типизированная надежная инженерия.',
-    t3: 'AI Сторителлинг', t3D: 'Генеративный ИИ в образовании.',
-    t4: 'Облако', t4D: 'Неограниченное глобальное масштабирование.',
-    stat1: 'Стабильность KPI', stat2: 'Паттерн'
+    badge: 'Наши технологии', title: 'React и сила ИИ.', desc: 'Быстрый, модульный интеллект.',
+    t1: 'React Native', t1D: 'Нативная скорость кроссплатформы.',
+    t2: 'TypeScript', t2D: 'Надежная типобезопасная инженерия.',
+    t3: 'AI Narratives', t3D: 'Генеративный ИИ в обучении.',
+    t4: 'Cloud Infra', t4D: 'Безлимитное масштабирование.',
+    stat1: 'Стабильность', stat2: 'Паттерн'
   },
   ecosystem: {
-    badge: 'Инструментарий', title: 'Экосистема.', desc: 'Инструменты индустриального стандарта.',
+    badge: 'Инструментарий', title: 'Экосистема.', desc: 'Отраслевые стандарты для 500k+ пользователей.',
     tools: {
-      figma: 'UI/UX дизайн', vscode: 'Кодинг', github: 'CI/CD оркестрация',
+      figma: 'Дизайн UI/UX', vscode: 'Кодинг', github: 'CI/CD оркестрация',
       jira: 'Agile спринты', slack: 'Синхронизация', firebase: 'Базы данных'
     }
   },
   education: {
-    badge: 'Инсайты', title: 'Анатомия Успеха.',
-    h1: 'Невидимое Ядро', p1: 'Душа — в бэкенд-архитектуре.',
-    h2: 'Дизайн Опыта', p2: 'UX — это психологическая наука.',
-    h3: 'Гарантия Качества', p3: 'Обработка любых входных данных.',
-    factTitle: 'Знаете ли вы?', factDesc: 'Обычное приложение содержит более 10 000 строк кода только для взаимодействий.'
+    badge: 'Инсайты', title: 'Анатомия успеха.',
+    h1: 'Невидимое ядро', p1: 'Душа — в бэкенд-архитектуре.',
+    h2: 'Проектирование опыта', p2: 'UX — это психологическая наука.',
+    h3: 'Гарантия качества', p3: 'Обработка любых данных.',
+    factTitle: 'Знаете ли вы?', factDesc: 'Типичное приложение содержит 10k+ строк кода только для интерфейса.'
   },
   contact: {
-    portal: 'Инженерный Портал', title: 'Запустить Проект.', subtitle: 'Обсудите видение с нашим лидом.',
-    successTitle: 'Бриф Записан', successDesc: 'Данные переданы в Google Таблицы.',
-    newSub: 'Новая Заявка', fullName: 'ФИО', email: 'Email', mobile: 'Телефон', category: 'Категория', brief: 'Бриф',
-    briefPlaceholder: 'Опишите ваше видение...', submit: 'Запустить', transmitting: 'Отправка...'
+    portal: 'Инженерный портал', title: 'Начать проект.', subtitle: 'Обсудите видение с нашим лидом.',
+    successTitle: 'Бриф сохранен', successDesc: 'Передано в Google Таблицы.',
+    newSub: 'Новая заявка', fullName: 'ФИО', email: 'Email', mobile: 'Телефон', category: 'Категория', brief: 'Бриф',
+    briefPlaceholder: 'Опишите ваше видение...', submit: 'Запустить', transmitting: 'Отправка...',
+    cat1: 'Разработка мобильных приложений', cat2: 'Образовательная платформа', cat3: 'Игровой движок'
   },
   footer: {
-    desc: 'Ведущая инженерная студия в Новом Каире.',
+    desc: 'Премиальная инженерная студия в Новом Каире.',
     engineering: 'Инженерия', strategy: 'Стратегия', hq: 'Штаб-квартира', hqLoc: 'Египет, Новый Каир', hqAddr: 'District 5, Marakez',
-    inquiries: 'Запросы', portalLink: 'Связаться через портал', status: 'В сети', devEnv: 'Среда разработки',
-    rights: 'Smart Solutions Ltd.', privacy: 'Приватность', terms: 'Условия', scroll: 'Наверх',
-    links: { security: 'Безопасность', perf: 'Скорость', monetization: 'Монетизация', design: 'Дизайн-мышление', industry: 'Обзор индустрии' }
+    inquiries: 'Запросы', portalLink: 'Контактный портал', status: 'В сети', devEnv: 'Среда разработки',
+    rights: 'Smart Solutions Ltd.', privacy: 'Конфиденциальность', terms: 'Условия', scroll: 'Наверх',
+    links: { security: 'Безопасность', perf: 'Скорость', monetization: 'Монетизация', design: 'Дизайн-мышление', industry: 'Индустрия' }
   }
 };
 
 const es = {
-  nav: { home: 'Inicio', lifecycle: 'Ciclo de vida', tech: 'Tecnología', ecosystem: 'Ecosistema', anatomy: 'Anatomía', connect: 'Contacto', start: 'Empezar Proyecto' },
+  nav: { home: 'Inicio', lifecycle: 'Ciclo de vida', tech: 'Tecnología', ecosystem: 'Ecosistema', anatomy: 'Anatomía', connect: 'Contacto', start: 'Proyecto' },
   hero: { 
-    badge: 'Líderes en Innovación en Nuevo Cairo', title: 'Excelencia Digital por Diseño.', 
-    subtitle: 'Smart Solutions es un estudio de ingeniería de primer nivel. Diseñamos experiencias digitales que definen industrias.',
-    ctaWork: 'Ver Trabajos', ctaStory: 'Nuestra Historia', flagship: 'Insignia', downloads: '500k+ Descargas', appTitle: 'My Wonder Books',
+    badge: 'Líderes en Innovación en Nuevo Cairo', 
+    title: 'Excelencia Digital por Diseño.', 
+    subtitle: 'Smart Solutions es un estudio de ingeniería de aplicaciones. No solo construimos aplicaciones; diseñamos experiencias.',
+    ctaWork: 'Nuestro Trabajo', ctaStory: 'Nuestra Historia', flagship: 'Insignia', downloads: '500k+ Descargas', appTitle: 'My Wonder Books',
     appDesc: 'La plataforma líder mundial de cuentos educativos para niños.', partner: 'Socio Global', partnerDetail: 'Harvard Innovation Invite'
   },
   about: {
     identity: 'Nuestra Identidad', title: 'Ingeniería de Precisión.',
-    desc: 'Smart Solutions es un estudio de ingeniería de élite en Nuevo Cairo. Especializados en infraestructura digital de alto rendimiento para educación global.',
-    scale: 'Escala', scaleDesc: 'Millones de interacciones procesadas diariamente.',
+    desc: 'Smart Solutions es un estudio de ingeniería en Nuevo Cairo. Nos especializamos en infraestructura digital para educación.',
+    scale: 'Escala', scaleDesc: 'Millones de interacciones diarias.',
     trust: 'Confianza', trustDesc: 'Estándares de privacidad de nivel bancario.'
   },
   values: {
-    v1Title: 'Arquitectura Limpia', v1Desc: 'Construimos estructuras. Los principios SOLID garantizan que las apps sigan siendo rápidas al escalar.',
-    v2Title: 'Lógica centrada en el Usuario', v2Desc: 'La accesibilidad está integrada en cada píxel para una experiencia fluida.',
-    v3Title: 'Seguridad Militar', v3Desc: 'Protegemos los datos con cifrado avanzado para cada plataforma que construimos.'
+    v1Title: 'Arquitectura Limpia', v1Desc: 'Construimos estructuras. Nuestros principios SOLID garantizan velocidad al escalar.',
+    v2Title: 'Lógica centrada en el usuario', v2Desc: 'Accesibilidad integrada en cada píxel para una experiencia fluida.',
+    v3Title: 'Seguridad Militar', v3Desc: 'Protección de datos con cifrado avanzado para cada plataforma.'
   },
   stats: {
-    badge: 'La Revolución Digital', title: 'Un Ecosistema Próspero', desc: 'La industria de las apps redefine la interacción. Estamos al frente de este cambio.',
-    s1: 'Crecimiento', s1V: '15% Anual', s1D: 'Expansión de la economía digital',
-    s2: 'Descargas', s2V: '+250 mil millones', s2D: 'Apps descargadas por año',
+    badge: 'La Revolución Digital', title: 'Un Ecosistema Próspero', desc: 'La industria de las apps redefine la interacción. Estamos a la vanguardia.',
+    s1: 'Crecimiento', s1V: '15% anual', s1D: 'Expansión de la economía digital',
+    s2: 'Descargas', s2V: '+250 mil mill', s2D: 'Apps descargadas por año',
     s3: 'Tiempo Diario', s3V: '4.8 Horas', s3D: 'Promedio de tiempo en apps',
-    s4: 'Ingresos Globales', s4V: '+$600 mil millones', s4D: 'Tamaño de mercado proyectado',
+    s4: 'Ingresos Globales', s4V: '+$600 mil mill', s4D: 'Tamaño de mercado proyectado',
     quote: '"El futuro pertenece a quienes lo construyen."',
-    insight: 'Para 2030, las apps serán la puerta principal a la educación y el comercio global.'
+    insight: 'Para 2030, las apps serán la puerta principal para la educación y el comercio.'
   },
   innovation: {
     badge: 'Centro de Innovación', title: 'Herramientas del Futuro',
     tabDev: 'Desarrollo', tabDes: 'Diseño', tabInt: 'Inteligencia',
-    devH4: 'Frontend de Alta Velocidad', devP: 'Ingeniería para rendimiento nativo usando arquitecturas modulares de React.',
-    desH4: 'Diseño de Experiencia', desP: 'Prototipado de micro-interacciones para asegurar el deleite absoluto del usuario.',
-    intH4: 'Motores de Inteligencia Artificial', intP: 'Integración de Gemini para potenciar rutas de aprendizaje adaptativas.',
+    devH4: 'Frontend de Alta Velocidad', devP: 'Rendimiento nativo en todos los dispositivos usando React modular',
+    desH4: 'Diseño de Experiencia', desP: 'Micro-interacciones de precisión para el deleite del usuario',
+    intH4: 'Motores de IA', intP: 'Integración de Gemini para aprendizaje adaptativo que evoluciona contigo',
     intQuote: '"Arquitecturando la lógica del mañana."'
   },
   lifecycle: {
-    badge: 'Flujo de Ingeniería', title: 'El Ciclo de Vida de la App',
-    p1T: 'El Plano', p1D: 'Wireframes y mapeo de arquitectura técnica.',
-    p2T: 'La Construcción', p2D: 'Ciclos ágiles de desarrollo basados en sprints.',
-    p3T: 'El Pulido', p3D: 'Auditorías rigurosas de QA y accesibilidad.',
-    p4T: 'El Lanzamiento', p4D: 'ASO y estrategia de despliegue en producción.',
+    badge: 'Flujo de Ingeniería', title: 'Ciclo de Vida de la App',
+    p1T: 'El Plano', p1D: 'Wireframes y mapeo de arquitectura técnica',
+    p2T: 'La Construcción', p2D: 'Ciclos de desarrollo ágiles basados en sprints',
+    p3T: 'El Pulido', p3D: 'QA riguroso y auditorías de accesibilidad',
+    p4T: 'El Lanzamiento', p4D: 'ASO y estrategia de despliegue en producción',
     phase: 'FASE'
   },
   techComparison: {
-    badge: 'Lógica Arquitectónica', title: 'Nativo vs. Multiplataforma', desc: 'Elegir entre Swift/Kotlin o React Native depende de tus objetivos.',
-    nativeT: '¿Cuándo ir por Nativo?', nativeD: 'Acceso complejo al hardware, gráficos intensivos y máximo rendimiento específico.',
-    crossT: '¿Cuándo ir por Multi?', crossD: 'Velocidad de mercado, código unificado para iOS/Android y apps basadas en contenido.',
-    questionNative: '¿Cuándo ir por Nativo?', questionCross: '¿Cuándo ir por Multi?'
+    badge: 'Lógica Arquitectónica', title: 'Nativo vs Multiplataforma', desc: 'Elegir entre Swift/Kotlin o React Native depende de sus objetivos',
+    nativeT: '¿Cuándo ir por Nativo?', nativeD: 'Acceso complejo al hardware, gráficos intensivos y máxima velocidad',
+    crossT: '¿Cuándo ir por Multi?', crossD: 'Velocidad de mercado, código unificado para iOS/Android'
   },
   anatomy: {
-    badge: 'Inmersión Educativa', title: 'La Anatomía del Rendimiento',
-    l1T: 'La Interfaz', l1D: 'Frontend de alta velocidad usando React.', l1L: ['Componentes UI', 'Gestión de Estado', 'Animaciones'],
+    badge: 'Inmersión Educativa', title: 'Anatomía del Rendimiento.',
+    l1T: 'La Interfaz', l1D: 'Frontend de alta velocidad con React para respuesta instantánea.', l1L: ['Componentes UI', 'Gestión de Estado', 'Animaciones'],
     l2T: 'El Cerebro', l2D: 'Lógica segura y algoritmos complejos.', l2L: ['Capa API', 'Lógica de Negocio', 'Microservicios'],
-    l3T: 'La Memoria', l3D: 'Almacenamiento escalable distribuido.', l3L: ['Sincronización', 'Cifrado', 'Nube']
+    l3T: 'La Memoria', l3D: 'Almacenamiento escalable con sincronización.', l3L: ['Sincronización', 'Cifrado', 'Nube']
   },
   portfolio: {
     badge: 'Casos de Estudio', title: 'Excelencia en Ingeniería.', desc: 'Arquitectura de precisión en cada producto.',
-    app1: { cat: 'Educación', title: 'My Wonder Books', desc: 'Librería interactiva para niños.', stat: '500K Usuarios' },
-    app2: { cat: 'Juegos', title: 'Engine Quest', desc: 'Motor cognitivo para mentes jóvenes.', stat: '4.9 Calificación' },
-    app3: { cat: 'Creatividad', title: 'Canvas Pro', desc: 'Motor vectorial de baja latencia.', stat: 'App Premium' }
+    app1: { cat: 'Educación', title: 'My Wonder Books', desc: 'Biblioteca interactiva para niños.', stat: '500k usuarios' },
+    app2: { cat: 'Juegos', title: 'Engine Quest', desc: 'Motor cognitivo para mentes jóvenes.', stat: 'Nota 4.9' },
+    app3: { cat: 'Creatividad', title: 'Canvas Pro', desc: 'Motor vectorial para ilustración digital.', stat: 'App Premium' }
   },
   monetization: {
     badge: 'Lógica de Negocio', title: 'Escalado y Monetización.', desc: 'Estrategias para el crecimiento sostenible.',
     m1T: 'SaaS', m1D: 'Modelos de valor recurrente.',
     m2T: 'Freemium', m2D: 'Estrategia de venta de funciones premium.',
-    m3T: 'In-App', m3D: 'Bienes digitales y microtransacciones.',
-    m4T: 'Anuncios', m4D: 'Alcance masivo a través de impresiones.',
-    dashTitle: 'Analítica de Ingresos', dashGrowth: '↑ 24% Crecimiento', metric1: 'Rendimiento Activo', metric2: 'Valor de Usuario', badgeLabel: 'ESCALADO', badgeSub: 'Arquitectura de Ingresos'
+    m3T: 'In-App', m3D: 'Bienes digitales y transacciones.',
+    m4T: 'Anuncios', m4D: 'Alcance masivo por impresiones.',
+    dashTitle: 'Analítica de Ingresos', dashGrowth: '↑ Crecimiento 24%', metric1: 'Rendimiento Activo', metric2: 'Valor de Usuario', badgeLabel: 'ESCALADO', badgeSub: 'Arquitectura de Ingresos'
   },
   designThinking: {
     badge: 'Estrategia de Producto', title: 'Pensamiento de Diseño.', desc: 'Ingeniería basada en la lógica humana.',
-    p1: 'Empatizar', p1D: 'Observar a humanos reales.',
+    p1: 'Empatizar', p1D: 'Observación de humanos reales.',
     p2: 'Definir', p2D: 'Sintetizar en un problema claro.',
-    p3: 'Idear', p3D: 'Generar ideas salvajes sin juzgar.',
-    p4: 'Prototipar', p4D: 'Modelos para fallar rápido y aprender.'
+    p3: 'Idear', p3D: 'Generación de ideas sin juicio.',
+    p4: 'Prototipar', p4D: 'Modelos para aprender rápido.'
   },
   performance: {
     badge: 'Optimización', title: 'La Velocidad es una Función.',
@@ -536,147 +539,148 @@ const es = {
     encrypted: 'Cifrado'
   },
   security: {
-    badge: 'Protocolo de Seguridad', title: 'Privacidad por Arquitectura.', desc: 'En educación, la protección de los niños es prioridad.',
-    f1: 'Cifrado AES-256', f2: 'Cumplimiento COPPA y GDPR', f3: 'Autenticación Biométrica'
+    badge: 'Protocolos de Seguridad', title: 'Privacidad por Arquitectura.', desc: 'La protección de los niños es nuestra prioridad.',
+    f1: 'Cifrado AES-256', f2: 'Cumplimiento COPPA y GDPR', f3: 'Auth Biométrica'
   },
   timeline: {
     badge: 'Nuestro Contexto', title: 'Evolución del Progreso.',
-    e1T: 'Génesis WAP', e1D: 'Interfaces de texto simples.',
-    e2T: 'Big Bang', e2D: 'Lanzamiento de la App Store.',
+    e1T: 'Génesis WAP', e1D: 'Interfaces de texto de utilidades simples.',
+    e2T: 'El Big Bang', e2D: 'Lanzamiento de App Store.',
     e3T: 'Cambio a la Nube', e3D: 'Sincronización en tiempo real.',
-    e4T: 'Nativo en IA', e4D: 'Sistemas adaptativos de IA.'
+    e4T: 'Nativo de IA', e4D: 'Sistemas adaptativos de IA.'
   },
   globalImpact: {
-    badge: 'Huella Global', title: 'Mentes Activas Globales.', subtitle: 'Alcance mensual de usuarios.',
+    badge: 'Nuestra Huella', title: 'Mentes Activas Globales.', subtitle: 'Usuarios mensuales alcanzados.',
     s1: 'Países', s1V: '45+', s2: 'Rating', s2V: '4.9/5', s3: 'Historias', s3V: '12M+', s4: 'Uptime', s4V: '99.9%'
   },
   futureTrends: {
-    badge: 'Horizonte', title: 'Arquitecturas Próximas.', quote: '"La pantalla desaparece en el entorno."',
+    badge: 'Horizonte', title: 'Arquitecturas de Próxima Generación.', quote: '"La pantalla desaparece en el entorno."',
     t1: 'Computación Espacial', t1D: 'Fusión de apps con espacio físico.',
-    t2: 'IA en el Borde', t2D: 'Redes neuronales locales.',
+    t2: 'Edge IA', t2D: 'Redes neuronales locales.',
     t3: 'Zero-UI', t3D: 'Apps guiadas por voz y gestos.'
   },
   process: {
     badge: 'El Viaje', title: 'Dando Vida a las Ideas.', desc: 'Equilibrio entre creatividad y disciplina.',
-    ctaT: '¿Necesitas nuestro flujo?', ctaD: 'Documentación transparente en cada fase.', ctaB: 'Contactar',
+    ctaT: '¿Necesitas nuestro flujo?', ctaD: 'Documentación transparente.', ctaB: 'Contacto',
     s1T: 'Descubrimiento', s1D: 'Entendiendo la psicología del usuario.',
     s2T: 'Arquitectura UI/UX', s2D: 'Interfaces intuitivas y accesibles.',
-    s3T: 'Código de Precisión', s3D: 'Cero latencia optimizado.',
-    s4T: 'QA Riguroso', s4D: 'Probando cada caso posible.'
+    s3T: 'Código de Precisión', s3D: 'Código optimizado sin latencia.',
+    s4T: 'QA Riguroso', s4D: 'Probando cada caso extremo.'
   },
   techStack: {
-    badge: 'Tecnología', title: 'Poder de React e IA.', desc: 'Inteligencia rápida y modular.',
+    badge: 'Nuestra Tecnología', title: 'React y Poder IA.', desc: 'Inteligencia rápida y modular.',
     t1: 'React Native', t1D: 'Velocidad nativa multiplataforma.',
     t2: 'TypeScript', t2D: 'Ingeniería confiable y tipada.',
-    t3: 'Narrativa IA', t3D: 'IA Generativa en educación.',
+    t3: 'AI Narratives', t3D: 'IA generativa en educación.',
     t4: 'Cloud Infra', t4D: 'Escalado global ilimitado.',
-    stat1: 'KPI Estabilidad', stat2: 'Patrón'
+    stat1: 'Estabilidad', stat2: 'Patrón'
   },
   ecosystem: {
-    badge: 'Herramientas', title: 'El Ecosistema.', desc: 'Estándares de la industria.',
+    badge: 'Herramientas', title: 'El Ecosistema.', desc: 'Estándares industriales.',
     tools: {
       figma: 'Diseño UI/UX', vscode: 'Codificación', github: 'Orquestación CI/CD',
-      jira: 'Sprints ágiles', slack: 'Sincronización', firebase: 'Bases de datos'
+      jira: 'Agile sprints', slack: 'Sincronización', firebase: 'Bases de datos'
     }
   },
   education: {
-    badge: 'Insights de Ingeniería', title: 'Anatomía del Éxito.',
+    badge: 'Insights', title: 'Anatomía del Éxito.',
     h1: 'Núcleo Invisible', p1: 'El alma está en la arquitectura backend.',
     h2: 'Diseño de Experiencia', p2: 'UX es una ciencia psicológica.',
     h3: 'Garantía de Calidad', p3: 'Manejo de entradas inesperadas.',
-    factTitle: '¿Sabías que?', factDesc: 'Una app típica tiene más de 10,000 líneas de código solo para interacciones.'
+    factTitle: '¿Sabías que?', factDesc: 'Una app típica tiene 10k+ líneas de código de interfaz.'
   },
   contact: {
     portal: 'Portal de Ingeniería', title: 'Iniciar Proyecto.', subtitle: 'Habla con nuestro líder.',
-    successTitle: 'Brief Registrado', successDesc: 'Datos enviados con éxito.',
-    newSub: 'Nueva Solicitud', fullName: 'Nombre Completo', email: 'Correo', mobile: 'Móvil', category: 'Categoría', brief: 'Brief',
-    briefPlaceholder: 'Describe tu visión...', submit: 'Iniciar', transmitting: 'Enviando...'
+    successTitle: 'Brief Registrado', successDesc: 'Transmitido a Google Sheets.',
+    newSub: 'Nueva Solicitud', fullName: 'Nombre Completo', email: 'Email', mobile: 'Móvil', category: 'Categoría', brief: 'Brief',
+    briefPlaceholder: 'Describe tu visión...', submit: 'Iniciar', transmitting: 'Enviando...',
+    cat1: 'Desarrollo de Apps Móviles', cat2: 'Plataforma Educativa', cat3: 'Motor de Juegos'
   },
   footer: {
-    desc: 'Estudio de ingeniería líder en Nuevo Cairo.',
+    desc: 'Estudio de ingeniería en Nuevo Cairo.',
     engineering: 'Ingeniería', strategy: 'Estrategia', hq: 'Sede Central', hqLoc: 'Egipto, Nuevo Cairo', hqAddr: 'District 5, Marakez',
-    inquiries: 'Consultas', portalLink: 'Contactar vía Portal', status: 'En línea', devEnv: 'Entorno Dev',
-    rights: 'Smart Solutions Ltd.', privacy: 'Privacidad', terms: 'Términos', scroll: 'Inicio',
-    links: { security: 'Seguridad', perf: 'Rendimiento', monetization: 'Monetización', design: 'Pensamiento de Diseño', industry: 'Perspectivas' }
+    inquiries: 'Consultas', portalLink: 'Portal de Contacto', status: 'En línea', devEnv: 'Entorno Dev',
+    rights: 'Smart Solutions Ltd.', privacy: 'Privacidad', terms: 'Términos', scroll: 'Summit',
+    links: { security: 'Seguridad', perf: 'Rendimiento', monetization: 'Monetización', design: 'Diseño Thinking', industry: 'Industria' }
   }
 };
 
 const fr = {
-  nav: { home: 'Accueil', lifecycle: 'Cycle de vie', tech: 'Tech', ecosystem: 'Écosystème', anatomy: 'Anatomie', connect: 'Contact', start: 'Démarrer Projet' },
+  nav: { home: 'Accueil', lifecycle: 'Cycle de vie', tech: 'Tech', ecosystem: 'Écosystème', anatomy: 'Anatomie', connect: 'Contact', start: 'Projet' },
   hero: { 
-    badge: 'Innovation au Nouveau Caire', title: 'Excellence Numérique par Design.', 
-    subtitle: 'Smart Solutions est un studio d\'ingénierie d\'applications. Nous concevons des expériences qui définissent des industries.',
-    ctaWork: 'Nos Projets', ctaStory: 'Notre Histoire', flagship: 'Phare', downloads: '500k+ Téléchargements', appTitle: 'My Wonder Books',
+    badge: 'Innovation au Nouveau Caire', 
+    title: 'Excellence Numérique par le Design.', 
+    subtitle: 'Smart Solutions est un studio d\'ingénierie d\'applications. Nous ne construisons pas seulement des apps ; nous créons des expériences.',
+    ctaWork: 'Nos Travaux', ctaStory: 'Notre Histoire', flagship: 'Phare', downloads: '500k+ Téléchargements', appTitle: 'My Wonder Books',
     appDesc: 'La plateforme de narration éducative pour enfants n°1 au monde.', partner: 'Partenaire Global', partnerDetail: 'Harvard Innovation Invite'
   },
   about: {
     identity: 'Notre Identité', title: 'Ingénierie de Précision.',
-    desc: 'Smart Solutions est un studio d\'ingénierie de pointe au Nouveau Caire. Spécialistes en infrastructure numérique haute performance.',
-    scale: 'Échelle', scaleDesc: 'Millions d\'interactions traitées quotidiennement.',
+    desc: 'Smart Solutions est un studio au Nouveau Caire. Spécialisés dans l\'infrastructure numérique pour l\'éducation.',
+    scale: 'Échelle', scaleDesc: 'Des millions d\'interactions quotidiennes.',
     trust: 'Confiance', trustDesc: 'Normes de confidentialité de niveau bancaire.'
   },
   values: {
-    v1Title: 'Architecture Propre', v1Desc: 'Nous bâtissons des structures. Nos principes SOLID garantissent la vitesse au fil de la croissance.',
-    v2Title: 'Logique Utilisateur', v2Desc: 'L\'accessibilité est au cœur de chaque pixel de nos interfaces.',
+    v1Title: 'Architecture Propre', v1Desc: 'Nous bâtissons des structures. Nos principes SOLID garantissent la vitesse lors du scaling.',
+    v2Title: 'Logique Utilisateur', v2Desc: 'Accessibilité intégrée pour une expérience fluide.',
     v3Title: 'Sécurité Militaire', v3Desc: 'Protection des données avec cryptage avancé pour chaque plateforme.'
   },
   stats: {
-    badge: 'La Révolution Numérique', title: 'Un Écosystème Prospère', desc: 'L\'industrie des apps redéfinit l\'interaction. Nous sommes en tête de ce virage.',
-    s1: 'Croissance', s1V: '15% par an', s1D: 'Expansion de l\'économie numérique',
+    badge: 'Révolution Numérique', title: 'Un Écosystème Prospère', desc: 'L\'industrie des apps redéfinit l\'interaction. Nous sommes à la pointe.',
+    s1: 'Croissance', s1V: '15% annuel', s1D: 'Expansion de l\'économie numérique',
     s2: 'Téléchargements', s2V: '+250 Milliards', s2D: 'Apps téléchargées par an',
     s3: 'Temps Quotidien', s3V: '4.8 Heures', s3D: 'Moyenne de temps sur les apps',
-    s4: 'Revenu Global', s4V: '+$600 Milliards', s4D: 'Taille de marché projetée',
+    s4: 'Revenu Global', s4V: '+$600 Milliards', s4D: 'Taille du marché projetée',
     quote: '"L\'avenir appartient à ceux qui le construisent."',
-    insight: 'D\'ici 2030, les apps seront le canal principal pour l\'éducation et le commerce mondial.'
+    insight: 'D\'ici 2030, les apps seront la porte principale pour l\'éducation et le commerce.'
   },
   innovation: {
     badge: 'Hub d\'Innovation', title: 'Outils du Futur',
     tabDev: 'Développement', tabDes: 'Design', tabInt: 'Intelligence',
-    devH4: 'Frontend Haute Vitesse', devP: 'Ingénierie pour performance native via architectures React modulaires.',
-    desH4: 'Design d\'Expérience', desP: 'Prototypage de micro-interactions pour assurer le plaisir de l\'utilisateur.',
-    intH4: 'Moteurs d\'IA', intP: 'Intégration de Gemini pour des parcours d\'apprentissage adaptatifs.',
+    devH4: 'Frontend Haute Vitesse', devP: 'Performance native sur tous les appareils via React modulaire',
+    desH4: 'Design d\'Expérience', desP: 'Micro-interactions de précision pour le plaisir de l\'utilisateur',
+    intH4: 'Moteurs d\'IA', intP: 'Intégration de Gemini pour un apprentissage adaptatif qui évolue avec vous',
     intQuote: '"Architecturer la logique de demain."'
   },
   lifecycle: {
-    badge: 'Flux d\'Ingénierie', title: 'Le Cycle de Vie de l\'App',
-    p1T: 'Le Plan', p1D: 'Wireframes et cartographie d\'architecture technique.',
-    p2T: 'La Construction', p2D: 'Cycles agiles basés sur des sprints.',
-    p3T: 'Le Polissage', p3D: 'QA rigoureux et audits d\'accessibilité.',
-    p4T: 'Le Lancement', p4D: 'ASO et stratégie de déploiement en production.',
+    badge: 'Flux d\'Ingénierie', title: 'Cycle de Vie de l\'App',
+    p1T: 'Le Plan', p1D: 'Wireframes et cartographie d\'architecture technique',
+    p2T: 'La Construction', p2D: 'Cycles agiles basés sur des sprints',
+    p3T: 'Le Polissage', p3D: 'QA rigoureux et audits d\'accessibilité',
+    p4T: 'Le Lancement', p4D: 'ASO et stratégie de déploiement en production',
     phase: 'PHASE'
   },
   techComparison: {
-    badge: 'Logique Architecturale', title: 'Natif vs. Multiplateforme', desc: 'Choisir entre Swift/Kotlin ou React Native selon vos objectifs.',
-    nativeT: 'Pourquoi le Natif ?', nativeD: 'Accès hardware complexe, graphismes intensifs et performance maximale.',
-    crossT: 'Pourquoi le Multi ?', crossD: 'Vitesse de mise sur marché, code unifié iOS/Android et apps de contenu.',
-    questionNative: 'Pourquoi le Natif ?', questionCross: 'Pourquoi le Multi ?'
+    badge: 'Logique Architecturale', title: 'Natif vs Multiplateforme', desc: 'Choisir entre Swift/Kotlin ou React Native selon vos objectifs',
+    nativeT: 'Pourquoi le Natif ?', nativeD: 'Accès matériel complexe, graphismes intensifs et vitesse maximale',
+    crossT: 'Pourquoi le Multi ?', crossD: 'Vitesse du marché, code unifié pour iOS/Android'
   },
   anatomy: {
-    badge: 'Immersion Éducative', title: 'L\'Anatomie de la Performance',
-    l1T: 'L\'Interface', l1D: 'Frontend haute vitesse avec React.', l1L: ['Composants UI', 'Gestion d\'État', 'Animations Fluides'],
+    badge: 'Immersion Éducative', title: 'Anatomie de la Performance.',
+    l1T: 'L\'Interface', l1D: 'Frontend haute vitesse avec React pour une réponse instantanée.', l1L: ['Composants UI', 'Gestion d\'État', 'Animations'],
     l2T: 'Le Cerveau', l2D: 'Logique sécurisée et algorithmes complexes.', l2L: ['Couche API', 'Logique Métier', 'Microservices'],
-    l3T: 'La Mémoire', l3D: 'Stockage scalable distribué.', l3L: ['Sync Temps Réel', 'Cryptage', 'Cloud']
+    l3T: 'La Mémoire', l3D: 'Stockage scalable avec synchronisation.', l3L: ['Sincronisation', 'Cryptage', 'Cloud']
   },
   portfolio: {
     badge: 'Études de Cas', title: 'Excellence Ingénierie.', desc: 'Architecture de précision pour chaque produit.',
-    app1: { cat: 'Éducation', title: 'My Wonder Books', desc: 'Bibliothèque interactive pour enfants.', stat: '500K Utilisateurs' },
+    app1: { cat: 'Éducation', title: 'My Wonder Books', desc: 'Bibliothèque interactive pour enfants.', stat: '500k utilisateurs' },
     app2: { cat: 'Jeux', title: 'Engine Quest', desc: 'Moteur cognitif pour jeunes esprits.', stat: 'Note 4.9' },
-    app3: { cat: 'Créativité', title: 'Canvas Pro', desc: 'Moteur vectoriel haute performance.', stat: 'App Premium' }
+    app3: { cat: 'Créativité', title: 'Canvas Pro', desc: 'Moteur vectoriel pour illustration numérique.', stat: 'App Premium' }
   },
   monetization: {
-    badge: 'Business Logic', title: 'Croissance et Monétisation.', desc: 'Stratégies pour un succès durable.',
+    badge: 'Business Logic', title: 'Scaling et Monétisation.', desc: 'Stratégies pour une croissance durable.',
     m1T: 'SaaS', m1D: 'Modèles de valeur récurrente.',
     m2T: 'Freemium', m2D: 'Stratégie premium upsell.',
-    m3T: 'In-App', m3D: 'Biens numériques et microtransactions.',
+    m3T: 'In-App', m3D: 'Biens numériques et transactions.',
     m4T: 'Ads', m4D: 'Portée massive via impressions.',
-    dashTitle: 'Analytique de Revenu', dashGrowth: '↑ 24% Croissance', metric1: 'Rendement Actif', metric2: 'Valeur Utilisateur', badgeLabel: 'ÉCHELLE', badgeSub: 'Architecture de Revenu'
+    dashTitle: 'Analytique de Revenu', dashGrowth: '↑ Croissance 24%', metric1: 'Rendement Actif', metric2: 'Valeur Utilisateur', badgeLabel: 'ÉCHELLE', badgeSub: 'Architecture de Revenu'
   },
   designThinking: {
     badge: 'Stratégie Produit', title: 'Design Thinking.', desc: 'Ingénierie ancrée dans la logique humaine.',
-    p1: 'Empathie', p1D: 'Observer les humains en environnement.',
-    p2: 'Définir', p2D: 'Synthétiser en un problème clair.',
-    p3: 'Idéation', p3D: 'Générer des idées sans jugement.',
-    p4: 'Prototypage', p4D: 'Modèles pour échouer vite et apprendre.'
+    p1: 'Empathie', p1D: 'Observation des humains réels.',
+    p2: 'Définir', p2D: 'Synthèse en un problème clair.',
+    p3: 'Idéation', p3D: 'Génération d\'idées sans jugement.',
+    p4: 'Prototypage', p4D: 'Modèles pour échouer vite.'
   },
   performance: {
     badge: 'Optimisation', title: 'La Vitesse est une Feature.',
@@ -686,14 +690,14 @@ const fr = {
     encrypted: 'Chiffré'
   },
   security: {
-    badge: 'Protocole Sécurité', title: 'Confidentialité par Architecture.', desc: 'En éducation, la protection des enfants est la priorité.',
+    badge: 'Protocoles Sécurité', title: 'Confidentialité par Architecture.', desc: 'La protection des enfants est la priorité.',
     f1: 'Cryptage AES-256', f2: 'Prêt COPPA & RGPD', f3: 'Auth Biométrique'
   },
   timeline: {
     badge: 'Notre Contexte', title: 'Évolution du Progrès.',
-    e1T: 'Genèse WAP', e1D: 'Interfaces texte simples.',
-    e2T: 'Big Bang', e2D: 'Lancement de l\'App Store.',
-    e3T: 'Shift Cloud', e3D: 'Moteurs de sync temps réel.',
+    e1T: 'Genèse WAP', e1D: 'Interfaces texte d\'utilitaires simples.',
+    e2T: 'Le Big Bang', e2D: 'Lancement de l\'App Store.',
+    e3T: 'Shift Cloud', e3D: 'Sincronisation en temps réel.',
     e4T: 'IA Native', e4D: 'Systèmes adaptatifs IA.'
   },
   globalImpact: {
@@ -701,24 +705,24 @@ const fr = {
     s1: 'Pays', s1V: '45+', s2: 'Note', s2V: '4.9/5', s3: 'Histoires', s3V: '12M+', s4: 'Uptime', s4V: '99.9%'
   },
   futureTrends: {
-    badge: 'Horizon', title: 'Architectures Futures.', quote: '"L\'écran disparaît dans l\'environnement."',
-    t1: 'Computing Spatial', t1D: 'Fusion apps et espace physique.',
+    badge: 'Horizon', title: 'Architectures du Futur.', quote: '"L\'écran disparaît dans l\'environnement."',
+    t1: 'Computing Spatial', t1D: 'Fusion d\'apps avec l\'espace physique.',
     t2: 'Edge IA', t2D: 'Réseaux neuronaux locaux.',
     t3: 'Zero-UI', t3D: 'Apps pilotées par voix et gestes.'
   },
   process: {
     badge: 'Le Voyage', title: 'Donner Vie aux Idées.', desc: 'Équilibre créativité et discipline.',
-    ctaT: 'Besoin de notre workflow ?', ctaD: 'Documentation transparente à chaque phase.', ctaB: 'Contact',
+    ctaT: 'Besoin de notre workflow ?', ctaD: 'Documentation transparente.', ctaB: 'Contact',
     s1T: 'Découverte', s1D: 'Comprendre la psychologie utilisateur.',
     s2T: 'Architecture UI/UX', s2D: 'Interfaces intuitives.',
-    s3T: 'Code Précis', s3D: 'Zéro latence optimisé.',
+    s3T: 'Code Précis', s3D: 'Code optimisé sans latence.',
     s4T: 'QA Rigoureux', s4D: 'Tester chaque cas d\'usage.'
   },
   techStack: {
     badge: 'Technologie', title: 'Poids de React et IA.', desc: 'Intelligence rapide et modulaire.',
     t1: 'React Native', t1D: 'Vitesse native multiplateforme.',
     t2: 'TypeScript', t2D: 'Ingénierie fiable et typée.',
-    t3: 'Récits IA', t3D: 'IA Générative en éducation.',
+    t3: 'Récits IA', t3D: 'IA générative en éducation.',
     t4: 'Cloud Infra', t4D: 'Scaling global illimité.',
     stat1: 'KPI Stabilité', stat2: 'Pattern'
   },
@@ -734,16 +738,17 @@ const fr = {
     h1: 'Cœur Invisible', p1: 'L\'âme est dans l\'architecture backend.',
     h2: 'Design d\'Expérience', p2: 'UX est une science psychologique.',
     h3: 'Assurance Qualité', p3: 'Gérer les entrées inattendues.',
-    factTitle: 'Le saviez-vous ?', factDesc: 'Une app typique contient plus de 10 000 lignes de code rien que pour les interactions.'
+    factTitle: 'Le saviez-vous ?', factDesc: 'Une app typique contient 10k+ lignes de code d\'interface.'
   },
   contact: {
     portal: 'Portail Ingénierie', title: 'Lancer Projet.', subtitle: 'Discutez avec notre responsable.',
-    successTitle: 'Brief Enregistré', successDesc: 'Données transmises avec succès.',
+    successTitle: 'Brief Enregistré', successDesc: 'Transmis à Google Sheets.',
     newSub: 'Nouveau Brief', fullName: 'Nom Complet', email: 'Email', mobile: 'Mobile', category: 'Catégorie', brief: 'Brief',
-    briefPlaceholder: 'Décrivez votre vision...', submit: 'Lancer', transmitting: 'Envoi...'
+    briefPlaceholder: 'Décrivez votre vision...', submit: 'Lancer', transmitting: 'Envoi...',
+    cat1: 'Développement d\'Apps Mobiles', cat2: 'Plateforme Éducative', cat3: 'Moteur de Jeux'
   },
   footer: {
-    desc: 'Studio d\'ingénierie leader au Nouveau Caire.',
+    desc: 'Studio d\'ingénierie au Nouveau Caire.',
     engineering: 'Ingénierie', strategy: 'Stratégie', hq: 'Siège Social', hqLoc: 'Égypte, Nouveau Caire', hqAddr: 'District 5, Marakez',
     inquiries: 'Demandes', portalLink: 'Contact via Portail', status: 'En ligne', devEnv: 'Environnement Dev',
     rights: 'Smart Solutions Ltd.', privacy: 'Confidentialité', terms: 'Conditions', scroll: 'Sommet',
