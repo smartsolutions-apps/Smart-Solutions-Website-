@@ -1,7 +1,8 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 
 const Monetization: React.FC = () => {
+  const [imgError, setImgError] = useState(false);
+
   const models = [
     { title: "SaaS & Subscriptions", desc: "Recurring revenue models that focus on long-term user value.", icon: "💳" },
     { title: "Freemium", desc: "Offering core value for free while charging for premium features.", icon: "💎" },
@@ -29,50 +30,60 @@ const Monetization: React.FC = () => {
               ))}
             </div>
           </div>
-          <div className="relative group cursor-pointer">
+          
+          <div className="relative group">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 bg-slate-900 relative">
-              {/* This is a hard-coded SVG Dashboard. It CANNOT break. */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                <div className="flex justify-between items-start">
-                  <div className="space-y-1">
-                    <div className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Monthly Revenue</div>
-                    <div className="text-3xl font-black text-white">$124,500</div>
-                  </div>
-                  <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                  </div>
-                </div>
-                
-                <div className="flex-1 flex items-end gap-2 py-8">
-                  {[40, 70, 45, 90, 65, 80, 100, 85, 95, 75, 60, 85].map((h, i) => (
-                    <div key={i} className="flex-1 bg-indigo-500/20 rounded-t-sm relative group/bar">
-                      <div 
-                        className="absolute bottom-0 left-0 right-0 bg-indigo-500 transition-all duration-1000 group-hover:bg-indigo-400" 
-                        style={{ height: `${h}%` }}
-                      ></div>
+              {imgError ? (
+                /* Interactive CSS Dashboard Fallback - THIS CANNOT BREAK */
+                <div className="absolute inset-0 p-8 flex flex-col justify-between animate-fadeIn bg-slate-950">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-1">
+                      <div className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Projected Growth</div>
+                      <div className="text-3xl font-black text-white">$1.2M+</div>
                     </div>
-                  ))}
-                </div>
+                    <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 flex items-end gap-2 py-8">
+                    {[30, 60, 45, 80, 55, 70, 90, 75, 85, 65, 50, 85].map((h, i) => (
+                      <div key={i} className="flex-1 bg-indigo-500/10 rounded-t-sm relative">
+                        <div 
+                          className="absolute bottom-0 left-0 right-0 bg-indigo-500 transition-all duration-1000" 
+                          style={{ height: `${h}%`, transitionDelay: `${i * 50}ms` }}
+                        ></div>
+                      </div>
+                    ))}
+                  </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
-                    <div className="text-[9px] uppercase font-bold text-slate-500">Churn Rate</div>
-                    <div className="text-xl font-bold text-white">1.2%</div>
-                  </div>
-                  <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
-                    <div className="text-[9px] uppercase font-bold text-slate-500">LTV</div>
-                    <div className="text-xl font-bold text-white">$242</div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
+                      <div className="text-[9px] uppercase font-bold text-slate-500">Active Yield</div>
+                      <div className="text-xl font-bold text-white">94%</div>
+                    </div>
+                    <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
+                      <div className="text-[9px] uppercase font-bold text-slate-500">User Value</div>
+                      <div className="text-xl font-bold text-white">$48.5</div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                /* Primary Image - Highly stable Unsplash link */
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bbbda50d2671?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Growth analytics dashboard" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  onError={() => setImgError(true)}
+                />
+              )}
               
-              {/* Subtle hover overlay */}
-              <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-colors z-20 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-indigo-600/5 group-hover:bg-indigo-600/10 transition-colors pointer-events-none"></div>
             </div>
             
             <div className="absolute -bottom-8 -right-8 glass-card p-8 rounded-3xl shadow-2xl border border-indigo-50 z-30 transform group-hover:scale-110 transition-transform">
-              <div className="text-indigo-600 font-black text-3xl mb-1">PROFIT</div>
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Engineered for Success</p>
+              <div className="text-indigo-600 font-black text-3xl mb-1">REVENUE</div>
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Scale Architecture</p>
             </div>
           </div>
         </div>
