@@ -1,8 +1,14 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from '../App';
 
-const COUNTRY_CODES = [
+interface CountryCode {
+  code: string;
+  country: string;
+  flag: string;
+}
+
+const PREFERRED_CODES: CountryCode[] = [
   { code: '+20', country: 'Egypt', flag: '🇪🇬' },
   { code: '+1', country: 'USA/Canada', flag: '🇺🇸' },
   { code: '+44', country: 'UK', flag: '🇬🇧' },
@@ -14,6 +20,7 @@ const COUNTRY_CODES = [
 
 const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
+  const [countryCodes, setCountryCodes] = useState<CountryCode[]>(PREFERRED_CODES);
   const { t, locale } = useTranslation();
   
   const [formData, setFormData] = useState({ 
@@ -24,6 +31,42 @@ const Contact: React.FC = () => {
     category: t.contact.cat1, 
     message: '' 
   });
+
+  // Automatic IP-based Country Detection
+  useEffect(() => {
+    const detectCountry = async () => {
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        
+        if (data.country_calling_code) {
+          const detectedCode = data.country_calling_code.startsWith('+') 
+            ? data.country_calling_code 
+            : `+${data.country_calling_code}`;
+          
+          // Check if detected code exists in our preferred list
+          const exists = countryCodes.find(c => c.code === detectedCode);
+          
+          if (!exists) {
+            // Add the new code to the list so it's selectable in the UI
+            const newEntry: CountryCode = {
+              code: detectedCode,
+              country: data.country_name || 'Detected',
+              flag: '🌐'
+            };
+            setCountryCodes(prev => [newEntry, ...prev]);
+          }
+          
+          setFormData(prev => ({ ...prev, countryCode: detectedCode }));
+        }
+      } catch (err) {
+        console.warn("Country detection via IP failed. Using default (+20).", err);
+      }
+    };
+
+    detectCountry();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,12 +159,12 @@ const Contact: React.FC = () => {
                       onChange={e => setFormData({...formData, countryCode: e.target.value})}
                       className={`w-full ${locale === 'ar' ? 'pr-12 pl-6' : 'pl-12 pr-6'} py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20`}
                     >
-                      {COUNTRY_CODES.map(c => (
-                        <option key={c.code} value={c.code}>{c.code}</option>
+                      {countryCodes.map(c => (
+                        <option key={c.code} value={c.code}>{c.code} ({c.country})</option>
                       ))}
                     </select>
                     <div className={`absolute ${locale === 'ar' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 text-xl`}>
-                      {COUNTRY_CODES.find(c => c.code === formData.countryCode)?.flag}
+                      {countryCodes.find(c => c.code === formData.countryCode)?.flag || '🌐'}
                     </div>
                   </div>
                   <input 

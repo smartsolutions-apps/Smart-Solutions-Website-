@@ -3,6 +3,7 @@
   "description": "Based in New Cairo, Smart Solutions engineers world-class mobile experiences for education and gaming. Creators of My Wonder Books.",
   "requestFramePermissions": [
     "camera",
-    "microphone"
+    "microphone",
+    "geolocation"
   ]
 }
