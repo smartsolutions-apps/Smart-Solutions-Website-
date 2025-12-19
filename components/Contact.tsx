@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useTranslation } from '../App';
 
 const COUNTRY_CODES = [
   { code: '+20', country: 'Egypt', flag: '🇪🇬' },
@@ -13,6 +14,8 @@ const COUNTRY_CODES = [
 
 const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
+  const { t, locale } = useTranslation();
+  
   const [formData, setFormData] = useState({ 
     name: '', 
     email: '', 
@@ -26,11 +29,9 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setStatus('sending');
     
-    // YOUR UPDATED LIVE GOOGLE SCRIPT URL
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgmxiAFE2VALewPnUXeTKZGYVKwI1FBFoH9ZhqCd1nnPSHfA3SA3inTtkHfE9ORZhumA/exec';
 
     try {
-      // no-cors is essential for Google Scripts to avoid immediate CORS blocks
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -45,13 +46,12 @@ const Contact: React.FC = () => {
       window.scrollTo({ top: document.getElementById('contact')?.offsetTop - 100, behavior: 'smooth' });
     } catch (err) {
       console.error("Submission error:", err);
-      // Fallback to success as no-cors often throws errors even on successful receipt
       setStatus('success');
     }
   };
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+    const val = e.target.value.replace(/[^a-zA-Z\s\u0600-\u06FF]/g, '');
     setFormData({...formData, name: val});
   };
 
@@ -64,9 +64,9 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-20 md:py-32 bg-slate-50 px-6 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">Engineering Portal</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tighter">Initiate Project.</h3>
-          <p className="text-slate-500 font-medium max-w-md mx-auto">Discuss your technical vision with our Studio Lead.</p>
+          <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">{t.contact.portal}</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tighter">{t.contact.title}</h3>
+          <p className="text-slate-500 font-medium max-w-md mx-auto">{t.contact.subtitle}</p>
         </div>
 
         <div className="bg-white p-6 md:p-12 rounded-[40px] shadow-2xl border border-slate-100 overflow-hidden">
@@ -75,16 +75,15 @@ const Contact: React.FC = () => {
               <div className="w-20 h-20 bg-indigo-600 text-white rounded-full flex items-center justify-center mb-8 mx-auto shadow-xl">
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
               </div>
-              <h4 className="text-3xl font-black text-slate-900 mb-4">Brief Logged</h4>
-              <p className="text-slate-500 mb-8">Data transmitted successfully to our Google Sheet. Our team will contact you within 24 hours.</p>
-              <button onClick={() => setStatus('idle')} className="text-indigo-600 font-black uppercase tracking-widest text-xs hover:underline">New Submission</button>
+              <h4 className="text-3xl font-black text-slate-900 mb-4">{t.contact.successTitle}</h4>
+              <p className="text-slate-500 mb-8">{t.contact.successDesc}</p>
+              <button onClick={() => setStatus('idle')} className="text-indigo-600 font-black uppercase tracking-widest text-xs hover:underline">{t.contact.newSub}</button>
             </div>
           ) : (
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
-                {/* Name */}
-                <div className="space-y-2">
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label>
+                <div className="space-y-2 text-start">
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.fullName}</label>
                   <input 
                     required 
                     value={formData.name} 
@@ -95,9 +94,8 @@ const Contact: React.FC = () => {
                   />
                 </div>
 
-                {/* Email */}
-                <div className="space-y-2">
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</label>
+                <div className="space-y-2 text-start">
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.email}</label>
                   <input 
                     required 
                     value={formData.email} 
@@ -109,21 +107,20 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* PHONE ROW */}
-              <div className="space-y-2">
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Mobile Contact</label>
+              <div className="space-y-2 text-start">
+                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.mobile}</label>
                 <div className="flex gap-4">
                   <div className="relative w-32 md:w-48 shrink-0">
                     <select 
                       value={formData.countryCode} 
                       onChange={e => setFormData({...formData, countryCode: e.target.value})}
-                      className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20"
+                      className={`w-full ${locale === 'ar' ? 'pr-12 pl-6' : 'pl-12 pr-6'} py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20`}
                     >
                       {COUNTRY_CODES.map(c => (
                         <option key={c.code} value={c.code}>{c.code}</option>
                       ))}
                     </select>
-                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-xl">
+                    <div className={`absolute ${locale === 'ar' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 text-xl`}>
                       {COUNTRY_CODES.find(c => c.code === formData.countryCode)?.flag}
                     </div>
                   </div>
@@ -139,35 +136,33 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 items-start">
-                {/* Category */}
-                <div className="space-y-2">
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Category</label>
+                <div className="space-y-2 text-start">
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.category}</label>
                   <select 
                     value={formData.category} 
                     onChange={e => setFormData({...formData, category: e.target.value})}
                     className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20"
                   >
-                    <option>Mobile App Development</option>
-                    <option>Educational Platform</option>
-                    <option>Gaming Engine</option>
+                    <option>{locale === 'ar' ? 'تطوير تطبيقات الموبايل' : 'Mobile App Development'}</option>
+                    <option>{locale === 'ar' ? 'منصة تعليمية' : 'Educational Platform'}</option>
+                    <option>{locale === 'ar' ? 'محرك ألعاب' : 'Gaming Engine'}</option>
                   </select>
                 </div>
-                {/* Message / Brief */}
-                <div className="space-y-2">
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Technical Brief</label>
+                <div className="space-y-2 text-start">
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.brief}</label>
                   <textarea 
                     required 
                     value={formData.message} 
                     onChange={e => setFormData({...formData, message: e.target.value})} 
                     rows={8} 
-                    placeholder="Provide a detailed description of your project vision, requirements, and any specific goals..." 
+                    placeholder={t.contact.briefPlaceholder} 
                     className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium resize-none"
                   ></textarea>
                 </div>
               </div>
 
               <button disabled={status === 'sending'} className="w-full py-6 bg-indigo-600 text-white font-black uppercase tracking-[0.4em] rounded-2xl shadow-2xl hover:bg-indigo-700 hover:-translate-y-1 transition-all disabled:bg-slate-300">
-                {status === 'sending' ? 'Transmitting...' : 'Initiate Project'}
+                {status === 'sending' ? t.contact.transmitting : t.contact.submit}
               </button>
             </form>
           )}

@@ -1,5 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
+import { Locale, translations } from './translations';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -24,8 +25,37 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+interface LanguageContextType {
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
+  t: any;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const useTranslation = () => {
+  const context = useContext(LanguageContext);
+  if (!context) throw new Error('useTranslation must be used within a LanguageProvider');
+  return context;
+};
+
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('home');
+  const [locale, setLocale] = useState<Locale>('en');
+
+  const t = translations[locale];
+
+  useEffect(() => {
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = locale;
+    
+    // Smooth transition for fonts
+    if (locale === 'ar') {
+      document.body.style.fontFamily = "'Inter', 'IBM Plex Sans Arabic', sans-serif";
+    } else {
+      document.body.style.fontFamily = "'Inter', sans-serif";
+    }
+  }, [locale]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,75 +93,77 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen selection:bg-indigo-100 selection:text-indigo-900 bg-white">
-      <Navbar activeTab={activeTab} />
-      <main>
-        <section id="home">
-          <Hero />
-        </section>
-        <section id="about" className="reveal">
-          <About />
-        </section>
-        <section className="reveal">
-          <Values />
-        </section>
-        <section id="industry" className="reveal">
-          <IndustryStats />
-        </section>
-        <section id="innovation" className="reveal">
-          <InnovationHub />
-        </section>
-        <section id="lifecycle" className="reveal">
-          <AppLifecycle />
-        </section>
-        <section id="tech-choices" className="reveal">
-          <TechComparison />
-        </section>
-        <section id="anatomy" className="reveal">
-          <Anatomy />
-        </section>
-        <section id="apps" className="reveal">
-          <Portfolio />
-        </section>
-        <section id="design-thinking" className="reveal">
-          <DesignThinking />
-        </section>
-        <section id="performance" className="reveal">
-          <Performance />
-        </section>
-        <section id="monetization" className="reveal">
-          <Monetization />
-        </section>
-        <section id="security" className="reveal">
-          <Security />
-        </section>
-        <section id="evolution" className="reveal">
-          <Timeline />
-        </section>
-        <section className="reveal">
-          <GlobalImpact />
-        </section>
-        <section id="future" className="reveal">
-          <FutureTrends />
-        </section>
-        <section id="process" className="reveal">
-          <Process />
-        </section>
-        <section id="tech" className="reveal">
-          <TechStack />
-        </section>
-        <section id="ecosystem" className="reveal">
-          <TechEcosystem />
-        </section>
-        <section id="how-we-build" className="reveal">
-          <Education />
-        </section>
-        <section id="contact" className="reveal">
-          <Contact />
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <LanguageContext.Provider value={{ locale, setLocale, t }}>
+      <div className={`min-h-screen selection:bg-indigo-100 selection:text-indigo-900 bg-white ${locale === 'ar' ? 'font-arabic' : ''}`}>
+        <Navbar activeTab={activeTab} />
+        <main>
+          <section id="home">
+            <Hero />
+          </section>
+          <section id="about" className="reveal">
+            <About />
+          </section>
+          <section className="reveal">
+            <Values />
+          </section>
+          <section id="industry" className="reveal">
+            <IndustryStats />
+          </section>
+          <section id="innovation" className="reveal">
+            <InnovationHub />
+          </section>
+          <section id="lifecycle" className="reveal">
+            <AppLifecycle />
+          </section>
+          <section id="tech-choices" className="reveal">
+            <TechComparison />
+          </section>
+          <section id="anatomy" className="reveal">
+            <Anatomy />
+          </section>
+          <section id="apps" className="reveal">
+            <Portfolio />
+          </section>
+          <section id="design-thinking" className="reveal">
+            <DesignThinking />
+          </section>
+          <section id="performance" className="reveal">
+            <Performance />
+          </section>
+          <section id="monetization" className="reveal">
+            <Monetization />
+          </section>
+          <section id="security" className="reveal">
+            <Security />
+          </section>
+          <section id="evolution" className="reveal">
+            <Timeline />
+          </section>
+          <section className="reveal">
+            <GlobalImpact />
+          </section>
+          <section id="future" className="reveal">
+            <FutureTrends />
+          </section>
+          <section id="process" className="reveal">
+            <Process />
+          </section>
+          <section id="tech" className="reveal">
+            <TechStack />
+          </section>
+          <section id="ecosystem" className="reveal">
+            <TechEcosystem />
+          </section>
+          <section id="how-we-build" className="reveal">
+            <Education />
+          </section>
+          <section id="contact" className="reveal">
+            <Contact />
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </LanguageContext.Provider>
   );
 };
 

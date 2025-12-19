@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useTranslation } from '../App';
 
 interface NavbarProps {
   activeTab: string;
@@ -7,14 +8,15 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, locale } = useTranslation();
 
   const navItems = [
-    { label: 'Home', id: 'home' },
-    { label: 'Lifecycle', id: 'lifecycle' },
-    { label: 'Tech', id: 'tech-choices' },
-    { label: 'Ecosystem', id: 'ecosystem' },
-    { label: 'Anatomy', id: 'anatomy' },
-    { label: 'Connect', id: 'contact' },
+    { label: t.nav.home, id: 'home' },
+    { label: t.nav.lifecycle, id: 'lifecycle' },
+    { label: t.nav.tech, id: 'tech-choices' },
+    { label: t.nav.ecosystem, id: 'ecosystem' },
+    { label: t.nav.anatomy, id: 'anatomy' },
+    { label: t.nav.connect, id: 'contact' },
   ];
 
   const handleScroll = (id: string) => {
@@ -41,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-2xl shadow-lg group-hover:rotate-6 transition-transform">
             S
           </div>
-          <div className="hidden sm:block">
+          <div className="hidden sm:block text-start">
             <h1 className="text-xl font-black tracking-tighter text-slate-800 leading-none">SMART</h1>
             <p className="text-[9px] tracking-[0.3em] font-bold text-indigo-600 leading-none mt-1 uppercase">Solutions</p>
           </div>
@@ -64,9 +66,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
         <div className="flex items-center gap-4">
           <button 
             onClick={() => handleScroll('contact')}
-            className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-indigo-600 hover:-translate-y-0.5 transition-all shadow-xl shadow-slate-200"
+            className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-indigo-600 hover:-translate-y-0.5 transition-all shadow-xl shadow-slate-200 whitespace-nowrap"
           >
-            Start Project
+            {t.nav.start}
           </button>
           
           <button 
@@ -87,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
               <button
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
-                className={`text-left text-xs font-black uppercase tracking-widest ${
+                className={`text-start text-xs font-black uppercase tracking-widest ${
                   activeTab === item.id ? 'text-indigo-600' : 'text-slate-400'
                 }`}
               >
