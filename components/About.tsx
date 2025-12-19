@@ -9,6 +9,9 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
 const About: React.FC = () => {
   const { t } = useTranslation();
 
+  // Guard against missing keys
+  const about = t.about || { identity: 'Identity', title: 'About Us', desc: '', scale: '', scaleDesc: '', trust: '', trustDesc: '' };
+
   return (
     <section id="about" className="py-20 md:py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative">
@@ -55,24 +58,24 @@ const About: React.FC = () => {
           </div>
           
           <div className="order-1 lg:order-2 text-center lg:text-start">
-            <h2 className="text-indigo-600 font-black uppercase tracking-[0.4em] text-[10px] mb-4">{t.about.identity}</h2>
+            <h2 className="text-indigo-600 font-black uppercase tracking-[0.4em] text-[10px] mb-4">{about.identity}</h2>
             <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-[0.9] tracking-tighter">
-              {t.about.title}
+              {about.title}
             </h3>
             <p className="text-slate-500 mb-8 text-base md:text-lg font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
-              {t.about.desc}
+              {about.desc}
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
               <div className="p-8 rounded-[2.5rem] bg-indigo-50 border border-indigo-100 text-start">
                 <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">✓</div>
-                <h4 className="font-bold text-indigo-900 uppercase text-[9px] tracking-widest mb-1">{t.about.scale}</h4>
-                <p className="text-[11px] text-indigo-600/70 font-bold leading-tight">{t.about.scaleDesc}</p>
+                <h4 className="font-bold text-indigo-900 uppercase text-[9px] tracking-widest mb-1">{about.scale}</h4>
+                <p className="text-[11px] text-indigo-600/70 font-bold leading-tight">{about.scaleDesc}</p>
               </div>
               <div className="p-8 rounded-[2.5rem] bg-slate-900 border border-slate-800 text-start">
                 <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-indigo-400 shadow-sm mb-4">✓</div>
-                <h4 className="font-bold text-white uppercase text-[9px] tracking-widest mb-1">{t.about.trust}</h4>
-                <p className="text-[11px] text-slate-400 font-bold leading-tight">{t.about.trustDesc}</p>
+                <h4 className="font-bold text-white uppercase text-[9px] tracking-widest mb-1">{about.trust}</h4>
+                <p className="text-[11px] text-slate-400 font-bold leading-tight">{about.trustDesc}</p>
               </div>
             </div>
           </div>
