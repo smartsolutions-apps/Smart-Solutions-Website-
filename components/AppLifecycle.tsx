@@ -1,20 +1,22 @@
 
 import React from 'react';
+import { useTranslation } from '../App';
 
 const AppLifecycle: React.FC = () => {
+  const { t } = useTranslation();
   const phases = [
-    { title: "The Blueprint", step: "01", desc: "User stories, wireframes, and technical architecture.", icon: "📝" },
-    { title: "The Build", step: "02", desc: "Sprint-based development with continuous integration.", icon: "🏗️" },
-    { title: "The Polish", step: "03", desc: "Rigorous testing, accessibility audits, and bug squashing.", icon: "✨" },
-    { title: "The Launch", step: "04", desc: "App Store optimization and production deployment.", icon: "🚀" }
+    { title: t.lifecycle.p1T, step: "01", desc: t.lifecycle.p1D, icon: "📝" },
+    { title: t.lifecycle.p2T, step: "02", desc: t.lifecycle.p2D, icon: "🏗️" },
+    { title: t.lifecycle.p3T, step: "03", desc: t.lifecycle.p3D, icon: "✨" },
+    { title: t.lifecycle.p4T, step: "04", desc: t.lifecycle.p4D, icon: "🚀" }
   ];
 
   return (
     <section id="lifecycle" className="py-32 bg-slate-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">Engineering Flow</h2>
-          <h3 className="text-5xl font-black text-slate-900 tracking-tighter">The App Lifecycle.</h3>
+          <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">{t.lifecycle.badge}</h2>
+          <h3 className="text-5xl font-black text-slate-900 tracking-tighter">{t.lifecycle.title}</h3>
         </div>
         
         <div className="relative">

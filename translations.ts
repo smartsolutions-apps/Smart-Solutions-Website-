@@ -1,295 +1,204 @@
 
 export type Locale = 'en' | 'ar' | 'ru' | 'es' | 'fr';
 
-export const translations = {
-  en: {
-    nav: { home: 'Home', lifecycle: 'Lifecycle', tech: 'Tech', ecosystem: 'Ecosystem', anatomy: 'Anatomy', connect: 'Connect', start: 'Start Project' },
-    hero: { 
-      badge: 'Leading Innovation in New Cairo', 
-      title: 'Digital Excellence by Design.', 
-      subtitle: 'Smart Solutions is a premier app engineering studio. We don\'t just build apps; we engineer digital experiences that define industries.',
-      ctaWork: 'See Our Work',
-      ctaStory: 'Our Story',
-      flagship: 'Flagship',
-      downloads: '500k+ Downloads',
-      appTitle: 'My Wonder Books',
-      appDesc: 'The world\'s leading educational storytelling platform for kids.',
-      partner: 'Global Partner',
-      partnerDetail: 'Harvard Innovation Invite'
-    },
-    about: {
-      identity: 'Our Identity',
-      title: 'Engineering on Precision.',
-      desc: 'Smart Solutions is a premier engineering studio in New Cairo. We specialize in high-performance digital infrastructure for the global education sector.',
-      scale: 'Scale',
-      scaleDesc: 'Millions of interactions handled daily.',
-      trust: 'Trust',
-      trustDesc: 'Bank-grade data privacy standards.'
-    },
-    contact: {
-      portal: 'Engineering Portal',
-      title: 'Initiate Project.',
-      subtitle: 'Discuss your technical vision with our Studio Lead.',
-      successTitle: 'Brief Logged',
-      successDesc: 'Data transmitted successfully to our Google Sheet. Our team will contact you within 24 hours.',
-      newSub: 'New Submission',
-      fullName: 'Full Name',
-      email: 'Email Address',
-      mobile: 'Mobile Contact',
-      category: 'Category',
-      brief: 'Technical Brief',
-      briefPlaceholder: 'Provide a detailed description of your project vision...',
-      submit: 'Initiate Project',
-      transmitting: 'Transmitting...'
-    },
-    footer: {
-      desc: 'A premier engineering studio based in New Cairo, specializing in high-performance digital infrastructure.',
-      engineering: 'Engineering',
-      strategy: 'Strategy',
-      hq: 'Studio HQ',
-      hqLoc: 'New Cairo, Egypt',
-      hqAddr: 'District 5, Marakez',
-      hqTitle: 'Digital Innovation Center',
-      inquiries: 'Inquiries',
-      portalLink: 'Contact via Engineering Portal',
-      status: 'Status: Online',
-      devEnv: 'Development Environment',
-      rights: 'Smart Solutions Ltd.',
-      privacy: 'Privacy',
-      terms: 'Terms',
-      scroll: 'Scroll to Summit'
+const commonEn = {
+  nav: { home: 'Home', lifecycle: 'Lifecycle', tech: 'Tech', ecosystem: 'Ecosystem', anatomy: 'Anatomy', connect: 'Connect', start: 'Start Project' },
+  hero: { 
+    badge: 'Leading Innovation in New Cairo', 
+    title: 'Digital Excellence by Design.', 
+    subtitle: 'Smart Solutions is a premier app engineering studio. We don\'t just build apps; we engineer digital experiences that define industries.',
+    ctaWork: 'See Our Work', ctaStory: 'Our Story', flagship: 'Flagship', downloads: '500k+ Downloads', appTitle: 'My Wonder Books',
+    appDesc: 'The world\'s leading educational storytelling platform for kids.', partner: 'Global Partner', partnerDetail: 'Harvard Innovation Invite'
+  },
+  about: {
+    identity: 'Our Identity',
+    title: 'Engineering on Precision.',
+    desc: 'Smart Solutions is a premier engineering studio in New Cairo. We specialize in high-performance digital infrastructure for the global education sector.',
+    scale: 'Scale', scaleDesc: 'Millions of interactions handled daily.',
+    trust: 'Trust', trustDesc: 'Bank-grade data privacy standards.'
+  },
+  values: {
+    v1Title: 'Clean Architecture', v1Desc: 'We build structures. Our SOLID principles ensure that apps remain fast even as they scale.',
+    v2Title: 'User-First Logic', v2Desc: 'Accessibility is baked into every pixel of our interfaces.',
+    v3Title: 'Military-Grade Security', v3Desc: 'Protecting user data with advanced encryption for every platform.'
+  },
+  stats: {
+    badge: 'The Digital Revolution', title: 'A Thriving Ecosystem.', desc: 'The app industry is redefining interaction. We are at the forefront.',
+    s1: 'Global Revenue', s1V: '$600B+', s1D: 'Projected market size',
+    s2: 'Daily Time', s2V: '4.8 Hours', s2D: 'Average user time in apps',
+    s3: 'Downloads', s3V: '250B+', s3D: 'Apps downloaded per year',
+    s4: 'Growth', s4V: '15% YoY', s4D: 'Expansion of digital economy',
+    quote: '"The future belongs to those who build it."',
+    insight: 'By 2030, apps will be the primary gateway for global education.'
+  },
+  innovation: {
+    badge: 'Innovation Hub', title: 'Tools of the Future.',
+    tabDev: 'Development', tabDes: 'Design', tabInt: 'Intelligence',
+    devH4: 'High-Speed Frontend', devP: 'Engineered for native-level performance across all mobile devices using modular React architectures.',
+    desH4: 'Experience Design', desP: 'Prototyping precision micro-interactions to ensure absolute user delight at every touchpoint.',
+    intH4: 'AI Intelligence Engines', intP: 'Integrating Gemini to power adaptive learning paths that evolve with your users\' progress.',
+    intQuote: '"Architecting the logic of tomorrow."'
+  },
+  anatomy: {
+    badge: 'Educational Deep-Dive', title: 'The Anatomy of Performance.',
+    l1T: 'The Interface', l1D: 'High-speed frontend using React.', l1L: ['UI Components', 'State', 'Animations'],
+    l2T: 'The Brain', l2D: 'Secure logic and complex algorithms.', l2L: ['API Layer', 'Business Logic', 'Microservices'],
+    l3T: 'The Memory', l3D: 'Distributed scalable storage.', l3L: ['Sync', 'Encryption', 'Storage']
+  },
+  portfolio: {
+    badge: 'Case Studies', title: 'Engineering Excellence.', desc: 'Precision architecture in every product.',
+    app1: { cat: 'Education', title: 'My Wonder Books', desc: 'Interactive library for children.', stat: '500K Users' },
+    app2: { cat: 'Gaming', title: 'Engine Quest', desc: 'Cognitive logic engine.', stat: '4.9 Rating' },
+    app3: { cat: 'Creativity', title: 'Canvas Pro', desc: 'Low-latency vector engine.', stat: 'Premium App' }
+  },
+  lifecycle: {
+    badge: 'Engineering Flow', title: 'The App Lifecycle.',
+    p1T: 'The Blueprint', p1D: 'Wireframes and technical architecture.',
+    p2T: 'The Build', p2D: 'Sprint-based development.',
+    p3T: 'The Polish', p3D: 'Rigorous QA and accessibility audits.',
+    p4T: 'The Launch', p4D: 'ASO and production deployment.'
+  },
+  techComparison: {
+    badge: 'Architectural Logic', title: 'Native vs. Cross-Platform.', desc: 'Choosing between Swift/Kotlin or React Native.',
+    nativeT: 'When to go Native?', nativeD: 'Complex hardware, intensive graphics, and maximum performance.',
+    crossT: 'When to go Cross?', crossD: 'Speed to market, unified codebase, and content-driven apps.'
+  },
+  monetization: {
+    badge: 'Business Logic', title: 'Scaling & Monetization.', desc: 'Strategies for sustainable growth.',
+    m1T: 'SaaS', m1D: 'Recurring value models.',
+    m2T: 'Freemium', m2D: 'Premium features upsell.',
+    m3T: 'In-App', m3D: 'Digital goods.',
+    m4T: 'Ad-Based', m4D: 'Massive impressions.',
+    dashTitle: 'Revenue Analytics', dashGrowth: '↑ 24% Growth', metric1: 'Active Yield', metric2: 'User Value', badgeLabel: 'SCALED', badgeSub: 'Revenue Architecture'
+  },
+  designThinking: {
+    badge: 'Product Strategy', title: 'Design Thinking.', desc: 'Engineering rooted in human logic. We don\'t start with code, we start with people.',
+    p1: 'Empathize', p1D: 'Observing real humans in their environment.',
+    p2: 'Define', p2D: 'Synthesizing observations into a clear problem.',
+    p3: 'Ideate', p3D: 'Generating wild ideas without judgment.',
+    p4: 'Prototype', p4D: 'Building low-fidelity models to fail fast.'
+  },
+  performance: {
+    badge: 'Optimization', title: 'Speed is a Feature.',
+    s1: '100ms', s1D: 'Latency kills conversion.',
+    s2: '60 FPS', s2D: 'Fluid animations build trust.',
+    s3: '< 16ms', s3D: 'Instant interaction response.'
+  },
+  security: {
+    badge: 'Security Protocol', title: 'Privacy by Architecture.', desc: 'We treat security as a foundational layer. In education, child data protection is our highest priority.',
+    f1: 'AES-256 Data Encryption at Rest', f2: 'COPPA & GDPR Compliance Ready', f3: 'Biometric Auth Integration'
+  },
+  timeline: {
+    badge: 'Our Context', title: 'Evolution of Progress.',
+    e1T: 'WAP Genesis', e1D: 'Text-based simple utility.',
+    e2T: 'The Big Bang', e2D: 'App Store launch power.',
+    e3T: 'Cloud Shift', e3D: 'Real-time sync performance.',
+    e4T: 'AI-Native', e4D: 'Generative AI adaptation.'
+  },
+  globalImpact: {
+    badge: 'Our Footprint', title: 'Active Global Minds.', subtitle: 'Monthly active users reached.',
+    s1: 'Countries', s1V: '45+', s2: 'Rating', s2V: '4.9/5', s3: 'Stories', s3V: '12M+', s4: 'Uptime', s4V: '99.9%'
+  },
+  futureTrends: {
+    badge: 'Horizon Scan', title: 'Next-Gen Architectures.', quote: '"The screen is disappearing into the environment."',
+    t1: 'Spatial Computing', t1D: 'The merge of apps with physical space.',
+    t2: 'Edge AI', t2D: 'Complex neural networks running locally.',
+    t3: 'Zero-UI', t3D: 'Apps driven by voice and gesture.'
+  },
+  process: {
+    badge: 'The Journey', title: 'Bringing Ideas to Life.', desc: 'Balance of creativity and discipline.',
+    ctaT: 'Need our workflow?', ctaD: 'Transparent documentation for every phase.', ctaB: 'Contact Us',
+    s1T: 'Deep Discovery', s1D: 'Understanding user psychology.',
+    s2T: 'UI/UX Architecture', s2D: 'Intuitive accessible interfaces.',
+    s3T: 'Precision Coding', s3D: 'Zero latency optimized code.',
+    s4T: 'Rigorous QA', s4D: 'Testing every single edge case.'
+  },
+  techStack: {
+    badge: 'Our Technology', title: 'React & AI Power.', desc: 'Fast, intuitive, modular intelligence.',
+    t1: 'React Native', t1D: 'Cross-platform native speed.',
+    t2: 'TypeScript', t2D: 'Type-safe reliable engineering.',
+    t3: 'AI Narratives', t3D: 'Generative AI in apps.',
+    t4: 'Cloud Infra', t4D: 'Unlimited global scaling.',
+    stat1: 'Stability KPI', stat2: 'Pattern'
+  },
+  ecosystem: {
+    badge: 'Studio Tooling', title: 'The Ecosystem.', desc: 'Industry standard tools for 500k+ users.',
+    tools: {
+      figma: 'UI/UX design', vscode: 'Low-latency coding', github: 'CI/CD orchestration',
+      jira: 'Agile sprints', slack: 'Real-time sync', firebase: 'Real-time databases'
     }
   },
-  ar: {
-    nav: { home: 'الرئيسية', lifecycle: 'دورة الحياة', tech: 'التقنية', ecosystem: 'النظام البيئي', anatomy: 'التشريح', connect: 'اتصل بنا', start: 'ابدأ مشروعك' },
-    hero: { 
-      badge: 'ريادة الابتكار في القاهرة الجديدة', 
-      title: 'التميز الرقمي بالتصميم.', 
-      subtitle: 'سمارت سوليوشنز هو استوديو رائد لهندسة التطبيقات. نحن لا نبني تطبيقات فحسب؛ بل نصمم تجارب رقمية تحدد معالم الصناعات.',
-      ctaWork: 'أعمالنا',
-      ctaStory: 'قصتنا',
-      flagship: 'المنتج الرائد',
-      downloads: 'أكثر من 500 ألف تحميل',
-      appTitle: 'كتبي العجيبة',
-      appDesc: 'المنصة العالمية الرائدة لرواية القصص التعليمية للأطفال.',
-      partner: 'شريك عالمي',
-      partnerDetail: 'دعوة هارفارد للابتكار'
-    },
-    about: {
-      identity: 'هويتنا',
-      title: 'الهندسة بدقة.',
-      desc: 'سمارت سوليوشنز هو استوديو هندسي متميز في القاهرة الجديدة. نحن متخصصون في البنية التحتية الرقمية عالية الأداء لقطاع التعليم العالمي.',
-      scale: 'النطاق',
-      scaleDesc: 'التعامل مع ملايين التفاعلات يومياً.',
-      trust: 'الثقة',
-      trustDesc: 'معايير خصوصية بيانات بمستوى بنكي.'
-    },
-    contact: {
-      portal: 'بوابة الهندسة',
-      title: 'ابدأ مشروعك.',
-      subtitle: 'ناقش رؤيتك التقنية مع قائد الاستوديو لدينا.',
-      successTitle: 'تم تسجيل الملخص',
-      successDesc: 'تم إرسال البيانات بنجاح إلى جداول بيانات جوجل الخاصة بنا. سيتصل بك فريقنا في غضون 24 ساعة.',
-      newSub: 'إرسال جديد',
-      fullName: 'الاسم بالكامل',
-      email: 'البريد الإلكتروني',
-      mobile: 'رقم الهاتف',
-      category: 'الفئة',
-      brief: 'الملخص التقني',
-      briefPlaceholder: 'قدم وصفاً تفصيلياً لرؤية مشروعك...',
-      submit: 'بدء المشروع',
-      transmitting: 'جاري الإرسال...'
-    },
-    footer: {
-      desc: 'استوديو هندسي رائد مقره القاهرة الجديدة، متخصص في البنية التحتية الرقمية عالية الأداء.',
-      engineering: 'الهندسة',
-      strategy: 'الاستراتيجية',
-      hq: 'المقر الرئيسي',
-      hqLoc: 'القاهرة الجديدة، مصر',
-      hqAddr: 'ديستريكت 5، مراكز',
-      hqTitle: 'مركز الابتكار الرقمي',
-      inquiries: 'الاستفسارات',
-      portalLink: 'اتصل عبر بوابة الهندسة',
-      status: 'الحالة: متصل',
-      devEnv: 'بيئة التطوير',
-      rights: 'سمارت سوليوشنز المحدودة.',
-      privacy: 'الخصوصية',
-      terms: 'الشروط',
-      scroll: 'العودة للقمة'
-    }
+  education: {
+    badge: 'Engineering Insights', title: 'Successful App Anatomy.',
+    h1: 'Invisible Core', p1: 'Soul is backend architecture.',
+    h2: 'Experience Design', p2: 'UX is a psychological science.',
+    h3: 'QA Assurance', p3: 'Handling unexpected inputs.',
+    factTitle: 'Did you know?', factDesc: 'Typical apps have 10k+ lines of interaction code.'
   },
-  ru: {
-    nav: { home: 'Главная', lifecycle: 'Цикл', tech: 'Технологии', ecosystem: 'Экосистема', anatomy: 'Анатомия', connect: 'Связь', start: 'Начать проект' },
-    hero: { 
-      badge: 'Лидеры инноваций в Новом Каире', 
-      title: 'Цифровое совершенство через дизайн.', 
-      subtitle: 'Smart Solutions — ведущая студия разработки приложений. Мы не просто создаем приложения, мы проектируем цифровой опыт.',
-      ctaWork: 'Наши работы',
-      ctaStory: 'Наша история',
-      flagship: 'Флагман',
-      downloads: '500k+ загрузок',
-      appTitle: 'My Wonder Books',
-      appDesc: 'Ведущая мировая платформа образовательного сторителлинга для детей.',
-      partner: 'Глобальный партнер',
-      partnerDetail: 'Harvard Innovation Invite'
-    },
-    about: {
-      identity: 'Наша идентичность',
-      title: 'Точность в инженерии.',
-      desc: 'Smart Solutions — премиальная инженерная студия в Новом Каире. Мы специализируемся на высокопроизводительной инфраструктуре.',
-      scale: 'Масштаб',
-      scaleDesc: 'Миллионы взаимодействий ежедневно.',
-      trust: 'Доверие',
-      trustDesc: 'Банковские стандарты защиты данных.'
-    },
-    contact: {
-      portal: 'Инженерный портал',
-      title: 'Запустить проект.',
-      subtitle: 'Обсудите свое техническое видение с нашим руководителем студии.',
-      successTitle: 'Бриф зарегистрирован',
-      successDesc: 'Данные успешно переданы. Наша команда свяжется с вами в течение 24 часов.',
-      newSub: 'Новая заявка',
-      fullName: 'Полное имя',
-      email: 'Электронная почта',
-      mobile: 'Контактный телефон',
-      category: 'Категория',
-      brief: 'Технический бриф',
-      briefPlaceholder: 'Опишите ваше видение проекта...',
-      submit: 'Начать проект',
-      transmitting: 'Передача данных...'
-    },
-    footer: {
-      desc: 'Ведущая инженерная студия в Новом Каире, специализирующаяся на цифровой инфраструктуре.',
-      engineering: 'Инженерия',
-      strategy: 'Стратегия',
-      hq: 'Штаб-квартира',
-      hqLoc: 'Новый Каир, Египет',
-      hqAddr: 'District 5, Marakez',
-      hqTitle: 'Центр цифровых инноваций',
-      inquiries: 'Запросы',
-      portalLink: 'Связаться через инженерный портал',
-      status: 'Статус: Онлайн',
-      devEnv: 'Среда разработки',
-      rights: 'Smart Solutions Ltd.',
-      privacy: 'Конфиденциальность',
-      terms: 'Условия',
-      scroll: 'Наверх'
-    }
+  contact: {
+    portal: 'Engineering Portal', title: 'Initiate Project.', subtitle: 'Discuss vision with our Lead.',
+    successTitle: 'Brief Logged', successDesc: 'Transmitted to our Google Sheets.',
+    newSub: 'New Submission', fullName: 'Full Name', email: 'Email', mobile: 'Mobile', category: 'Category', brief: 'Brief',
+    briefPlaceholder: 'Describe your vision...', submit: 'Initiate', transmitting: 'Sending...'
   },
-  es: {
-    nav: { home: 'Inicio', lifecycle: 'Ciclo de vida', tech: 'Tecnología', ecosystem: 'Ecosistema', anatomy: 'Anatomía', connect: 'Contacto', start: 'Iniciar Proyecto' },
-    hero: { 
-      badge: 'Líderes en Innovación en Nuevo Cairo', 
-      title: 'Excelencia Digital por Diseño.', 
-      subtitle: 'Smart Solutions es un estudio de ingeniería de aplicaciones de primer nivel. Diseñamos experiencias digitales que definen industrias.',
-      ctaWork: 'Ver Trabajo',
-      ctaStory: 'Nuestra Historia',
-      flagship: 'Insignia',
-      downloads: '500k+ Descargas',
-      appTitle: 'My Wonder Books',
-      appDesc: 'La plataforma de cuentos educativos líder en el mundo para niños.',
-      partner: 'Socio Global',
-      partnerDetail: 'Invitación de Innovación de Harvard'
-    },
-    about: {
-      identity: 'Nuestra Identidad',
-      title: 'Ingeniería de Precisión.',
-      desc: 'Smart Solutions es un estudio de ingeniería premium en Nuevo Cairo. Especialistas en infraestructura digital de alto rendimiento.',
-      scale: 'Escala',
-      scaleDesc: 'Millones de interacciones procesadas diariamente.',
-      trust: 'Confianza',
-      trustDesc: 'Estándares de privacidad de nivel bancario.'
-    },
-    contact: {
-      portal: 'Portal de Ingeniería',
-      title: 'Iniciar Proyecto.',
-      subtitle: 'Discuta su visión técnica con nuestro líder de estudio.',
-      successTitle: 'Brief Registrado',
-      successDesc: 'Datos transmitidos con éxito. Nuestro equipo le contactará en 24 horas.',
-      newSub: 'Nueva Solicitud',
-      fullName: 'Nombre Completo',
-      email: 'Correo Electrónico',
-      mobile: 'Contacto Móvil',
-      category: 'Categoría',
-      brief: 'Resumen Técnico',
-      briefPlaceholder: 'Proporcione una descripción detallada...',
-      submit: 'Iniciar Proyecto',
-      transmitting: 'Transmitiendo...'
-    },
-    footer: {
-      desc: 'Estudio de ingeniería líder con sede en Nuevo Cairo, especializado en infraestructura digital.',
-      engineering: 'Ingeniería',
-      strategy: 'Estrategia',
-      hq: 'Sede Central',
-      hqLoc: 'Nuevo Cairo, Egipto',
-      hqAddr: 'District 5, Marakez',
-      hqTitle: 'Centro de Innovación Digital',
-      inquiries: 'Consultas',
-      portalLink: 'Contacto vía Portal de Ingeniería',
-      status: 'Estado: En línea',
-      devEnv: 'Entorno de Desarrollo',
-      rights: 'Smart Solutions Ltd.',
-      privacy: 'Privacidad',
-      terms: 'Términos',
-      scroll: 'Volver arriba'
-    }
-  },
-  fr: {
-    nav: { home: 'Accueil', lifecycle: 'Cycle de vie', tech: 'Tech', ecosystem: 'Écosystème', anatomy: 'Anatomie', connect: 'Contact', start: 'Démarrer Projet' },
-    hero: { 
-      badge: 'Innovation de pointe au Nouveau Caire', 
-      title: 'Excellence Numérique par le Design.', 
-      subtitle: 'Smart Solutions est un studio d\'ingénierie d\'applications de premier plan. Nous concevons des expériences numériques marquantes.',
-      ctaWork: 'Voir nos travaux',
-      ctaStory: 'Notre Histoire',
-      flagship: 'Phare',
-      downloads: '500k+ Téléchargements',
-      appTitle: 'My Wonder Books',
-      appDesc: 'La plateforme de narration éducative pour enfants leader au monde.',
-      partner: 'Partenaire Global',
-      partnerDetail: 'Invitation à l\'innovation Harvard'
-    },
-    about: {
-      identity: 'Notre Identité',
-      title: 'Ingénierie de Précision.',
-      desc: 'Smart Solutions est un studio d\'ingénierie premium au Nouveau Caire. Spécialiste de l\'infrastructure numérique haute performance.',
-      scale: 'Échelle',
-      scaleDesc: 'Millions d\'interactions quotidiennes.',
-      trust: 'Confiance',
-      trustDesc: 'Normes de confidentialité de niveau bancaire.'
-    },
-    contact: {
-      portal: 'Portail Ingénierie',
-      title: 'Lancer un Projet.',
-      subtitle: 'Discutez de votre vision technique avec notre responsable de studio.',
-      successTitle: 'Brief Enregistré',
-      successDesc: 'Données transmises avec succès. Notre équipe vous contactera sous 24h.',
-      newSub: 'Nouveau Brief',
-      fullName: 'Nom Complet',
-      email: 'Adresse E-mail',
-      mobile: 'Contact Mobile',
-      category: 'Catégorie',
-      brief: 'Brief Technique',
-      briefPlaceholder: 'Fournissez une description détaillée...',
-      submit: 'Lancer le Projet',
-      transmitting: 'Transmission...'
-    },
-    footer: {
-      desc: 'Studio d\'ingénierie de premier plan basé au Nouveau Caire, spécialisé en infrastructure numérique.',
-      engineering: 'Ingénierie',
-      strategy: 'Stratégie',
-      hq: 'Siège Social',
-      hqLoc: 'Le Nouveau Caire, Égypte',
-      hqAddr: 'District 5, Marakez',
-      hqTitle: 'Centre d\'Innovation Numérique',
-      inquiries: 'Demandes',
-      portalLink: 'Contact via Portail Ingénierie',
-      status: 'Statut: En ligne',
-      devEnv: 'Environnement de Dév',
-      rights: 'Smart Solutions Ltd.',
-      privacy: 'Vie privée',
-      terms: 'Conditions',
-      scroll: 'Sommet'
-    }
+  footer: {
+    desc: 'Premier engineering studio in New Cairo.',
+    engineering: 'Engineering', strategy: 'Strategy', hq: 'Studio HQ', hqLoc: 'New Cairo, Egypt', hqAddr: 'District 5, Marakez',
+    inquiries: 'Inquiries', portalLink: 'Portal Contact', status: 'Online', devEnv: 'Dev Env',
+    rights: 'Smart Solutions Ltd.', privacy: 'Privacy', terms: 'Terms', scroll: 'Summit',
+    links: { security: 'Security', perf: 'Performance', monetization: 'Monetization', design: 'Design Thinking', industry: 'Industry' }
   }
+};
+
+const commonAr = {
+  ...commonEn,
+  nav: { home: 'الرئيسية', lifecycle: 'دورة الحياة', tech: 'التقنية', ecosystem: 'النظام البيئي', anatomy: 'التشريح', connect: 'اتصل بنا', start: 'ابدأ مشروعك' },
+  hero: { 
+    badge: 'ريادة الابتكار في القاهرة الجديدة', 
+    title: 'التميز الرقمي بالتصميم.', 
+    subtitle: 'سمارت سوليوشنز هو استوديو رائد لهندسة التطبيقات. نحن لا نبني تطبيقات فحسب؛ بل نصمم تجارب رقمية تحدد معالم الصناعات.',
+    ctaWork: 'أعمالنا', ctaStory: 'قصتنا', flagship: 'المنتج الرائد', downloads: 'أكثر من 500 ألف تحميل', appTitle: 'كتبي العجيبة',
+    appDesc: 'المنصة العالمية الرائدة لرواية القصص التعليمية للأطفال.', partner: 'شريك عالمي', partnerDetail: 'دعوة هارفارد للابتكار'
+  },
+  about: {
+    identity: 'هويتنا',
+    title: 'الهندسة بدقة.',
+    desc: 'سمارت سوليوشنز هو استوديو هندسي متميز في القاهرة الجديدة. نحن متخصصون في البنية التحتية الرقمية عالية الأداء لقطاع التعليم العالمي.',
+    scale: 'النطاق', scaleDesc: 'التعامل مع ملايين التفاعلات يومياً.',
+    trust: 'الثقة', trustDesc: 'معايير خصوصية بيانات بمستوى بنكي.'
+  },
+  footer: {
+    ...commonEn.footer,
+    desc: 'استوديو هندسي رائد مقره القاهرة الجديدة، متخصص في البنية التحتية الرقمية عالية الأداء.',
+    engineering: 'الهندسة', strategy: 'الاستراتيجية', hq: 'المقر الرئيسي', hqLoc: 'القاهرة الجديدة، مصر', hqAddr: 'ديستريكت 5، مراكز',
+    inquiries: 'الاستفسارات', portalLink: 'اتصل عبر بوابة الهندسة', status: 'متصل', devEnv: 'بيئة التطوير',
+    rights: 'سمارت سوليوشنز المحدودة.', privacy: 'الخصوصية', terms: 'الشروط', scroll: 'العودة للقمة',
+    links: { security: 'الأمان', perf: 'الأداء', monetization: 'الربح', design: 'التفكير التصميمي', industry: 'الصناعة' }
+  }
+};
+
+const commonRu = {
+  ...commonEn,
+  about: { ...commonEn.about, title: 'Инженерия точности.' },
+  hero: { ...commonEn.hero, title: 'Цифровое совершенство через дизайн.' }
+};
+
+const commonEs = {
+  ...commonEn,
+  about: { ...commonEn.about, title: 'Ingeniería de precisión.' },
+  hero: { ...commonEn.hero, title: 'Excelencia digital por diseño.' }
+};
+
+const commonFr = {
+  ...commonEn,
+  about: { ...commonEn.about, title: 'Ingénierie de précision.' },
+  hero: { ...commonEn.hero, title: 'Excellence numérique par design.' }
+};
+
+export const translations = {
+  en: commonEn,
+  ar: commonAr,
+  ru: commonRu,
+  es: commonEs,
+  fr: commonFr
 };

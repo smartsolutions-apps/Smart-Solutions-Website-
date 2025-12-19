@@ -1,31 +1,34 @@
 
 import React from 'react';
+import { useTranslation } from '../App';
 
 const Portfolio: React.FC = () => {
+  const { t } = useTranslation();
+
   const apps = [
     {
-      title: "My Wonder Books",
-      category: "Education",
-      desc: "Our flagship interactive library for children, featuring dynamic narration and behavioral tracking.",
-      stat: "500K Users",
-      img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=1200", // Quality book image
-      alt: "Digital storytelling platform for children"
+      title: t.portfolio.app1.title,
+      category: t.portfolio.app1.cat,
+      desc: t.portfolio.app1.desc,
+      stat: t.portfolio.app1.stat,
+      img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=1200",
+      alt: "Digital storytelling platform"
     },
     {
-      title: "Engine Quest",
-      category: "Gaming",
-      desc: "High-performance cognitive engine designed to measure and improve logic in young minds.",
-      stat: "4.9 Rating",
+      title: t.portfolio.app2.title,
+      category: t.portfolio.app2.cat,
+      desc: t.portfolio.app2.desc,
+      stat: t.portfolio.app2.stat,
       img: "https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&q=80&w=1200",
-      alt: "Gaming engine interface for logic puzzles"
+      alt: "Gaming engine interface"
     },
     {
-      title: "Canvas Pro",
-      category: "Creativity",
-      desc: "A low-latency vector engine designed for seamless digital illustration on mobile hardware.",
-      stat: "Premium App",
+      title: t.portfolio.app3.title,
+      category: t.portfolio.app3.cat,
+      desc: t.portfolio.app3.desc,
+      stat: t.portfolio.app3.stat,
       img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=1200",
-      alt: "Digital illustration tool on a high-res smartphone screen"
+      alt: "Digital illustration tool"
     }
   ];
 
@@ -33,18 +36,18 @@ const Portfolio: React.FC = () => {
     <section id="apps" className="py-32 bg-white px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">Case Studies</h2>
-            <h3 className="text-5xl font-black text-slate-900 tracking-tighter leading-none">Engineering <br/>Excellence.</h3>
+          <div className="max-w-2xl text-start">
+            <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">{t.portfolio.badge}</h2>
+            <h3 className="text-5xl font-black text-slate-900 tracking-tighter leading-none">{t.portfolio.title}</h3>
           </div>
-          <p className="text-slate-500 font-medium max-w-sm text-sm leading-relaxed">
-            Every product we build is a combination of thousands of hours of testing and precise technical architecture.
+          <p className="text-slate-500 font-medium max-w-sm text-sm leading-relaxed text-start">
+            {t.portfolio.desc}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
           {apps.map((app, i) => (
-            <div key={i} className="group">
+            <div key={i} className="group text-start">
               <div className="relative rounded-[3rem] overflow-hidden mb-8 aspect-[4/5] shadow-2xl transition-all duration-700 group-hover:-translate-y-4">
                 <img src={app.img} alt={app.alt} className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>

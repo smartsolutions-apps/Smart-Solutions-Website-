@@ -1,7 +1,9 @@
 
 import React from 'react';
+import { useTranslation } from '../App';
 
 const Security: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section id="security" className="py-20 md:py-32 bg-white scroll-mt-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -24,16 +26,16 @@ const Security: React.FC = () => {
              </div>
           </div>
           <div className="flex-1 order-1 lg:order-2 text-center lg:text-left">
-            <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">Security Protocol</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 tracking-tighter leading-[0.9]">Privacy by <br className="hidden md:block"/>Architecture.</h3>
+            <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">{t.security.badge}</h2>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 tracking-tighter leading-[0.9]">{t.security.title}</h3>
             <p className="text-slate-500 text-base md:text-lg font-medium leading-relaxed mb-8 md:mb-10 max-w-xl mx-auto lg:mx-0">
-              We treat security as a foundational layer, not a feature. In the educational sector, protecting child data is our highest engineering priority.
+              {t.security.desc}
             </p>
             <div className="space-y-4 md:space-y-6 text-left inline-block lg:block">
                {[
-                 "AES-256 Data Encryption at Rest",
-                 "COPPA & GDPR Compliance Ready",
-                 "Biometric Auth Integration"
+                 t.security.f1,
+                 t.security.f2,
+                 t.security.f3
                ].map((text, i) => (
                  <div key={i} className="flex gap-4 items-center">
                     <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold shrink-0 text-lg">✓</div>

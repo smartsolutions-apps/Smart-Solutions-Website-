@@ -1,11 +1,13 @@
 
 import React from 'react';
+import { useTranslation } from '../App';
 
 const FutureTrends: React.FC = () => {
+  const { t } = useTranslation();
   const trends = [
-    { title: "Spatial Computing", desc: "The merge of digital apps with physical space via AR glasses.", year: "2025" },
-    { title: "Edge AI", desc: "Complex neural networks running locally on your device hardware.", year: "2026" },
-    { title: "Zero-UI", desc: "Apps driven entirely by voice, gesture, and anticipation.", year: "2027" }
+    { title: t.futureTrends.t1, desc: t.futureTrends.t1D, year: "2025" },
+    { title: t.futureTrends.t2, desc: t.futureTrends.t2D, year: "2026" },
+    { title: t.futureTrends.t3, desc: t.futureTrends.t3D, year: "2027" }
   ];
 
   return (
@@ -16,14 +18,14 @@ const FutureTrends: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 text-start">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-indigo-400 font-black uppercase tracking-[0.3em] text-[10px] mb-4">Horizon Scan</h2>
-            <h3 className="text-5xl font-black tracking-tighter">Future Trends & <br/>Next-Gen Architectures.</h3>
+            <h2 className="text-indigo-400 font-black uppercase tracking-[0.3em] text-[10px] mb-4">{t.futureTrends.badge}</h2>
+            <h3 className="text-5xl font-black tracking-tighter">{t.futureTrends.title}</h3>
           </div>
           <div className="text-slate-400 font-medium max-w-sm text-sm italic">
-            "The screen is disappearing. We are moving toward a world where the interface is the environment itself."
+            {t.futureTrends.quote}
           </div>
         </div>
 
