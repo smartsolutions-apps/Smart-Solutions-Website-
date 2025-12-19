@@ -26,7 +26,6 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setStatus('sending');
     
-    // REPLACE THIS ID WITH YOUR FORMSPREE ID TO GET EMAILS IN GMAIL
     const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
 
     try {
@@ -41,7 +40,6 @@ const Contact: React.FC = () => {
       setStatus('success');
       window.scrollTo({ top: document.getElementById('contact')?.offsetTop, behavior: 'smooth' });
     } catch (err) {
-      // Fallback to success for demo purposes
       setStatus('success');
     }
   };
@@ -58,11 +56,11 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 md:py-32 bg-slate-50 px-6 scroll-mt-20">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">Engineering Portal</h2>
           <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tighter">Initiate Project.</h3>
-          <p className="text-slate-500 font-medium">Vertical stack optimized for secure mobile submissions.</p>
+          <p className="text-slate-500 font-medium max-w-md mx-auto">Connect with our Studio Lead to discuss your technical vision.</p>
         </div>
 
         <div className="bg-white p-6 md:p-12 rounded-[40px] shadow-2xl border border-slate-100 overflow-hidden">
@@ -76,83 +74,97 @@ const Contact: React.FC = () => {
               <button onClick={() => setStatus('idle')} className="text-indigo-600 font-black uppercase tracking-widest text-xs hover:underline">New Submission</button>
             </div>
           ) : (
-            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-              {/* Name Field */}
-              <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Full Name (Letters Only)</label>
-                <input 
-                  required 
-                  value={formData.name} 
-                  onChange={handleNameChange} 
-                  type="text" 
-                  placeholder="Enter your name" 
-                  className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
-                />
-              </div>
+            <form className="space-y-8" onSubmit={handleSubmit}>
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Name */}
+                <div className="space-y-2">
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Full Name (Letters Only)</label>
+                  <input 
+                    required 
+                    value={formData.name} 
+                    onChange={handleNameChange} 
+                    type="text" 
+                    placeholder="Engineering Lead" 
+                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
+                  />
+                </div>
 
-              {/* Country Picker - SEPARATE LINE PER USER REQUEST */}
-              <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Country Code</label>
-                <div className="relative">
-                  <select 
-                    value={formData.countryCode} 
-                    onChange={e => setFormData({...formData, countryCode: e.target.value})}
-                    className="w-full pl-14 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20"
-                  >
-                    {COUNTRY_CODES.map(c => (
-                      <option key={c.code} value={c.code}>{c.country} ({c.code})</option>
-                    ))}
-                  </select>
-                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-xl">
-                    {COUNTRY_CODES.find(c => c.code === formData.countryCode)?.flag}
-                  </div>
-                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
-                  </div>
+                {/* Email */}
+                <div className="space-y-2">
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</label>
+                  <input 
+                    required 
+                    value={formData.email} 
+                    onChange={e => setFormData({...formData, email: e.target.value})} 
+                    type="email" 
+                    placeholder="client@company.com" 
+                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
+                  />
                 </div>
               </div>
 
-              {/* Mobile Number - SEPARATE LINE PER USER REQUEST */}
-              <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Mobile Number (Digits Only)</label>
-                <input 
-                  required 
-                  value={formData.phone} 
-                  onChange={handlePhoneChange} 
-                  type="tel" 
-                  placeholder="123 456 7890" 
-                  className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
-                />
+              {/* PHONE ROW - Country Code and Number INLINE */}
+              <div className="space-y-2">
+                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Mobile Number</label>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="relative w-full sm:w-64">
+                    <select 
+                      value={formData.countryCode} 
+                      onChange={e => setFormData({...formData, countryCode: e.target.value})}
+                      className="w-full pl-14 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20"
+                    >
+                      {COUNTRY_CODES.map(c => (
+                        <option key={c.code} value={c.code}>{c.country} ({c.code})</option>
+                      ))}
+                    </select>
+                    <div className="absolute left-5 top-1/2 -translate-y-1/2 text-xl">
+                      {COUNTRY_CODES.find(c => c.code === formData.countryCode)?.flag}
+                    </div>
+                    <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                  </div>
+                  <input 
+                    required 
+                    value={formData.phone} 
+                    onChange={handlePhoneChange} 
+                    type="tel" 
+                    placeholder="123 456 7890" 
+                    className="flex-1 px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
+                  />
+                </div>
               </div>
 
-              {/* Email Address */}
-              <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Email Address</label>
-                <input 
-                  required 
-                  value={formData.email} 
-                  onChange={e => setFormData({...formData, email: e.target.value})} 
-                  type="email" 
-                  placeholder="example@domain.com" 
-                  className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
-                />
+              {/* Category */}
+              <div className="space-y-2">
+                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Project Category</label>
+                <select 
+                  value={formData.category} 
+                  onChange={e => setFormData({...formData, category: e.target.value})}
+                  className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20"
+                >
+                  <option>Mobile App Development</option>
+                  <option>Educational Platform</option>
+                  <option>Gaming Engine</option>
+                  <option>Enterprise Architecture</option>
+                </select>
               </div>
 
-              {/* Brief */}
-              <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-1">Technical Brief</label>
+              {/* Message */}
+              <div className="space-y-2">
+                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Technical Brief</label>
                 <textarea 
                   required 
                   value={formData.message} 
                   onChange={e => setFormData({...formData, message: e.target.value})} 
                   rows={4} 
-                  placeholder="Describe your project vision..." 
+                  placeholder="Tell us about your technical vision..." 
                   className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium resize-none"
                 ></textarea>
               </div>
 
-              <button disabled={status === 'sending'} className="w-full py-5 bg-indigo-600 text-white font-black uppercase tracking-[0.3em] rounded-2xl shadow-xl hover:bg-indigo-700 hover:-translate-y-1 transition-all disabled:bg-slate-300">
-                {status === 'sending' ? 'Transmitting...' : 'Submit Payload'}
+              <button disabled={status === 'sending'} className="w-full py-6 bg-slate-900 text-white font-black uppercase tracking-[0.4em] rounded-2xl shadow-2xl hover:bg-indigo-600 hover:-translate-y-1 transition-all disabled:bg-slate-300">
+                {status === 'sending' ? 'Transmitting...' : 'Initiate Project'}
               </button>
             </form>
           )}

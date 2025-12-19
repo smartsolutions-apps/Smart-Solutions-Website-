@@ -8,8 +8,8 @@ const Portfolio: React.FC = () => {
       category: "Education",
       desc: "Our flagship interactive library for children, featuring dynamic narration and behavioral tracking.",
       stat: "500K Users",
-      img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200",
-      alt: "My Wonder Books tablet interface showing storytelling engine"
+      img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1200", // Book-themed image
+      alt: "Interactive digital library showcase for kids"
     },
     {
       title: "Engine Quest",

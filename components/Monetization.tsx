@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 
 const Monetization: React.FC = () => {
-  const [imgError, setImgError] = useState(false);
-
   const models = [
     { title: "SaaS & Subscriptions", desc: "Recurring revenue models that focus on long-term user value.", icon: "💳" },
     { title: "Freemium", desc: "Offering core value for free while charging for premium features.", icon: "💎" },
@@ -32,58 +31,70 @@ const Monetization: React.FC = () => {
           </div>
           
           <div className="relative group">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 bg-slate-900 relative">
-              {imgError ? (
-                /* Interactive CSS Dashboard Fallback - THIS CANNOT BREAK */
-                <div className="absolute inset-0 p-8 flex flex-col justify-between animate-fadeIn bg-slate-950">
-                  <div className="flex justify-between items-start">
-                    <div className="space-y-1">
-                      <div className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Projected Growth</div>
-                      <div className="text-3xl font-black text-white">$1.2M+</div>
-                    </div>
-                    <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                    </div>
+            {/* VIBRANT DASHBOARD VISUAL */}
+            <div className="aspect-[1.1/1] rounded-[3.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(79,70,229,0.2)] bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 p-1 relative">
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-3xl"></div>
+              
+              <div className="relative h-full w-full bg-slate-950/80 backdrop-blur-md rounded-[3.2rem] p-8 flex flex-col gap-6 overflow-hidden">
+                {/* Header Section */}
+                <div className="flex justify-between items-center">
+                  <div className="space-y-1">
+                    <div className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Yield Analytics</div>
+                    <div className="text-4xl font-black text-white tracking-tighter">$2,482,190<span className="text-lg text-green-400 ml-2">↑ 24%</span></div>
                   </div>
-                  
-                  <div className="flex-1 flex items-end gap-2 py-8">
-                    {[30, 60, 45, 80, 55, 70, 90, 75, 85, 65, 50, 85].map((h, i) => (
-                      <div key={i} className="flex-1 bg-indigo-500/10 rounded-t-sm relative">
-                        <div 
-                          className="absolute bottom-0 left-0 right-0 bg-indigo-500 transition-all duration-1000" 
-                          style={{ height: `${h}%`, transitionDelay: `${i * 50}ms` }}
-                        ></div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
-                      <div className="text-[9px] uppercase font-bold text-slate-500">Active Yield</div>
-                      <div className="text-xl font-bold text-white">94%</div>
-                    </div>
-                    <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
-                      <div className="text-[9px] uppercase font-bold text-slate-500">User Value</div>
-                      <div className="text-xl font-bold text-white">$48.5</div>
+                  <div className="flex gap-2">
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                       <div className="w-4 h-4 rounded-full border-2 border-indigo-400"></div>
                     </div>
                   </div>
                 </div>
-              ) : (
-                /* Primary Image - Highly stable Unsplash link */
-                <img 
-                  src="https://images.unsplash.com/photo-1551288049-bbbda50d2671?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Growth analytics dashboard" 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                  onError={() => setImgError(true)}
-                />
-              )}
-              
-              <div className="absolute inset-0 bg-indigo-600/5 group-hover:bg-indigo-600/10 transition-colors pointer-events-none"></div>
+
+                {/* Main Graph Area */}
+                <div className="flex-1 flex items-end justify-between gap-1.5 px-2 relative">
+                  {/* Decorative Grid Lines */}
+                  <div className="absolute inset-x-0 top-0 bottom-0 flex flex-col justify-between pointer-events-none opacity-10">
+                    {[...Array(5)].map((_, i) => <div key={i} className="border-t border-white w-full"></div>)}
+                  </div>
+                  
+                  {[35, 55, 45, 85, 65, 75, 95, 80, 70, 90, 85, 100].map((h, i) => (
+                    <div key={i} className="flex-1 group/bar relative">
+                      <div 
+                        className="w-full bg-gradient-to-t from-indigo-600 to-purple-400 rounded-t-lg transition-all duration-1000 ease-out shadow-[0_0_20px_rgba(79,70,229,0.3)]" 
+                        style={{ height: `${h}%`, transitionDelay: `${i * 40}ms` }}
+                      >
+                         <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-white text-slate-900 text-[9px] font-black px-2 py-1 rounded shadow-lg pointer-events-none">
+                           {h}%
+                         </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* KPI Grid */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-white/5 p-5 rounded-3xl border border-white/10 backdrop-blur-xl">
+                    <div className="text-[9px] uppercase font-black text-slate-500 mb-1">Retention</div>
+                    <div className="text-xl font-black text-white">88.4%</div>
+                  </div>
+                  <div className="bg-white/5 p-5 rounded-3xl border border-white/10 backdrop-blur-xl">
+                    <div className="text-[9px] uppercase font-black text-slate-500 mb-1">LTV</div>
+                    <div className="text-xl font-black text-white">$142.5</div>
+                  </div>
+                  <div className="bg-white/5 p-5 rounded-3xl border border-white/10 backdrop-blur-xl">
+                    <div className="text-[9px] uppercase font-black text-slate-500 mb-1">ARPU</div>
+                    <div className="text-xl font-black text-white">$12.9</div>
+                  </div>
+                </div>
+
+                {/* Animated Particles */}
+                <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500/20 blur-[100px] rounded-full"></div>
+                <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-purple-500/20 blur-[100px] rounded-full"></div>
+              </div>
             </div>
             
-            <div className="absolute -bottom-8 -right-8 glass-card p-8 rounded-3xl shadow-2xl border border-indigo-50 z-30 transform group-hover:scale-110 transition-transform">
-              <div className="text-indigo-600 font-black text-3xl mb-1">REVENUE</div>
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Scale Architecture</p>
+            <div className="absolute -bottom-8 -right-8 glass-card p-10 rounded-[2.5rem] shadow-2xl border border-indigo-50/50 z-30 transform group-hover:scale-105 transition-transform">
+              <div className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 font-black text-4xl mb-1 italic">GROWTH</div>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Performance Index</p>
             </div>
           </div>
         </div>

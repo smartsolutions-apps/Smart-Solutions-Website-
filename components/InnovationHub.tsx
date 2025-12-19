@@ -1,12 +1,9 @@
 
 import React, { useState } from 'react';
-import { GoogleGenAI } from "@google/genai";
 
-type TabType = 'react' | 'figma' | 'gemini' | 'veo';
+type TabType = 'react' | 'figma' | 'gemini';
 
 const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-  // If the high-res image fails, we provide a beautiful, branded geometric background 
-  // rather than a "broken" placeholder. This ensures the UI remains premium.
   e.currentTarget.style.display = 'none';
   const parent = e.currentTarget.parentElement;
   if (parent) {
@@ -32,41 +29,12 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
 
 const InnovationHub: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('react');
-  const [aiLoading, setAiLoading] = useState(false);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
   const tabs: { id: TabType; label: string; icon: string }[] = [
     { id: 'react', label: 'Development', icon: '⚛️' },
     { id: 'figma', label: 'Design', icon: '🎨' },
-    { id: 'gemini', label: 'Intelligence', icon: '🧠' },
-    { id: 'veo', label: 'Motion', icon: '🎬' }
+    { id: 'gemini', label: 'Intelligence', icon: '🧠' }
   ];
-
-  const handleGenerateVideo = async () => {
-    if (!window.aistudio) return;
-    setAiLoading(true);
-    try {
-      if (!await window.aistudio.hasSelectedApiKey()) {
-        await window.aistudio.openSelectKey();
-      }
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      let operation = await ai.models.generateVideos({
-        model: 'veo-3.1-fast-generate-preview',
-        prompt: 'Futuristic digital hub in New Cairo, high-tech engineering studio, cinematic lighting',
-        config: { numberOfVideos: 1, resolution: '720p', aspectRatio: '16:9' }
-      });
-      while (!operation.done) {
-        await new Promise(resolve => setTimeout(resolve, 5000));
-        operation = await ai.operations.getVideosOperation({ operation: operation });
-      }
-      const downloadLink = operation.response?.generatedVideos?.[0]?.video?.uri;
-      if (downloadLink) setVideoUrl(`${downloadLink}&key=${process.env.API_KEY}`);
-    } catch (error) {
-      console.error("Video failed:", error);
-    } finally {
-      setAiLoading(false);
-    }
-  };
 
   return (
     <section id="innovation" className="py-24 bg-slate-950 text-white scroll-mt-20 overflow-hidden">
@@ -132,28 +100,6 @@ const InnovationHub: React.FC = () => {
               <p className="text-slate-400 text-sm md:text-lg max-w-xl mx-auto">Integrating Gemini to power adaptive learning paths that evolve with your users' progress.</p>
               <div className="p-8 bg-blue-500/5 rounded-3xl border border-blue-500/10">
                 <p className="text-blue-300 italic font-medium">"Architecting the logic of tomorrow."</p>
-              </div>
-            </div>
-          )}
-
-          {activeTab === 'veo' && (
-            <div className="max-w-4xl w-full text-center space-y-8 animate-fadeIn mx-auto">
-              <h4 className="text-3xl md:text-4xl font-black leading-none tracking-tight">AI Motion Concepts</h4>
-              <div className="relative aspect-video bg-black/40 rounded-3xl overflow-hidden border border-white/5 flex items-center justify-center">
-                {videoUrl ? (
-                  <video src={videoUrl} controls className="w-full h-full object-cover" />
-                ) : (
-                  <div className="p-12 text-center">
-                    {aiLoading ? (
-                      <div className="space-y-4">
-                        <div className="w-10 h-10 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
-                        <p className="text-[10px] font-black uppercase tracking-widest text-pink-500/50">Building Sequence...</p>
-                      </div>
-                    ) : (
-                      <button onClick={handleGenerateVideo} className="px-10 py-5 bg-pink-600 text-white font-black rounded-2xl hover:bg-pink-500 transition-all text-xs uppercase tracking-widest shadow-xl shadow-pink-900/20">Generate Hub Demo</button>
-                    )}
-                  </div>
-                )}
               </div>
             </div>
           )}
