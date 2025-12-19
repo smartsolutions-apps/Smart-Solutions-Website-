@@ -1,6 +1,6 @@
 {
-  "name": "Smart Solutions - App Engineering Excellence",
-  "description": "A premium corporate website for Smart Solutions, a leading app development agency specializing in kids' applications and games, featuring their flagship project My Wonder Books.",
+  "name": "Smart Solutions | Premium App Engineering Studio",
+  "description": "Based in New Cairo, Smart Solutions engineers world-class mobile experiences for education and gaming. Creators of My Wonder Books.",
   "requestFramePermissions": [
     "camera",
     "microphone"

@@ -4,16 +4,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Solutions | Premium App Engineering Studio</title>
-    <meta name="description" content="Based in New Cairo, Smart Solutions is a world-class app development agency specializing in education and gaming." />
+    
+    <!-- SEO Masterclass -->
+    <title>Smart Solutions | Premium App Engineering Studio New Cairo</title>
+    <meta name="description" content="Based in New Cairo, Smart Solutions engineers world-class mobile experiences for education and gaming. Creators of My Wonder Books. Leading Egypt's digital revolution." />
+    <meta name="keywords" content="App Development Egypt, New Cairo Tech Studio, My Wonder Books, Mobile App Engineering, EdTech Egypt, Gaming Studio Cairo, AI App Development" />
+    <meta name="author" content="Smart Solutions" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smartsolutions.app/" />
+    <meta property="og:title" content="Smart Solutions | Premium App Engineering Studio" />
+    <meta property="og:description" content="Engineering digital excellence in the heart of New Cairo. 500k+ downloads and Harvard-recognized innovation." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=1200" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Smart Solutions | Egypt's Leading App Studio" />
+    <meta name="twitter:description" content="We engineer digital masterpieces that define industries. Based in District 5, New Cairo." />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #f8fafc;
+        background-color: #fcfcfd;
+        color: #0f172a;
       }
       .gradient-text {
         background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
@@ -21,18 +45,36 @@
         -webkit-text-fill-color: transparent;
       }
       .glass-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
       }
-      .section-fade {
-        animation: fadeIn 0.8s ease-out forwards;
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      ::-webkit-scrollbar { width: 10px; }
+      ::-webkit-scrollbar-track { background: #f8fafc; }
+      ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; border: 3px solid #f8fafc; }
+      ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+
+      @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+      .animate-blob {
+        animation: blob 7s infinite;
       }
     </style>
+
     <script type="importmap">
     {
       "imports": {
@@ -43,7 +85,7 @@
     }
     </script>
   </head>
-  <body class="text-slate-900 overflow-x-hidden">
+  <body class="overflow-x-hidden antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

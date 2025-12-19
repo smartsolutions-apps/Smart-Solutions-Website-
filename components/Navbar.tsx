@@ -10,11 +10,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
 
   const navItems = [
     { label: 'Home', id: 'home' },
-    { label: 'About', id: 'about' },
-    { label: 'Our Apps', id: 'apps' },
+    { label: 'Story', id: 'about' },
+    { label: 'Work', id: 'apps' },
+    { label: 'Evolution', id: 'evolution' },
     { label: 'Process', id: 'process' },
-    { label: 'AI Tech', id: 'tech' },
-    { label: 'Insights', id: 'how-we-build' },
+    { label: 'Tech', id: 'tech' },
   ];
 
   const handleScroll = (id: string) => {
@@ -36,25 +36,24 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 mx-auto max-w-7xl">
-      <div className="glass-card px-6 py-4 rounded-2xl flex items-center justify-between shadow-xl">
+      <div className="glass-card px-6 py-3.5 rounded-2xl flex items-center justify-between shadow-2xl">
         <div className="flex items-center gap-3 cursor-pointer group" onClick={() => handleScroll('home')}>
-          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-2xl shadow-lg group-hover:scale-110 transition-transform">
+          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-2xl shadow-lg group-hover:rotate-6 transition-transform">
             S
           </div>
-          <div>
+          <div className="hidden sm:block">
             <h1 className="text-xl font-black tracking-tighter text-slate-800 leading-none">SMART</h1>
             <p className="text-[9px] tracking-[0.3em] font-bold text-indigo-600 leading-none mt-1">SOLUTIONS</p>
           </div>
         </div>
         
-        {/* Desktop Menu */}
         <div className="hidden xl:flex items-center gap-8">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className={`text-xs font-bold uppercase tracking-widest transition-all hover:text-indigo-600 ${
-                activeTab === item.id ? 'text-indigo-600' : 'text-slate-500'
+              className={`text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:text-indigo-600 ${
+                activeTab === item.id ? 'text-indigo-600' : 'text-slate-400'
               }`}
             >
               {item.label}
@@ -64,13 +63,12 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
 
         <div className="flex items-center gap-4">
           <button 
-            onClick={() => handleScroll('footer')}
-            className="hidden sm:block bg-indigo-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
+            onClick={() => handleScroll('contact')}
+            className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-indigo-600 hover:-translate-y-0.5 transition-all shadow-xl shadow-slate-200"
           >
             Connect
           </button>
           
-          {/* Mobile Toggle */}
           <button 
             className="xl:hidden p-2 text-slate-600"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -82,26 +80,25 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="xl:hidden mt-4 glass-card rounded-2xl p-6 shadow-2xl animate-fadeIn">
+        <div className="xl:hidden mt-3 glass-card rounded-2xl p-8 shadow-2xl animate-fadeIn border border-white/40">
           <div className="flex flex-col gap-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
-                className={`text-left text-sm font-bold uppercase tracking-widest ${
-                  activeTab === item.id ? 'text-indigo-600' : 'text-slate-500'
+                className={`text-left text-xs font-black uppercase tracking-widest ${
+                  activeTab === item.id ? 'text-indigo-600' : 'text-slate-400'
                 }`}
               >
                 {item.label}
               </button>
             ))}
             <button 
-              onClick={() => handleScroll('footer')}
-              className="bg-indigo-600 text-white py-3 rounded-xl text-sm font-bold w-full"
+              onClick={() => handleScroll('contact')}
+              className="bg-indigo-600 text-white py-4 rounded-xl text-xs font-black uppercase tracking-widest w-full"
             >
-              Contact Us
+              Start a Project
             </button>
           </div>
         </div>

@@ -8,21 +8,24 @@ const Portfolio: React.FC = () => {
       category: "Education",
       desc: "An award-winning interactive library with custom-tailored narration engine.",
       stat: "500K Users",
-      img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800"
+      img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800",
+      alt: "My Wonder Books educational app interface on a tablet"
     },
     {
       title: "Logic Quest",
       category: "Gaming",
       desc: "Advanced cognitive puzzle engine built with complex state management.",
       stat: "Coming Soon",
-      img: "https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&q=80&w=800"
+      img: "https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&q=80&w=800",
+      alt: "Logic Quest gaming app puzzle engine visualization"
     },
     {
       title: "Smart Sketch",
       category: "Creativity",
       desc: "A low-latency vector engine for digital illustration on mobile devices.",
       stat: "In Pipeline",
-      img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800"
+      img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800",
+      alt: "Digital illustration tool Smart Sketch on a smartphone"
     }
   ];
 
@@ -43,7 +46,7 @@ const Portfolio: React.FC = () => {
           {apps.map((app, i) => (
             <div key={i} className="group cursor-pointer">
               <div className="relative rounded-[32px] overflow-hidden mb-8 aspect-[4/5] shadow-2xl transition-transform duration-700 group-hover:-translate-y-4">
-                <img src={app.img} alt={app.title} className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" />
+                <img src={app.img} alt={app.alt} className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-6 left-6">
                   <span className="px-4 py-1.5 bg-white/90 backdrop-blur rounded-full text-[10px] font-black uppercase tracking-widest text-indigo-600">
