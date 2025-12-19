@@ -49,9 +49,10 @@ const App: React.FC = () => {
     document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = locale;
     
-    // Smooth transition for fonts - ensured IBM Plex Sans Arabic is available
+    // Applying primary fonts based on locale
+    // CSS in index.html handles the specific Header/Body split for Arabic
     if (locale === 'ar') {
-      document.body.style.fontFamily = "'Inter', 'IBM Plex Sans Arabic', 'Noto Sans Arabic', sans-serif";
+      document.body.style.fontFamily = "'Almarai', sans-serif";
     } else {
       document.body.style.fontFamily = "'Inter', sans-serif";
     }
@@ -94,7 +95,7 @@ const App: React.FC = () => {
 
   return (
     <LanguageContext.Provider value={{ locale, setLocale, t }}>
-      <div className={`min-h-screen selection:bg-indigo-100 selection:text-indigo-900 bg-white ${locale === 'ar' ? 'font-arabic' : ''}`}>
+      <div className={`min-h-screen selection:bg-indigo-100 selection:text-indigo-900 bg-white`}>
         <Navbar activeTab={activeTab} />
         <main className="overflow-x-hidden">
           <section id="home">
@@ -141,6 +142,9 @@ const App: React.FC = () => {
           </section>
           <section className="reveal">
             <GlobalImpact />
+          </section>
+          <section id="future" className="reveal">
+            <FutureTrends />
           </section>
           <section id="future" className="reveal">
             <FutureTrends />

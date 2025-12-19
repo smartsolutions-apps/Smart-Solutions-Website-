@@ -84,19 +84,19 @@ const Footer: React.FC = () => {
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">
             <div className="flex flex-wrap justify-center gap-6 md:gap-8">
               <span>© {new Date().getFullYear()} {t.footer.rights}</span>
-              <button onClick={() => setModalState({ isOpen: true, type: 'privacy' })}>{t.footer.privacy}</button>
-              <button onClick={() => setModalState({ isOpen: true, type: 'terms' })}>{t.footer.terms}</button>
+              <button onClick={() => setModalState({ isOpen: true, type: 'privacy' })} className="hover:text-white transition-colors">{t.footer.privacy}</button>
+              <button onClick={() => setModalState({ isOpen: true, type: 'terms' })} className="hover:text-white transition-colors">{t.footer.terms}</button>
             </div>
 
             <div className="relative">
-              <button onClick={() => setIsLangOpen(!isLangOpen)} className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-xl">
+              <button onClick={() => setIsLangOpen(!isLangOpen)} className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors">
                 <span>{languages.find(l => l.code === locale)?.flag}</span>
                 <span className="text-slate-200">{languages.find(l => l.code === locale)?.label}</span>
               </button>
               {isLangOpen && (
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 bg-slate-900 border border-white/10 rounded-2xl p-2 z-50">
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 bg-slate-900 border border-white/10 rounded-2xl p-2 z-50 shadow-2xl">
                   {languages.map((lang) => (
-                    <button key={lang.code} onClick={() => { setLocale(lang.code); setIsLangOpen(false); }} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl ${locale === lang.code ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:bg-white/10'}`}>
+                    <button key={lang.code} onClick={() => { setLocale(lang.code); setIsLangOpen(false); }} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${locale === lang.code ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:bg-white/10'}`}>
                       <span>{lang.flag}</span><span>{lang.label}</span>
                     </button>
                   ))}
@@ -104,20 +104,44 @@ const Footer: React.FC = () => {
               )}
             </div>
 
-            <button onClick={handleScrollToTop} className="flex items-center gap-3 text-indigo-500 hover:text-white transition-colors">
+            <button onClick={handleScrollToTop} className="flex items-center gap-3 text-indigo-500 hover:text-white transition-colors group">
               {t.footer.scroll}
-              <div className="w-8 h-8 rounded-full border border-indigo-500/30 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full border border-indigo-500/30 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all">
                 <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 15l7-7 7 7" /></svg>
               </div>
             </button>
           </div>
         </div>
       </footer>
-      <LegalModal isOpen={modalState.isOpen && modalState.type === 'privacy'} onClose={() => setModalState({ isOpen: false, type: null })} title={t.footer.privacy}>
-        <div className="text-start"><h4 className="font-black text-slate-900 mb-2">1. Data Governance</h4><p>Encryption within our New Cairo facility.</p></div>
+      
+      <LegalModal 
+        isOpen={modalState.isOpen && modalState.type === 'privacy'} 
+        onClose={() => setModalState({ isOpen: false, type: null })} 
+        title={t.footer.privacy}
+      >
+        <div className="text-start space-y-8">
+          {t.footer.privacyContent.map((item: any, i: number) => (
+            <div key={i}>
+              <h4 className="text-xl font-black text-slate-900 mb-3 tracking-tight">{item.h}</h4>
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed">{item.p}</p>
+            </div>
+          ))}
+        </div>
       </LegalModal>
-      <LegalModal isOpen={modalState.isOpen && modalState.type === 'terms'} onClose={() => setModalState({ isOpen: false, type: null })} title={t.footer.terms}>
-        <div className="text-start"><h4 className="font-black text-slate-900 mb-2">1. Intellectual Property</h4><p>Exclusive property of Smart Solutions Ltd.</p></div>
+
+      <LegalModal 
+        isOpen={modalState.isOpen && modalState.type === 'terms'} 
+        onClose={() => setModalState({ isOpen: false, type: null })} 
+        title={t.footer.terms}
+      >
+        <div className="text-start space-y-8">
+          {t.footer.termsContent.map((item: any, i: number) => (
+            <div key={i}>
+              <h4 className="text-xl font-black text-slate-900 mb-3 tracking-tight">{item.h}</h4>
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed">{item.p}</p>
+            </div>
+          ))}
+        </div>
       </LegalModal>
     </>
   );

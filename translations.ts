@@ -36,7 +36,7 @@ const en = {
     devH4: 'High-Speed Frontend', devP: 'Engineered for native-level performance across all mobile devices using modular React architectures',
     desH4: 'Experience Design', desP: 'Prototyping precision micro-interactions to ensure absolute user delight at every touchpoint',
     intH4: 'AI Intelligence Engines', intP: 'Integrating Gemini to power adaptive learning paths that evolve with your users\' progress',
-    intQuote: '"Architecting the logic of tomorrow."'
+    intQuote: '"Architecturing the logic of tomorrow."'
   },
   lifecycle: {
     badge: 'Engineering Flow', title: 'The App Lifecycle',
@@ -148,7 +148,19 @@ const en = {
     engineering: 'Engineering', strategy: 'Strategy', hq: 'Studio HQ', hqLoc: 'New Cairo, Egypt', hqAddr: 'District 5, Marakez',
     inquiries: 'Inquiries', portalLink: 'Portal Contact', status: 'Online', devEnv: 'Dev Env',
     rights: 'Smart Solutions Ltd.', privacy: 'Privacy', terms: 'Terms', scroll: 'Summit',
-    links: { security: 'Security', perf: 'Performance', monetization: 'Monetization', design: 'Design Thinking', industry: 'Industry' }
+    links: { security: 'Security', perf: 'Performance', monetization: 'Monetization', design: 'Design Thinking', industry: 'Industry' },
+    privacyContent: [
+      { h: 'Data Governance', p: 'Smart Solutions operates under strict data protection protocols. All user data processed through our New Cairo headquarters is encrypted using AES-256 standards.' },
+      { h: 'Information Collection', p: 'We collect information solely for the purpose of engineering better user experiences and providing support to our clients and partners.' },
+      { h: 'Third-Party Disclosure', p: 'We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties without explicit consent.' },
+      { h: 'Child Safety', p: 'In accordance with COPPA, our educational platforms like My Wonder Books do not collect personal data from minors without verified parental consent.' }
+    ],
+    termsContent: [
+      { h: 'Intellectual Property', p: 'All software, architectures, and designs produced by Smart Solutions remain the exclusive property of Smart Solutions Ltd. until full delivery and transfer of rights.' },
+      { h: 'Usage License', p: 'Clients are granted a non-transferable license to use the delivered digital products according to the specific service level agreements signed.' },
+      { h: 'Liability', p: 'Smart Solutions is not liable for indirect or consequential damages arising from the use of our digital engineering services.' },
+      { h: 'Governing Law', p: 'These terms are governed by the laws of the Arab Republic of Egypt, specifically the jurisdiction of New Cairo.' }
+    ]
   }
 };
 
@@ -299,7 +311,19 @@ const ar = {
     engineering: 'الهندسة', strategy: 'الاستراتيجية', hq: 'المقر الرئيسي', hqLoc: 'القاهرة الجديدة، مصر', hqAddr: 'ديستريكت 5، مراكز',
     inquiries: 'الاستفسارات', portalLink: 'اتصل عبر البوابة', status: 'متصل', devEnv: 'بيئة التطوير',
     rights: 'سمارت سوليوشنز المحدودة.', privacy: 'الخصوصية', terms: 'الشروط', scroll: 'القمة',
-    links: { security: 'الأمان', perf: 'الأداء', monetization: 'تحقيق الربح', design: 'التفكير التصميمي', industry: 'رؤى الصناعة' }
+    links: { security: 'الأمان', perf: 'الأداء', monetization: 'تحقيق الربح', design: 'التفكير التصميمي', industry: 'رؤى الصناعة' },
+    privacyContent: [
+      { h: 'حوكمة البيانات', p: 'تعمل سمارت سوليوشنز وفقاً لبروتوكولات حماية بيانات صارمة. يتم تشفير جميع بيانات المستخدمين التي تتم معالجتها من خلال مقرنا في القاهرة الجديدة باستخدام معايير AES-256.' },
+      { h: 'جمع المعلومات', p: 'نحن نجمع المعلومات فقط لغرض هندسة تجارب مستخدم أفضل وتقديم الدعم لعملائنا وشركائنا.' },
+      { h: 'الإفصاح للغير', p: 'نحن لا نبيع أو نتاجر أو ننقل معلوماتك الشخصية إلى أطراف خارجية دون موافقة صريحة.' },
+      { h: 'سلامة الأطفال', p: 'وفقاً لـ COPPA، لا تقوم منصاتنا التعليمية مثل "كتبي العجيبة" بجمع بيانات شخصية من القاصرين دون موافقة الوالدين الموثقة.' }
+    ],
+    termsContent: [
+      { h: 'الملكية الفكرية', p: 'تظل جميع البرامج والهياكل والتصاميم التي تنتجها سمارت سوليوشنز ملكية حصرية لشركة سمارت سوليوشنز المحدودة حتى التسليم الكامل ونقل الحقوق.' },
+      { h: 'رخصة الاستخدام', p: 'يُمنح العملاء رخصة غير قابلة للتحويل لاستخدام المنتجات الرقمية المسلمة وفقاً لاتفاقيات مستوى الخدمة المحددة الموقعة.' },
+      { h: 'المسؤولية', p: 'سمارت سوليوشنز غير مسؤولة عن الأضرار غير المباشرة أو التبعية الناشئة عن استخدام خدمات الهندسة الرقمية الخاصة بنا.' },
+      { h: 'القانون الواجب التطبيق', p: 'تخضع هذه الشروط لقوانين جمهورية مصر العربية، وتحديداً اختصاص محاكم القاهرة الجديدة.' }
+    ]
   }
 };
 
@@ -450,7 +474,19 @@ const ru = {
     engineering: 'Инженерия', strategy: 'Стратегия', hq: 'Штаб-квартира', hqLoc: 'Египет, Новый Каир', hqAddr: 'District 5, Marakez',
     inquiries: 'Запросы', portalLink: 'Контактный портал', status: 'В сети', devEnv: 'Среда разработки',
     rights: 'Smart Solutions Ltd.', privacy: 'Конфиденциальность', terms: 'Условия', scroll: 'Наверх',
-    links: { security: 'Безопасность', perf: 'Скорость', monetization: 'Монетизация', design: 'Дизайн-мышление', industry: 'Индустрия' }
+    links: { security: 'Безопасность', perf: 'Скорость', monetization: 'Монетизация', design: 'Дизайн-мышление', industry: 'Индустрия' },
+    privacyContent: [
+      { h: 'Управление данными', p: 'Smart Solutions работает в соответствии со строгими протоколами защиты данных. Все данные пользователей шифруются по стандарту AES-256.' },
+      { h: 'Сбор информации', p: 'Мы собираем информацию исключительно с целью улучшения пользовательского опыта и поддержки наших клиентов.' },
+      { h: 'Раскрытие третьим лицам', p: 'Мы не продаем и не передаем вашу личную информацию сторонним лицам без вашего явного согласия.' },
+      { h: 'Безопасность детей', p: 'В соответствии с COPPA наши образовательные платформы не собирают личные данные несовершеннолетных без согласия родителей.' }
+    ],
+    termsContent: [
+      { h: 'Интеллектуальная собственность', p: 'Все программное обеспечение и дизайн, созданные Smart Solutions, остаются исключительной собственностью Smart Solutions Ltd. до полной передачи прав.' },
+      { h: 'Лицензия на использование', p: 'Клиентам предоставляется непередаваемая лицензия на использование продуктов в соответствии с подписанными соглашениями (SLA).' },
+      { h: 'Ответственность', p: 'Smart Solutions не несет ответственности за косвенные убытки, возникшие в результате использования наших цифровых услуг.' },
+      { h: 'Применимое право', p: 'Эти условия регулируются законодательством Арабской Республики Египет, юрисдикция Нового Каира.' }
+    ]
   }
 };
 
@@ -594,14 +630,26 @@ const es = {
     successTitle: 'Brief Registrado', successDesc: 'Transmitido a Google Sheets.',
     newSub: 'Nueva Solicitud', fullName: 'Nombre Completo', email: 'Email', mobile: 'Móvil', category: 'Categoría', brief: 'Brief',
     briefPlaceholder: 'Describe tu visión...', submit: 'Iniciar', transmitting: 'Enviando...',
-    cat1: 'Desarrollo de Apps Móviles', cat2: 'Plataforma Educativa', cat3: 'Motor de Juegos'
+    cat1: 'Desارrollo de Apps Móviles', cat2: 'Plataforma Educativa', cat3: 'Motor de Juegos'
   },
   footer: {
     desc: 'Estudio de ingeniería en Nuevo Cairo.',
     engineering: 'Ingeniería', strategy: 'Estrategia', hq: 'Sede Central', hqLoc: 'Egipto, Nuevo Cairo', hqAddr: 'District 5, Marakez',
     inquiries: 'Consultas', portalLink: 'Portal de Contacto', status: 'En línea', devEnv: 'Entorno Dev',
     rights: 'Smart Solutions Ltd.', privacy: 'Privacidad', terms: 'Términos', scroll: 'Summit',
-    links: { security: 'Seguridad', perf: 'Rendimiento', monetization: 'Monetización', design: 'Diseño Thinking', industry: 'Industria' }
+    links: { security: 'Seguridad', perf: 'Rendimiento', monetization: 'Monetización', design: 'Diseño Thinking', industry: 'Industria' },
+    privacyContent: [
+      { h: 'Gobernanza de Datos', p: 'Smart Solutions opera bajo estrictos protocolos de protección. Todos los datos procesados en nuestra sede de Nuevo Cairo están cifrados mediante estándares AES-256.' },
+      { h: 'Recopilación de Información', p: 'Recopilamos información únicamente con el propósito de diseñar mejores experiencias de usuario y brindar soporte a nuestros clientes.' },
+      { h: 'Divulgación a Terceros', p: 'No vendemos ni transferimos su información personal identificable a terceros sin su consentimiento explícito.' },
+      { h: 'Seguridad Infantil', p: 'De acuerdo con COPPA, nuestras plataformas educativas no recopilan datos personales de menores sin el consentimiento verificado de los padres.' }
+    ],
+    termsContent: [
+      { h: 'Propiedad Intelectual', p: 'Todo el software y los diseños producidos por Smart Solutions siguen siendo propiedad exclusiva de Smart Solutions Ltd. hasta la transferencia total de derechos.' },
+      { h: 'Licencia de Uso', p: 'Se otorga a los clientes una licencia no transferible para usar los productos digitales según los acuerdos de nivel de servicio (SLA) firmados.' },
+      { h: 'Responsabilidad', p: 'Smart Solutions no es responsable de daños indirectos resultantes del uso de nuestros servicios de ingeniería digital.' },
+      { h: 'Ley Aplicable', p: 'Estos términos se rigen por las leyes de la República Árabe de Egipto, específicamente la jurisdicción de Nuevo Cairo.' }
+    ]
   }
 };
 
@@ -752,7 +800,19 @@ const fr = {
     engineering: 'Ingénierie', strategy: 'Stratégie', hq: 'Siège Social', hqLoc: 'Égypte, Nouveau Caire', hqAddr: 'District 5, Marakez',
     inquiries: 'Demandes', portalLink: 'Contact via Portail', status: 'En ligne', devEnv: 'Environnement Dev',
     rights: 'Smart Solutions Ltd.', privacy: 'Confidentialité', terms: 'Conditions', scroll: 'Sommet',
-    links: { security: 'Sécurité', perf: 'Performance', monetization: 'Monétisation', design: 'Design Thinking', industry: 'Aperçus' }
+    links: { security: 'Sécurité', perf: 'Performance', monetization: 'Monétisation', design: 'Design Thinking', industry: 'Aperçus' },
+    privacyContent: [
+      { h: 'Gouvernance des Données', p: 'Smart Solutions opère selon des protocoles stricts de protection des données. Toutes les données traitées via notre siège social au Nouveau Caire sont cryptées selon les normes AES-256.' },
+      { h: 'Collecte d\'Informations', p: 'Nous collectons des informations uniquement dans le but de concevoir de meilleures expériences utilisateur et de fournir un support à nos clients.' },
+      { h: 'Divulgation à des Tiers', p: 'Nous ne vendons pas, n\'échangeons pas et ne transférons pas vos informations personnelles identifiables à des tiers sans consentement explicite.' },
+      { h: 'Sécurité des Enfants', p: 'Conformément à la COPPA, nos plateformes éducatives ne collectent pas de données personnelles de mineurs sans le consentement parental vérifié.' }
+    ],
+    termsContent: [
+      { h: 'Propriété Intellectuelle', p: 'Tous les logiciels et designs produits par Smart Solutions restent la propriété exclusive de Smart Solutions Ltd. jusqu\'au transfert complet des droits.' },
+      { h: 'Licence d\'Utilisation', p: 'Les clients bénéficient d\'une licence non transférable pour utiliser les produits numériques livrés selon les accords de niveau de service (SLA) signés.' },
+      { h: 'Responsabilité', p: 'Smart Solutions n\'est pas responsable des dommages indirects ou consécutifs résultant de l\'utilisation de nos services d\'ingénierie numérique.' },
+      { h: 'Loi Applicable', p: 'Ces conditions sont régies par les lois de la République Arabe d\'Égypte, spécifiquement la juridiction du Nouveau Caire.' }
+    ]
   }
 };
 

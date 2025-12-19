@@ -28,17 +28,17 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, title, childre
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 overflow-hidden">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 overflow-hidden">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-slate-950/90 backdrop-blur-md animate-fadeIn" 
+        className="absolute inset-0 bg-slate-950/80 backdrop-blur-md animate-fadeIn" 
         onClick={onClose}
       ></div>
       
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-[2.5rem] md:rounded-[3rem] shadow-2xl flex flex-col overflow-hidden animate-scaleIn border border-white/20">
+      <div className="relative w-full max-w-2xl max-h-[85vh] bg-white rounded-[2.5rem] shadow-2xl flex flex-col overflow-hidden animate-scaleIn border border-white/20">
         {/* Header */}
-        <div className="p-6 md:p-8 border-b border-slate-100 flex items-center justify-between shrink-0">
+        <div className="p-6 md:p-8 border-b border-slate-100 flex items-center justify-between shrink-0 bg-white z-10">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shrink-0">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,17 +49,17 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, title, childre
           </div>
           <button 
             onClick={onClose}
-            className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-slate-900 transition-all shrink-0"
+            className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-slate-900 transition-all shrink-0 hover:bg-slate-100"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
-        {/* Scrollable Content */}
-        <div className="p-6 md:p-12 overflow-y-auto overscroll-contain flex-grow custom-scrollbar">
-          <div className="prose prose-slate max-w-none prose-sm md:prose-base">
+        {/* Scrollable Content Area */}
+        <div className="flex-1 overflow-y-auto p-6 md:p-10 custom-scrollbar overscroll-contain bg-white">
+          <div className="space-y-8 pb-4">
             {children}
           </div>
         </div>
@@ -68,7 +68,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, title, childre
         <div className="p-6 border-t border-slate-100 bg-slate-50 flex justify-end shrink-0">
           <button 
             onClick={onClose}
-            className="w-full md:w-auto px-8 py-3 bg-slate-900 text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-indigo-600 transition-all"
+            className="w-full md:w-auto px-10 py-4 bg-slate-900 text-white font-black text-xs uppercase tracking-widest rounded-2xl hover:bg-indigo-600 transition-all shadow-lg active:scale-95"
           >
             Close
           </button>
@@ -80,9 +80,10 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, title, childre
         @keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .animate-fadeIn { animation: fadeIn 0.3s ease-out forwards; }
         .animate-scaleIn { animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
       `}</style>
     </div>
   );
