@@ -27,7 +27,7 @@ const AppLifecycle: React.FC = () => {
                 <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                   {phase.icon}
                 </div>
-                <div className="text-indigo-600 font-black text-xs mb-2 tracking-widest">PHASE {phase.step}</div>
+                <div className="text-indigo-600 font-black text-xs mb-2 tracking-widest">{t.lifecycle.phase} {phase.step}</div>
                 <h4 className="text-xl font-black text-slate-900 mb-4">{phase.title}</h4>
                 <p className="text-slate-500 text-xs font-medium leading-relaxed">{phase.desc}</p>
               </div>

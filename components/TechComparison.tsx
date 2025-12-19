@@ -17,11 +17,11 @@ const TechComparison: React.FC = () => {
             
             <div className="space-y-6">
               <div className="p-8 rounded-[2.5rem] bg-indigo-50 border border-indigo-100">
-                <h4 className="font-black text-indigo-900 mb-2">{t.techComparison.nativeT}</h4>
+                <h4 className="font-black text-indigo-900 mb-2">{t.techComparison.questionNative || t.techComparison.nativeT}</h4>
                 <p className="text-indigo-700/70 text-sm font-medium">{t.techComparison.nativeD}</p>
               </div>
               <div className="p-8 rounded-[2.5rem] bg-slate-900 text-white">
-                <h4 className="font-black mb-2">{t.techComparison.crossT}</h4>
+                <h4 className="font-black mb-2">{t.techComparison.questionCross || t.techComparison.crossT}</h4>
                 <p className="text-slate-400 text-sm font-medium">{t.techComparison.crossD}</p>
               </div>
             </div>

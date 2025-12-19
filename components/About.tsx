@@ -7,7 +7,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
 };
 
 const About: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   // Guard against missing keys
   const about = t.about || { identity: 'Identity', title: 'About Us', desc: '', scale: '', scaleDesc: '', trust: '', trustDesc: '' };
@@ -18,8 +18,8 @@ const About: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           <div className="order-2 lg:order-1 relative">
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4 pt-12">
-                <div className="rounded-[2.5rem] overflow-hidden shadow-2xl h-60 md:h-80 relative group bg-slate-50">
+              <div className="space-y-4 pt-8 md:pt-12">
+                <div className="rounded-[2.5rem] overflow-hidden shadow-2xl h-52 md:h-80 relative group bg-slate-50 border border-slate-100">
                   <img 
                     src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800" 
                     onError={handleImageError}
@@ -27,7 +27,7 @@ const About: React.FC = () => {
                     alt="Engineering Workspace" 
                   />
                 </div>
-                <div className="rounded-[2.5rem] overflow-hidden shadow-xl h-36 md:h-48 relative bg-slate-50">
+                <div className="rounded-[2.5rem] overflow-hidden shadow-xl h-32 md:h-48 relative bg-slate-50 border border-slate-100">
                   <img 
                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" 
                     onError={handleImageError}
@@ -37,7 +37,7 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="rounded-[2.5rem] overflow-hidden shadow-xl h-36 md:h-48 relative bg-slate-50">
+                <div className="rounded-[2.5rem] overflow-hidden shadow-xl h-32 md:h-48 relative bg-slate-50 border border-slate-100">
                   <img 
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" 
                     onError={handleImageError}
@@ -45,7 +45,7 @@ const About: React.FC = () => {
                     alt="Strategic Vision" 
                   />
                 </div>
-                <div className="rounded-[2.5rem] overflow-hidden shadow-2xl h-60 md:h-80 relative bg-slate-50">
+                <div className="rounded-[2.5rem] overflow-hidden shadow-2xl h-52 md:h-80 relative bg-slate-50 border border-slate-100">
                   <img 
                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800" 
                     onError={handleImageError}
@@ -58,24 +58,24 @@ const About: React.FC = () => {
           </div>
           
           <div className="order-1 lg:order-2 text-center lg:text-start">
-            <h2 className="text-indigo-600 font-black uppercase tracking-[0.4em] text-[10px] mb-4">{about.identity}</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-[0.9] tracking-tighter">
+            <h2 className="text-indigo-600 font-black uppercase tracking-[0.4em] text-[9px] md:text-[10px] mb-4">{about.identity}</h2>
+            <h3 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-[1.1] md:leading-[0.9] tracking-tighter">
               {about.title}
             </h3>
-            <p className="text-slate-500 mb-8 text-base md:text-lg font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
+            <p className={`text-slate-500 mb-8 text-base md:text-lg font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 ${locale === 'ar' ? 'md:leading-loose' : ''}`}>
               {about.desc}
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
-              <div className="p-8 rounded-[2.5rem] bg-indigo-50 border border-indigo-100 text-start">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">✓</div>
-                <h4 className="font-bold text-indigo-900 uppercase text-[9px] tracking-widest mb-1">{about.scale}</h4>
-                <p className="text-[11px] text-indigo-600/70 font-bold leading-tight">{about.scaleDesc}</p>
+              <div className="p-8 rounded-[2rem] md:rounded-[2.5rem] bg-indigo-50 border border-indigo-100 text-start">
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-600 shadow-sm mb-4 font-bold text-xl">✓</div>
+                <h4 className="font-black text-indigo-900 uppercase text-[9px] tracking-widest mb-1">{about.scale}</h4>
+                <p className="text-[11px] text-indigo-600/70 font-black leading-tight">{about.scaleDesc}</p>
               </div>
-              <div className="p-8 rounded-[2.5rem] bg-slate-900 border border-slate-800 text-start">
-                <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-indigo-400 shadow-sm mb-4">✓</div>
-                <h4 className="font-bold text-white uppercase text-[9px] tracking-widest mb-1">{about.trust}</h4>
-                <p className="text-[11px] text-slate-400 font-bold leading-tight">{about.trustDesc}</p>
+              <div className="p-8 rounded-[2rem] md:rounded-[2.5rem] bg-slate-900 border border-slate-800 text-start">
+                <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-indigo-400 shadow-sm mb-4 font-bold text-xl">✓</div>
+                <h4 className="font-black text-white uppercase text-[9px] tracking-widest mb-1">{about.trust}</h4>
+                <p className="text-[11px] text-slate-400 font-black leading-tight">{about.trustDesc}</p>
               </div>
             </div>
           </div>

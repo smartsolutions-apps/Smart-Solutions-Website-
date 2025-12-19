@@ -49,9 +49,9 @@ const App: React.FC = () => {
     document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = locale;
     
-    // Smooth transition for fonts
+    // Smooth transition for fonts - ensured IBM Plex Sans Arabic is available
     if (locale === 'ar') {
-      document.body.style.fontFamily = "'Inter', 'IBM Plex Sans Arabic', sans-serif";
+      document.body.style.fontFamily = "'Inter', 'IBM Plex Sans Arabic', 'Noto Sans Arabic', sans-serif";
     } else {
       document.body.style.fontFamily = "'Inter', sans-serif";
     }
@@ -75,15 +75,15 @@ const App: React.FC = () => {
       for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 150;
+        const elementVisible = 100; // Lowered for better mobile trigger
         if (elementTop < windowHeight - elementVisible) {
           reveals[i].classList.add('active');
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
     revealOnScroll(); 
 
     return () => {
@@ -96,7 +96,7 @@ const App: React.FC = () => {
     <LanguageContext.Provider value={{ locale, setLocale, t }}>
       <div className={`min-h-screen selection:bg-indigo-100 selection:text-indigo-900 bg-white ${locale === 'ar' ? 'font-arabic' : ''}`}>
         <Navbar activeTab={activeTab} />
-        <main>
+        <main className="overflow-x-hidden">
           <section id="home">
             <Hero />
           </section>

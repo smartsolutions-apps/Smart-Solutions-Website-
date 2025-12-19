@@ -20,7 +20,7 @@ const Security: React.FC = () => {
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                    <div className="glass-card px-8 py-4 md:px-12 md:py-6 rounded-full shadow-2xl border border-indigo-200 font-black text-indigo-600 text-xs md:text-sm tracking-[0.3em] uppercase animate-pulse-slow">
-                      Encrypted
+                      {t.performance.encrypted}
                    </div>
                 </div>
              </div>
