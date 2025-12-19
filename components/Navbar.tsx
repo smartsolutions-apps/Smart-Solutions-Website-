@@ -10,9 +10,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
 
   const navItems = [
     { label: 'Home', id: 'home' },
+    { label: 'Lifecycle', id: 'lifecycle' },
+    { label: 'Tech', id: 'tech-choices' },
     { label: 'Process', id: 'design-thinking' },
-    { label: 'Speed', id: 'performance' },
-    { label: 'Security', id: 'security' },
     { label: 'Structure', id: 'anatomy' },
     { label: 'Future', id: 'future' },
     { label: 'Connect', id: 'contact' },
