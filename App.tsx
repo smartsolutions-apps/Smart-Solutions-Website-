@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Values from './components/Values';
 import IndustryStats from './components/IndustryStats';
+import InnovationHub from './components/InnovationHub';
 import Anatomy from './components/Anatomy';
 import Portfolio from './components/Portfolio';
 import AppLifecycle from './components/AppLifecycle';
@@ -28,7 +29,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'industry', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'design-thinking', 'performance', 'monetization', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
+      const sections = ['home', 'about', 'industry', 'innovation', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'design-thinking', 'performance', 'monetization', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -76,6 +77,9 @@ const App: React.FC = () => {
         </section>
         <section id="industry" className="reveal">
           <IndustryStats />
+        </section>
+        <section id="innovation" className="reveal">
+          <InnovationHub />
         </section>
         <section id="lifecycle" className="reveal">
           <AppLifecycle />

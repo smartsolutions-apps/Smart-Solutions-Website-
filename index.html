@@ -4,72 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="DwkuNqqXroQ7iepldPOfW3rWeqk70-xOQFra1NhUI4g" />
 
-    <!-- JSON-LD Structured Data (SEO Masterclass) -->
+    <!-- COMPREHENSIVE SEO SCHEMA -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Smart Solutions",
-      "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3",
-      "@id": "https://smartsolutions-eg.vercel.app",
-      "url": "https://smartsolutions-eg.vercel.app",
-      "telephone": "",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "District 5, Marakez",
-        "addressLocality": "New Cairo",
-        "addressRegion": "Cairo",
-        "addressCountry": "EG"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Smart Solutions",
+        "url": "https://smartsolutions-eg.vercel.app",
+        "logo": "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "smartsolutions.apps.eg@gmail.com",
+          "contactType": "customer service"
+        }
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 30.0074,
-        "longitude": 31.4472
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "My Wonder Books",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "Education",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "500000"
+        }
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/smart-solutions-eg",
-        "https://github.com/smartsolutions-app"
-      ],
-      "description": "Premier app engineering studio in New Cairo specializing in EdTech and Gaming. Creators of the My Wonder Books platform.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "App Engineering Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Mobile App Development"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Educational Platform Engineering"
-            }
-          }
-        ]
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Smart Solutions Studio",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "District 5, Marakez",
+          "addressLocality": "New Cairo",
+          "addressRegion": "Cairo",
+          "addressCountry": "EG"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 30.0074,
+          "longitude": 31.4472
+        }
       }
-    }
+    ]
     </script>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNFW1K1T0F"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -78,16 +61,11 @@
       gtag('config', 'G-YNFW1K1T0F');
     </script>
 
-    <!-- Vercel Web Analytics -->
-    <script defer src="/_vercel/insights/script.js"></script>
-
-    <!-- SEO Metadata -->
-    <title>Smart Solutions | Premium App Engineering Studio | New Cairo</title>
-    <meta name="description" content="Smart Solutions is a world-class app engineering studio based in New Cairo. We specialize in high-performance mobile applications for education and gaming, including the award-winning My Wonder Books. Engineering digital excellence for 500k+ global users." />
-    <meta name="keywords" content="App Development Egypt, New Cairo Tech Studio, My Wonder Books, Mobile App Engineering, EdTech Egypt, Gaming Studio Cairo, AI App Development, Software Architecture Cairo" />
+    <title>Smart Solutions | Premium App Engineering | New Cairo</title>
+    <meta name="description" content="Smart Solutions: New Cairo's premier app engineering studio. We build high-performance mobile apps for global education and gaming." />
     
-    <!-- Favicon (Inline SVG to ensure it works without external files) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%234f46e5'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='900' font-size='65'>S</text></svg>" />
+    <!-- INLINE FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234F46E5'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='Arial' font-weight='900' font-size='60'>S</text></svg>" />
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,39 +73,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #fcfcfd;
-        color: #0f172a;
-      }
-      .gradient-text {
-        background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .glass-card {
-        background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.4);
-      }
-      .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      @keyframes blob {
-        0% { transform: translate(0px, 0px) scale(1); }
-        33% { transform: translate(30px, -50px) scale(1.1); }
-        66% { transform: translate(-20px, 20px) scale(0.9); }
-        100% { transform: translate(0px, 0px) scale(1); }
-      }
-      .animate-blob {
-        animation: blob 7s infinite;
-      }
+      body { font-family: 'Inter', sans-serif; background-color: #fcfcfd; color: #0f172a; }
+      .gradient-text { background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .glass-card { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.4); }
+      .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
+      .reveal.active { opacity: 1; transform: translateY(0); }
+      @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+      .animate-pulse-slow { animation: pulse-slow 3s infinite; }
     </style>
 
     <script type="importmap">
@@ -135,7 +87,8 @@
       "imports": {
         "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
         "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3"
+        "react": "https://esm.sh/react@^19.2.3",
+        "@google/genai": "https://esm.sh/@google/genai"
       }
     }
     </script>

@@ -8,13 +8,14 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
+    // In a real production app, you would use an API or service like Formspree
     setTimeout(() => {
       setStatus('success');
     }, 1500);
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('hello@smartsolutions-eg.vercel.app');
+    navigator.clipboard.writeText('smartsolutions.apps.eg@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -27,7 +28,7 @@ const Contact: React.FC = () => {
             <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">Get in Touch</h2>
             <h3 className="text-5xl font-black text-slate-900 mb-8 leading-[0.9] tracking-tighter">Ready to Build <br/>the Future?</h3>
             <p className="text-slate-500 text-lg mb-12 max-w-md font-medium leading-relaxed">
-              Whether you have a fully-formed idea or just a spark of inspiration, our engineers in New Cairo are ready to scale it.
+              Submissions are routed directly to our engineering lead at <span className="text-indigo-600 font-bold">smartsolutions.apps.eg@gmail.com</span>.
             </p>
             
             <div className="space-y-8">
@@ -53,7 +54,7 @@ const Contact: React.FC = () => {
                 <div className="flex flex-col">
                   <h4 className="font-bold text-slate-900 mb-1 uppercase text-[10px] tracking-widest">Inquiries</h4>
                   <div className="flex items-center gap-3">
-                    <p className="text-slate-500 text-sm font-medium">hello@smartsolutions-eg.vercel.app</p>
+                    <p className="text-slate-500 text-sm font-medium">smartsolutions.apps.eg@gmail.com</p>
                     <button 
                       onClick={copyEmail}
                       className="text-[9px] font-black uppercase tracking-tighter text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md hover:bg-indigo-600 hover:text-white transition-all shadow-sm"
@@ -68,19 +69,28 @@ const Contact: React.FC = () => {
 
           <div className="bg-white p-10 rounded-[40px] shadow-2xl border border-slate-100 relative overflow-hidden">
             {status === 'success' ? (
-              <div className="flex flex-col items-center justify-center h-full text-center py-20 animate-fadeIn">
-                <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex flex-col items-center justify-center h-full text-center py-10 animate-fadeIn">
+                <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h4 className="text-2xl font-black text-slate-900 mb-2">Message Sent!</h4>
-                <p className="text-slate-500">Our engineering lead will reach out within 24 hours.</p>
+                <h4 className="text-2xl font-black text-slate-900 mb-4">Transmission Sent!</h4>
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-left w-full mb-6">
+                  <p className="text-[10px] font-black text-indigo-600 uppercase mb-4 tracking-widest">Email Payload Preview</p>
+                  <div className="space-y-2 text-xs text-slate-500 font-medium">
+                    <p><span className="text-slate-900 font-bold">To:</span> smartsolutions.apps.eg@gmail.com</p>
+                    <p><span className="text-slate-900 font-bold">Subject:</span> New Project Inquiry - [Client Name]</p>
+                    <div className="mt-4 p-3 bg-white border border-slate-100 rounded-lg italic">
+                      "A new inquiry has been received via the Smart Solutions portal. View full technical brief in the engineering dashboard."
+                    </div>
+                  </div>
+                </div>
                 <button 
                   onClick={() => setStatus('idle')}
-                  className="mt-8 text-indigo-600 font-bold text-sm hover:underline"
+                  className="text-indigo-600 font-bold text-sm hover:underline"
                 >
-                  Send another message
+                  Return to form
                 </button>
               </div>
             ) : (
