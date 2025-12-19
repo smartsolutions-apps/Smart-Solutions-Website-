@@ -3,9 +3,17 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Values from './components/Values';
 import IndustryStats from './components/IndustryStats';
+import Anatomy from './components/Anatomy';
 import Portfolio from './components/Portfolio';
+import Monetization from './components/Monetization';
+import DesignThinking from './components/DesignThinking';
+import Performance from './components/Performance';
+import Security from './components/Security';
 import Timeline from './components/Timeline';
+import GlobalImpact from './components/GlobalImpact';
+import FutureTrends from './components/FutureTrends';
 import Process from './components/Process';
 import TechStack from './components/TechStack';
 import Education from './components/Education';
@@ -17,7 +25,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'industry', 'apps', 'evolution', 'process', 'tech', 'how-we-build', 'contact'];
+      const sections = ['home', 'about', 'anatomy', 'apps', 'monetization', 'design-thinking', 'performance', 'security', 'evolution', 'future', 'process', 'tech', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -60,14 +68,38 @@ const App: React.FC = () => {
         <section id="about" className="reveal">
           <About />
         </section>
+        <section className="reveal">
+          <Values />
+        </section>
         <section id="industry" className="reveal">
           <IndustryStats />
+        </section>
+        <section id="anatomy" className="reveal">
+          <Anatomy />
         </section>
         <section id="apps" className="reveal">
           <Portfolio />
         </section>
+        <section id="design-thinking" className="reveal">
+          <DesignThinking />
+        </section>
+        <section id="performance" className="reveal">
+          <Performance />
+        </section>
+        <section id="monetization" className="reveal">
+          <Monetization />
+        </section>
+        <section id="security" className="reveal">
+          <Security />
+        </section>
         <section id="evolution" className="reveal">
           <Timeline />
+        </section>
+        <section className="reveal">
+          <GlobalImpact />
+        </section>
+        <section id="future" className="reveal">
+          <FutureTrends />
         </section>
         <section id="process" className="reveal">
           <Process />

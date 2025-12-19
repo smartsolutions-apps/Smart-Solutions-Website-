@@ -10,11 +10,12 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
 
   const navItems = [
     { label: 'Home', id: 'home' },
-    { label: 'Story', id: 'about' },
-    { label: 'Work', id: 'apps' },
-    { label: 'Evolution', id: 'evolution' },
-    { label: 'Process', id: 'process' },
-    { label: 'Tech', id: 'tech' },
+    { label: 'Process', id: 'design-thinking' },
+    { label: 'Speed', id: 'performance' },
+    { label: 'Security', id: 'security' },
+    { label: 'Structure', id: 'anatomy' },
+    { label: 'Future', id: 'future' },
+    { label: 'Connect', id: 'contact' },
   ];
 
   const handleScroll = (id: string) => {
@@ -66,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
             onClick={() => handleScroll('contact')}
             className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-indigo-600 hover:-translate-y-0.5 transition-all shadow-xl shadow-slate-200"
           >
-            Connect
+            Start Project
           </button>
           
           <button 
@@ -81,7 +82,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
       </div>
 
       {isMenuOpen && (
-        <div className="xl:hidden mt-3 glass-card rounded-2xl p-8 shadow-2xl animate-fadeIn border border-white/40">
+        <div className="xl:hidden mt-3 glass-card rounded-2xl p-8 shadow-2xl border border-white/40">
           <div className="flex flex-col gap-6">
             {navItems.map((item) => (
               <button
@@ -94,12 +95,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
                 {item.label}
               </button>
             ))}
-            <button 
-              onClick={() => handleScroll('contact')}
-              className="bg-indigo-600 text-white py-4 rounded-xl text-xs font-black uppercase tracking-widest w-full"
-            >
-              Start a Project
-            </button>
           </div>
         </div>
       )}
