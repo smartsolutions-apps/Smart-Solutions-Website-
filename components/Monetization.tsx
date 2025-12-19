@@ -21,8 +21,8 @@ const Monetization: React.FC = () => {
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {models.map((m, i) => (
-                <div key={i} className="p-6 rounded-3xl border border-slate-100 hover:bg-slate-50 transition-colors">
-                  <div className="text-2xl mb-3">{m.icon}</div>
+                <div key={i} className="p-6 rounded-3xl border border-slate-100 hover:bg-slate-50 transition-colors group">
+                  <div className="text-2xl mb-3 group-hover:scale-110 transition-transform">{m.icon}</div>
                   <h4 className="font-bold text-slate-900 text-sm mb-2">{m.title}</h4>
                   <p className="text-slate-400 text-[11px] leading-relaxed font-semibold">{m.desc}</p>
                 </div>
@@ -30,11 +30,16 @@ const Monetization: React.FC = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1551288049-bbbda50d2671?auto=format&fit=crop&q=80&w=800" alt="Data Analytics and Monetization" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-indigo-600/10"></div>
+            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bbbda50d2671?auto=format&fit=crop&q=80&w=1200" 
+                alt="Complex Data Analytics Dashboard" 
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-indigo-600/5"></div>
             </div>
-            <div className="absolute -bottom-8 -left-8 glass-card p-8 rounded-3xl shadow-2xl">
+            <div className="absolute -bottom-8 -left-8 glass-card p-8 rounded-3xl shadow-2xl border border-indigo-50">
               <div className="text-indigo-600 font-black text-3xl mb-1">$613B</div>
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Total App Market 2025</p>
             </div>

@@ -30,15 +30,16 @@ const IndustryStats: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-20 relative rounded-3xl overflow-hidden aspect-[21/9] flex items-center justify-center">
+        <div className="mt-20 relative rounded-3xl overflow-hidden aspect-[21/9] flex items-center justify-center border border-white/5">
           <img 
-            src="https://images.unsplash.com/photo-1551288049-bbbda50d2671?auto=format&fit=crop&q=80&w=1200" 
+            src="https://images.unsplash.com/photo-1454165833762-02ad50e8958d?auto=format&fit=crop&q=80&w=1200" 
             className="absolute inset-0 w-full h-full object-cover opacity-20" 
-            alt="Data analytics" 
+            alt="Business team analyzing digital metrics" 
+            loading="lazy"
           />
           <div className="relative z-10 p-12 text-center">
             <h4 className="text-2xl font-bold mb-4 italic">"The future belongs to those who build it."</h4>
-            <p className="text-slate-400 max-w-xl mx-auto">By 2030, mobile applications will be the primary gateway for all educational content globally. Smart Solutions is already building the foundation for this shift.</p>
+            <p className="text-slate-400 max-w-xl mx-auto font-medium">By 2030, mobile applications will be the primary gateway for all educational content globally. Smart Solutions is already building the foundation for this shift.</p>
           </div>
         </div>
       </div>

@@ -58,7 +58,11 @@ const Footer: React.FC = () => {
               </p>
               <div className="flex gap-4">
                 {socialIcons.map((social) => (
-                  <button key={social.name} className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-500 hover:text-white hover:bg-indigo-600 transition-all">
+                  <button 
+                    key={social.name} 
+                    aria-label={social.name}
+                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-500 hover:text-white hover:bg-indigo-600 transition-all"
+                  >
                     {social.icon}
                   </button>
                 ))}
