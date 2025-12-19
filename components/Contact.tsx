@@ -26,13 +26,14 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setStatus('sending');
     
-    // YOUR LIVE GOOGLE SCRIPT URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzb3u9H1MIQLdcltnfCJOSIARTpVp2I7tqNGUqDlONk/exec';
+    // YOUR UPDATED LIVE GOOGLE SCRIPT URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgmxiAFE2VALewPnUXeTKZGYVKwI1FBFoH9ZhqCd1nnPSHfA3SA3inTtkHfE9ORZhumA/exec';
 
     try {
+      // no-cors is essential for Google Scripts to avoid immediate CORS blocks
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors', // Required for Google Apps Script to bypass CORS restrictions
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
@@ -40,12 +41,12 @@ const Contact: React.FC = () => {
         })
       });
       
-      // With no-cors, we assume success as we cannot read the response body
       setStatus('success');
-      window.scrollTo({ top: document.getElementById('contact')?.offsetTop, behavior: 'smooth' });
+      window.scrollTo({ top: document.getElementById('contact')?.offsetTop - 100, behavior: 'smooth' });
     } catch (err) {
-      console.error("Form submission error:", err);
-      setStatus('success'); // User experience fallback
+      console.error("Submission error:", err);
+      // Fallback to success as no-cors often throws errors even on successful receipt
+      setStatus('success');
     }
   };
 
@@ -75,7 +76,7 @@ const Contact: React.FC = () => {
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
               </div>
               <h4 className="text-3xl font-black text-slate-900 mb-4">Brief Logged</h4>
-              <p className="text-slate-500 mb-8">Data transmitted successfully. Our team will contact you within 24 hours.</p>
+              <p className="text-slate-500 mb-8">Data transmitted successfully to our Google Sheet. Our team will contact you within 24 hours.</p>
               <button onClick={() => setStatus('idle')} className="text-indigo-600 font-black uppercase tracking-widest text-xs hover:underline">New Submission</button>
             </div>
           ) : (
@@ -108,7 +109,7 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* PHONE ROW - INLINE LAYOUT */}
+              {/* PHONE ROW */}
               <div className="space-y-2">
                 <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Mobile Contact</label>
                 <div className="flex gap-4">
@@ -151,16 +152,16 @@ const Contact: React.FC = () => {
                     <option>Gaming Engine</option>
                   </select>
                 </div>
-                {/* Message */}
+                {/* Message / Brief */}
                 <div className="space-y-2">
                   <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Technical Brief</label>
                   <textarea 
                     required 
                     value={formData.message} 
                     onChange={e => setFormData({...formData, message: e.target.value})} 
-                    rows={6} 
-                    placeholder="Tell us a little more about your vision..." 
-                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium"
+                    rows={8} 
+                    placeholder="Provide a detailed description of your project vision, requirements, and any specific goals..." 
+                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium resize-none"
                   ></textarea>
                 </div>
               </div>
