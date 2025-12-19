@@ -12,9 +12,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
     { label: 'Home', id: 'home' },
     { label: 'Lifecycle', id: 'lifecycle' },
     { label: 'Tech', id: 'tech-choices' },
-    { label: 'Process', id: 'design-thinking' },
-    { label: 'Structure', id: 'anatomy' },
-    { label: 'Future', id: 'future' },
+    { label: 'Ecosystem', id: 'ecosystem' },
+    { label: 'Anatomy', id: 'anatomy' },
     { label: 'Connect', id: 'contact' },
   ];
 
@@ -44,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
           </div>
           <div className="hidden sm:block">
             <h1 className="text-xl font-black tracking-tighter text-slate-800 leading-none">SMART</h1>
-            <p className="text-[9px] tracking-[0.3em] font-bold text-indigo-600 leading-none mt-1">SOLUTIONS</p>
+            <p className="text-[9px] tracking-[0.3em] font-bold text-indigo-600 leading-none mt-1 uppercase">Solutions</p>
           </div>
         </div>
         

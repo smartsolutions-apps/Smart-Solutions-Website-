@@ -18,6 +18,7 @@ import GlobalImpact from './components/GlobalImpact';
 import FutureTrends from './components/FutureTrends';
 import Process from './components/Process';
 import TechStack from './components/TechStack';
+import TechEcosystem from './components/TechEcosystem';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -27,7 +28,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'monetization', 'design-thinking', 'performance', 'security', 'evolution', 'future', 'process', 'tech', 'contact'];
+      const sections = ['home', 'about', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'monetization', 'design-thinking', 'performance', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -114,6 +115,9 @@ const App: React.FC = () => {
         </section>
         <section id="tech" className="reveal">
           <TechStack />
+        </section>
+        <section id="ecosystem" className="reveal">
+          <TechEcosystem />
         </section>
         <section id="how-we-build" className="reveal">
           <Education />
