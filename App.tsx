@@ -24,6 +24,7 @@ import TechEcosystem from './components/TechEcosystem';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import VideoExperience from './components/VideoExperience';
 
 interface LanguageContextType {
   locale: Locale;
@@ -58,8 +59,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'industry', 'innovation', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'design-thinking', 'performance', 'monetization', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
-      const scrollPosition = window.scrollY + 150; // Increased buffer for sticky nav
+      const sections = ['home', 'cinema', 'about', 'industry', 'innovation', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'design-thinking', 'performance', 'monetization', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
+      const scrollPosition = window.scrollY + 150;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -103,6 +104,11 @@ const App: React.FC = () => {
           <section id="home">
             <Hero />
           </section>
+          
+          <section id="cinema" className="reveal">
+            <VideoExperience />
+          </section>
+
           <section id="about" className="reveal">
             <About />
           </section>
