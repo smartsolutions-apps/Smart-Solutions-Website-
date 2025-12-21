@@ -5,8 +5,8 @@ import { useTranslation } from '../App';
 const Hero: React.FC = () => {
   const { t, locale } = useTranslation();
   
-  // Use the static video from the previous download
-  const bgVideo = "evolution-film.mp4";
+  // High-quality cinematic tech video as a live background
+  const bgVideo = "https://cdn.pixabay.com/video/2016/11/04/6321-190779774_large.mp4";
 
   return (
     <section className="relative pt-32 md:pt-44 lg:pt-52 pb-24 md:pb-44 px-6 overflow-hidden min-h-[90vh] flex items-center">
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
             {t.hero.badge}
           </div>
           
-          {/* Robust title without problematic gradient clipping */}
+          {/* Robust title - fixed the "purple block" bug */}
           <h1 className="text-5xl sm:text-7xl lg:text-[6.5rem] font-black text-slate-900 leading-[1.1] lg:leading-[1] mb-10 tracking-tighter">
             {t.hero.title.split(' ')[0]} 
             <span className="text-indigo-600"> {t.hero.title.split(' ')[1]}</span> 

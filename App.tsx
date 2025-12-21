@@ -2,6 +2,7 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { Locale, translations } from './translations';
 import Navbar from './components/Navbar';
+import SidebarNav from './components/SidebarNav';
 import Hero from './components/Hero';
 import About from './components/About';
 import Values from './components/Values';
@@ -100,6 +101,7 @@ const App: React.FC = () => {
     <LanguageContext.Provider value={{ locale, setLocale, t }}>
       <div className={`min-h-screen selection:bg-indigo-600 selection:text-white bg-white`}>
         <Navbar activeTab={activeTab} />
+        <SidebarNav activeTab={activeTab} />
         <main className="overflow-x-hidden">
           <section id="home">
             <Hero />

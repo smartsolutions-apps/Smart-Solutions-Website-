@@ -1,9 +1,10 @@
 
 import React from 'react';
 
-// PRODUCTION: Place your downloaded video in the root of your project
-// and rename it to 'evolution-film.mp4'. 
-const STATIC_VIDEO_URL = "evolution-film.mp4"; 
+// Using a high-quality professional cinematic tech video as default 
+// so the site works immediately. Rename your downloaded video to 'evolution-film.mp4'
+// and place it in the same directory to use yours.
+const STATIC_VIDEO_URL = "https://cdn.pixabay.com/video/2021/08/13/84918-588326710_large.mp4"; 
 
 const VideoExperience: React.FC = () => {
   return (
@@ -30,16 +31,12 @@ const VideoExperience: React.FC = () => {
             />
             
             {/* Glassmorphic Overlay for Brand presence */}
-            <div className="absolute bottom-8 left-8 p-6 glass-card rounded-2xl border-white/20 hidden md:block">
-               <p className="text-[10px] font-black uppercase tracking-widest text-indigo-300 mb-1">Featured Production</p>
-               <p className="text-sm font-bold text-white uppercase tracking-tight">Smart Solutions: The Evolution</p>
-            </div>
-            
-            {/* Fallback Message for developers */}
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/40">
-               <p className="text-xs text-white/50 text-center px-10">
-                 (Place your 'evolution-film.mp4' in the root directory to see this video live)
-               </p>
+            <div className="absolute bottom-10 left-10 p-8 glass-card rounded-3xl border-white/20 hidden md:block">
+               <div className="flex items-center gap-4 mb-3">
+                 <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-black text-xs">S</div>
+                 <p className="text-[10px] font-black uppercase tracking-widest text-indigo-300">Featured Production</p>
+               </div>
+               <p className="text-xl font-black text-white uppercase tracking-tight">Smart Solutions: The Evolution</p>
             </div>
           </div>
         </div>
