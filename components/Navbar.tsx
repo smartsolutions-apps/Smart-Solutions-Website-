@@ -61,10 +61,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
 
   const navItems = [
     { label: t.nav.home, id: 'home' },
-    { label: 'Video', id: 'cinema' },
+    { label: t.about.identity, id: 'about' },
     { label: t.nav.lifecycle, id: 'lifecycle' },
     { label: t.nav.tech, id: 'tech-choices' },
     { label: t.nav.anatomy, id: 'anatomy' },
+    { label: t.portfolio.badge, id: 'apps' },
     { label: t.nav.connect, id: 'contact' },
   ];
 
@@ -91,22 +92,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
           <SmartLogo />
         </button>
         
-        <div className="hidden xl:flex items-center gap-10">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleScroll(item.id)}
-              className={`text-[10px] font-black uppercase tracking-[0.3em] transition-all hover:text-indigo-600 relative py-2 ${
-                activeTab === item.id ? 'text-indigo-600 after:content-[""] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600' : 'text-slate-500'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-
         <div className="flex items-center gap-2 md:gap-4">
-          {/* Language Switcher */}
+          {/* Language Switcher Dropdown */}
           <div className="relative" ref={langRef}>
             <button 
               onClick={() => setIsLangOpen(!isLangOpen)}
@@ -147,26 +134,26 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
           </button>
           
           <button 
-            className="p-2.5 text-slate-600 hover:bg-slate-100 rounded-xl transition-colors xl:hidden"
+            className="p-3 text-slate-900 bg-slate-50 hover:bg-slate-100 rounded-2xl transition-all border border-slate-100 shadow-sm active:scale-95"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="mt-3 glass-card rounded-[2.5rem] p-8 shadow-2xl animate-slideIn xl:hidden border-white/60">
-          <div className="flex flex-col gap-3">
+        <div className="mt-3 glass-card rounded-[2.5rem] p-4 md:p-8 shadow-2xl animate-slideIn border-white/60">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
                 className={`text-start px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all ${
-                  activeTab === item.id ? 'bg-indigo-50 text-indigo-600' : 'text-slate-500 hover:bg-slate-50'
+                  activeTab === item.id ? 'bg-indigo-600 text-white' : 'text-slate-500 hover:bg-slate-50'
                 }`}
               >
                 {item.label}

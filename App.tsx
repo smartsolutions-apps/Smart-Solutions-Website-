@@ -25,7 +25,6 @@ import TechEcosystem from './components/TechEcosystem';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import VideoExperience from './components/VideoExperience';
 
 interface LanguageContextType {
   locale: Locale;
@@ -60,7 +59,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'cinema', 'about', 'industry', 'innovation', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'design-thinking', 'performance', 'monetization', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
+      const sections = ['home', 'about', 'industry', 'innovation', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'design-thinking', 'performance', 'monetization', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
       const scrollPosition = window.scrollY + 150;
 
       for (const section of sections) {
@@ -105,10 +104,6 @@ const App: React.FC = () => {
         <main className="overflow-x-hidden">
           <section id="home">
             <Hero />
-          </section>
-          
-          <section id="cinema" className="reveal">
-            <VideoExperience />
           </section>
 
           <section id="about" className="reveal">

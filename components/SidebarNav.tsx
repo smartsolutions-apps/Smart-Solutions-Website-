@@ -11,7 +11,6 @@ const SidebarNav: React.FC<SidebarNavProps> = ({ activeTab }) => {
 
   const sections = [
     { id: 'home', label: t.nav.home },
-    { id: 'cinema', label: 'Video' },
     { id: 'about', label: t.about.identity },
     { id: 'lifecycle', label: t.nav.lifecycle },
     { id: 'tech-choices', label: t.nav.tech },
@@ -34,7 +33,7 @@ const SidebarNav: React.FC<SidebarNavProps> = ({ activeTab }) => {
   };
 
   const goNext = () => {
-    if (currentIndex < sections.length - 1) {
+    if (currentIndex < sections.length - 1 && currentIndex !== -1) {
       scrollToSection(sections[currentIndex + 1].id);
     }
   };
@@ -96,14 +95,6 @@ const SidebarNav: React.FC<SidebarNavProps> = ({ activeTab }) => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-      </div>
-      
-      {/* Scroll Progress Bar Background */}
-      <div className="w-0.5 h-12 bg-slate-100 rounded-full overflow-hidden">
-        <div 
-          className="w-full bg-indigo-600 transition-all duration-500" 
-          style={{ height: `${((currentIndex + 1) / sections.length) * 100}%` }}
-        />
       </div>
     </div>
   );
