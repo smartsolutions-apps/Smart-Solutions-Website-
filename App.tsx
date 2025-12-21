@@ -49,8 +49,6 @@ const App: React.FC = () => {
     document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = locale;
     
-    // Applying primary fonts based on locale
-    // CSS in index.html handles the specific Header/Body split for Arabic
     if (locale === 'ar') {
       document.body.style.fontFamily = "'Almarai', sans-serif";
     } else {
@@ -61,12 +59,16 @@ const App: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'industry', 'innovation', 'lifecycle', 'tech-choices', 'anatomy', 'apps', 'design-thinking', 'performance', 'monetization', 'security', 'evolution', 'future', 'process', 'tech', 'ecosystem', 'contact'];
-      const scrollPosition = window.scrollY + 120;
+      const scrollPosition = window.scrollY + 150; // Increased buffer for sticky nav
 
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element && scrollPosition >= element.offsetTop && scrollPosition < element.offsetTop + element.offsetHeight) {
-          setActiveTab(section);
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveTab(section);
+          }
         }
       }
     };
@@ -76,7 +78,7 @@ const App: React.FC = () => {
       for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 100; // Lowered for better mobile trigger
+        const elementVisible = 80; 
         if (elementTop < windowHeight - elementVisible) {
           reveals[i].classList.add('active');
         }
@@ -95,7 +97,7 @@ const App: React.FC = () => {
 
   return (
     <LanguageContext.Provider value={{ locale, setLocale, t }}>
-      <div className={`min-h-screen selection:bg-indigo-100 selection:text-indigo-900 bg-white`}>
+      <div className={`min-h-screen selection:bg-indigo-600 selection:text-white bg-white`}>
         <Navbar activeTab={activeTab} />
         <main className="overflow-x-hidden">
           <section id="home">
@@ -142,9 +144,6 @@ const App: React.FC = () => {
           </section>
           <section className="reveal">
             <GlobalImpact />
-          </section>
-          <section id="future" className="reveal">
-            <FutureTrends />
           </section>
           <section id="future" className="reveal">
             <FutureTrends />

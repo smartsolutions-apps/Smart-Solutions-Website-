@@ -44,8 +44,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
             S
           </div>
           <div className="hidden sm:block text-start">
-            <h1 className="text-xl font-black tracking-tighter text-slate-800 leading-none uppercase">Smart</h1>
-            <p className="text-[9px] tracking-[0.3em] font-bold text-indigo-600 leading-none mt-1 uppercase">Solutions</p>
+            <h1 className="text-xl font-black tracking-tighter text-slate-900 leading-none uppercase">Smart</h1>
+            <p className="text-[10px] tracking-[0.4em] font-extrabold text-indigo-600 leading-none mt-1.5 uppercase">Solutions</p>
           </div>
         </div>
         
@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
               key={item.id}
               onClick={() => handleScroll(item.id)}
               className={`text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:text-indigo-600 ${
-                activeTab === item.id ? 'text-indigo-600' : 'text-slate-400'
+                activeTab === item.id ? 'text-indigo-600' : 'text-slate-500'
               }`}
             >
               {item.label}
@@ -66,13 +66,13 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
         <div className="flex items-center gap-2 md:gap-4">
           <button 
             onClick={() => handleScroll('contact')}
-            className="hidden sm:block bg-slate-900 text-white px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-indigo-600 hover:-translate-y-0.5 transition-all shadow-xl whitespace-nowrap"
+            className="hidden sm:block bg-indigo-600 text-white px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-indigo-700 hover:-translate-y-0.5 transition-all shadow-xl whitespace-nowrap"
           >
             {t.nav.start}
           </button>
           
           <button 
-            className="p-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors"
+            className="p-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors xl:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -84,9 +84,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab }) => {
       </div>
 
       {isMenuOpen && (
-        <div className="mt-3 glass-card rounded-[2rem] p-6 shadow-2xl border border-white/40 animate-slideIn">
+        <div className="mt-3 glass-card rounded-[2rem] p-6 shadow-2xl border border-white/40 animate-slideIn xl:hidden">
           <div className="flex flex-col gap-2">
-            {/* Primary Action Button at Top of Mobile Menu */}
             <button 
               onClick={() => handleScroll('contact')}
               className="w-full bg-indigo-600 text-white py-4 rounded-2xl text-sm font-black uppercase tracking-widest shadow-lg mb-4 flex items-center justify-center gap-2"

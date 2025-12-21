@@ -45,11 +45,9 @@ const Contact: React.FC = () => {
             ? data.country_calling_code 
             : `+${data.country_calling_code}`;
           
-          // Check if detected code exists in our preferred list
           const exists = countryCodes.find(c => c.code === detectedCode);
           
           if (!exists) {
-            // Add the new code to the list so it's selectable in the UI
             const newEntry: CountryCode = {
               code: detectedCode,
               country: data.country_name || 'Detected',
@@ -105,8 +103,8 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 md:py-32 bg-slate-50 px-6 scroll-mt-20">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
           <h2 className="text-indigo-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">{t.contact.portal}</h2>
           <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tighter">{t.contact.title}</h3>
           <p className="text-slate-500 font-medium max-w-md mx-auto">{t.contact.subtitle}</p>
@@ -123,8 +121,9 @@ const Contact: React.FC = () => {
               <button onClick={() => setStatus('idle')} className="text-indigo-600 font-black uppercase tracking-widest text-xs hover:underline">{t.contact.newSub}</button>
             </div>
           ) : (
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid md:grid-cols-2 gap-6">
+            <form className="grid md:grid-cols-2 gap-8 lg:gap-12" onSubmit={handleSubmit}>
+              {/* Left Column: Essential Info */}
+              <div className="space-y-6">
                 <div className="space-y-2 text-start">
                   <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.fullName}</label>
                   <input 
@@ -148,37 +147,36 @@ const Contact: React.FC = () => {
                     className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
                   />
                 </div>
-              </div>
 
-              <div className="space-y-2 text-start">
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.mobile}</label>
-                <div className="flex gap-4">
-                  <div className="relative w-32 md:w-48 shrink-0">
-                    <select 
-                      value={formData.countryCode} 
-                      onChange={e => setFormData({...formData, countryCode: e.target.value})}
-                      className={`w-full ${locale === 'ar' ? 'pr-12 pl-6' : 'pl-12 pr-6'} py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20`}
-                    >
-                      {countryCodes.map(c => (
-                        <option key={c.code} value={c.code}>{c.code} ({c.country})</option>
-                      ))}
-                    </select>
-                    <div className={`absolute ${locale === 'ar' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 text-xl`}>
-                      {countryCodes.find(c => c.code === formData.countryCode)?.flag || '🌐'}
+                <div className="space-y-2 text-start">
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.mobile}</label>
+                  {/* CRITICAL: dir="ltr" ensures the code stays to the left of the number even in Arabic mode */}
+                  <div className="flex gap-3" dir="ltr">
+                    <div className="relative w-32 shrink-0">
+                      <select 
+                        value={formData.countryCode} 
+                        onChange={e => setFormData({...formData, countryCode: e.target.value})}
+                        className="w-full pl-10 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm appearance-none cursor-pointer outline-none focus:ring-2 focus:ring-indigo-500/20"
+                      >
+                        {countryCodes.map(c => (
+                          <option key={c.code} value={c.code}>{c.code}</option>
+                        ))}
+                      </select>
+                      <div className="absolute left-3 top-1/2 -translate-y-1/2 text-lg pointer-events-none">
+                        {countryCodes.find(c => c.code === formData.countryCode)?.flag || '🌐'}
+                      </div>
                     </div>
+                    <input 
+                      required 
+                      value={formData.phone} 
+                      onChange={handlePhoneChange} 
+                      type="tel" 
+                      placeholder="123 456 7890" 
+                      className="flex-1 px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
+                    />
                   </div>
-                  <input 
-                    required 
-                    value={formData.phone} 
-                    onChange={handlePhoneChange} 
-                    type="tel" 
-                    placeholder="123 456 7890" 
-                    className="flex-1 px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium" 
-                  />
                 </div>
-              </div>
 
-              <div className="grid md:grid-cols-2 gap-6 items-start">
                 <div className="space-y-2 text-start">
                   <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.category}</label>
                   <select 
@@ -191,22 +189,25 @@ const Contact: React.FC = () => {
                     <option value={t.contact.cat3}>{t.contact.cat3}</option>
                   </select>
                 </div>
-                <div className="space-y-2 text-start">
+              </div>
+
+              {/* Right Column: Brief & Submission */}
+              <div className="flex flex-col">
+                <div className="space-y-2 text-start flex-1 mb-6">
                   <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">{t.contact.brief}</label>
                   <textarea 
                     required 
                     value={formData.message} 
                     onChange={e => setFormData({...formData, message: e.target.value})} 
-                    rows={8} 
                     placeholder={t.contact.briefPlaceholder} 
-                    className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium resize-none"
+                    className="w-full h-full min-h-[200px] md:min-h-0 px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all font-medium resize-none"
                   ></textarea>
                 </div>
-              </div>
 
-              <button disabled={status === 'sending'} className="w-full py-6 bg-indigo-600 text-white font-black uppercase tracking-[0.4em] rounded-2xl shadow-2xl hover:bg-indigo-700 hover:-translate-y-1 transition-all disabled:bg-slate-300">
-                {status === 'sending' ? t.contact.transmitting : t.contact.submit}
-              </button>
+                <button disabled={status === 'sending'} className="w-full py-6 bg-indigo-600 text-white font-black uppercase tracking-[0.4em] rounded-2xl shadow-2xl hover:bg-indigo-700 hover:-translate-y-1 transition-all disabled:bg-slate-300">
+                  {status === 'sending' ? t.contact.transmitting : t.contact.submit}
+                </button>
+              </div>
             </form>
           )}
         </div>

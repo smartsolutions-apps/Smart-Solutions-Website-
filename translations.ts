@@ -150,16 +150,20 @@ const en = {
     rights: 'Smart Solutions Ltd.', privacy: 'Privacy', terms: 'Terms', scroll: 'Summit',
     links: { security: 'Security', perf: 'Performance', monetization: 'Monetization', design: 'Design Thinking', industry: 'Industry' },
     privacyContent: [
-      { h: 'Data Governance', p: 'Smart Solutions operates under strict data protection protocols. All user data processed through our New Cairo headquarters is encrypted using AES-256 standards.' },
-      { h: 'Information Collection', p: 'We collect information solely for the purpose of engineering better user experiences and providing support to our clients and partners.' },
-      { h: 'Third-Party Disclosure', p: 'We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties without explicit consent.' },
-      { h: 'Child Safety', p: 'In accordance with COPPA, our educational platforms like My Wonder Books do not collect personal data from minors without verified parental consent.' }
+      { h: '1. Data Governance', p: 'Smart Solutions operates under strict data protection protocols. All user data processed through our New Cairo headquarters is encrypted using AES-256 standards. We ensure that your digital identity is handled with the same precision as our engineering projects.' },
+      { h: '2. Information Collection', p: 'We collect information solely for the purpose of engineering better user experiences and providing technical support. This includes basic metadata used to optimize app performance and ensure cross-device compatibility.' },
+      { h: '3. Data Security & Storage', p: 'Your data is stored in distributed, scalable cloud environments with real-time synchronization. We utilize multi-layer authentication and biometric integrations where applicable to prevent unauthorized access.' },
+      { h: '4. Third-Party Disclosure', p: 'We do not sell, trade, or transfer your personally identifiable information to outside parties. Strategic partners who assist us in operating our services must adhere to strict confidentiality agreements.' },
+      { h: '5. Child Safety & COPPA', p: 'In accordance with COPPA, our educational platforms like My Wonder Books do not collect personal data from minors without verified parental consent. We are committed to a safe digital environment for the next generation.' },
+      { h: '6. Rights of Access', p: 'Users retain the right to request access to, correction of, or deletion of their personal information at any time via our engineering portal.' }
     ],
     termsContent: [
-      { h: 'Intellectual Property', p: 'All software, architectures, and designs produced by Smart Solutions remain the exclusive property of Smart Solutions Ltd. until full delivery and transfer of rights.' },
-      { h: 'Usage License', p: 'Clients are granted a non-transferable license to use the delivered digital products according to the specific service level agreements signed.' },
-      { h: 'Liability', p: 'Smart Solutions is not liable for indirect or consequential damages arising from the use of our digital engineering services.' },
-      { h: 'Governing Law', p: 'These terms are governed by the laws of the Arab Republic of Egypt, specifically the jurisdiction of New Cairo.' }
+      { h: '1. Intellectual Property', p: 'All software, clean architectures, and custom designs produced by Smart Solutions remain the exclusive property of Smart Solutions Ltd. until full delivery and formal transfer of rights as per project contracts.' },
+      { h: '2. Usage License', p: 'Clients and users are granted a non-transferable license to use delivered digital products according to specific service level agreements. Unauthorized reverse engineering or reproduction of our proprietary logic is strictly prohibited.' },
+      { h: '3. Technical Support & Sprints', p: 'Support services are delivered in sprint-based agile cycles. Smart Solutions commits to high uptime (99.9%) and rapid iteration for critical performance updates.' },
+      { h: '4. Liability & Performance', p: 'Smart Solutions is not liable for indirect or consequential damages arising from the use of our services. While we engineer for zero-latency, performance can be affected by third-party infrastructure and device-specific constraints.' },
+      { h: '5. Project Cancellation', p: 'Initiated projects may be paused or terminated subject to the specific terms defined in the individual project blueprint and contract.' },
+      { h: '6. Governing Law', p: 'These terms are governed by the laws of the Arab Republic of Egypt. Any disputes shall be settled under the exclusive jurisdiction of the courts of New Cairo.' }
     ]
   }
 };
@@ -189,7 +193,7 @@ const ar = {
     s1: 'النمو', s1V: 'سنوياً 15%', s1D: 'التوسع المستمر في الاقتصاد الرقمي',
     s2: 'التحميلات', s2V: '+$250 مليار', s2D: 'عدد التطبيقات المحملة سنوياً حول العالم',
     s3: 'الوقت اليومي', s3V: 'ساعات 4.8', s3D: 'متوسط الوقت الذي يقضيه المستخدمون في التطبيقات',
-    s4: 'الإيرادات العالمية', s4V: '+$600 مليار', s4D: 'حجم السوق السنوي المتوقع',
+    s4: 'البيانات العالمية', s4V: '+$600 مليار', s4D: 'حجم السوق السنوي المتوقع',
     quote: '"المستقبل ملك لأولئك الذين يبنونه."',
     insight: 'بحلول عام 2030، ستكون تطبيقات الهاتف المحمول هي البوابة الرئيسية لجميع المحتويات التعليمية والتجارية.'
   },
@@ -223,7 +227,7 @@ const ar = {
   portfolio: {
     badge: 'دراسات الحالة', title: 'التميز الهندسي', desc: 'هندسة دقيقة في كل منتج نقدمه للسوق العالمي.',
     app1: { cat: 'التعليم', title: 'كتبي العجيبة', desc: 'مكتبة تفاعلية للأطفال مع سرد قصصي ديناميكي.', stat: '500 ألف مستخدم' },
-    app2: { cat: 'الألعاب', title: 'إنجن كويست', desc: 'محرك منطق معرفي لتطوير عقول الأطفال الصغار.', stat: 'تقييم 4.9' },
+    app2: { cat: 'الخدمات', title: 'إنجن كويست', desc: 'محرك منطق معرفي لتطوير عقول الأطفال الصغار.', stat: 'تقييم 4.9' },
     app3: { cat: 'الإبداع', title: 'كانفاس برو', desc: 'محرك رسومات منخفض التأخير للرسم الرقمي.', stat: 'تطبيق متميز' }
   },
   monetization: {
@@ -313,16 +317,20 @@ const ar = {
     rights: 'سمارت سوليوشنز المحدودة.', privacy: 'الخصوصية', terms: 'الشروط', scroll: 'القمة',
     links: { security: 'الأمان', perf: 'الأداء', monetization: 'تحقيق الربح', design: 'التفكير التصميمي', industry: 'رؤى الصناعة' },
     privacyContent: [
-      { h: 'حوكمة البيانات', p: 'تعمل سمارت سوليوشنز وفقاً لبروتوكولات حماية بيانات صارمة. يتم تشفير جميع بيانات المستخدمين التي تتم معالجتها من خلال مقرنا في القاهرة الجديدة باستخدام معايير AES-256.' },
-      { h: 'جمع المعلومات', p: 'نحن نجمع المعلومات فقط لغرض هندسة تجارب مستخدم أفضل وتقديم الدعم لعملائنا وشركائنا.' },
-      { h: 'الإفصاح للغير', p: 'نحن لا نبيع أو نتاجر أو ننقل معلوماتك الشخصية إلى أطراف خارجية دون موافقة صريحة.' },
-      { h: 'سلامة الأطفال', p: 'وفقاً لـ COPPA، لا تقوم منصاتنا التعليمية مثل "كتبي العجيبة" بجمع بيانات شخصية من القاصرين دون موافقة الوالدين الموثقة.' }
+      { h: '1. حوكمة البيانات', p: 'تعمل سمارت سوليوشنز وفقاً لبروتوكولات حماية بيانات صارمة. يتم تشفير جميع بيانات المستخدمين التي تتم معالجتها من خلال مقرنا في القاهرة الجديدة باستخدام معايير AES-256. نحن نضمن التعامل مع هويتك الرقمية بنفس الدقة التي نتعامل بها مع مشاريعنا الهندسية.' },
+      { h: '2. جمع المعلومات', p: 'نحن نجمع المعلومات فقط لغرض هندسة تجارب مستخدم أفضل وتقديم الدعم الفني لعملائنا وشركائنا. يتضمن ذلك البيانات الوصفية الأساسية المستخدمة لتحسين أداء التطبيقات وضمان توافقها مع مختلف الأجهزة.' },
+      { h: '3. أمن وتخزين البيانات', p: 'يتم تخزين بياناتك في بيئات سحابية موزعة وقابلة للتوسع مع مزامنة لحظية. نحن نستخدم طبقات متعددة من المصادقة ودمج الخصائص البيومترية حيثما أمكن لمنع الوصول غير المصرح به.' },
+      { h: '4. الإفصاح لأطراف خارجية', p: 'نحن لا نبيع أو نتاجر أو ننقل معلوماتك الشخصية إلى أطراف خارجية. يجب على الشركاء الاستراتيجيين الذين يساعدوننا في تشغيل خدماتنا الالتزام باتفاقيات سرية صارمة.' },
+      { h: '5. سلامة الأطفال وCOPPA', p: 'وفقاً لـ COPPA، لا تقوم منصاتنا التعليمية مثل "كتبي العجيبة" بجمع بيانات شخصية من القاصرين دون موافقة الوالدين الموثقة. نحن ملتزمون بتوفير بيئة رقمية آمنة للجيل القادم.' },
+      { h: '6. حقوق الوصول والتحكم', p: 'يحتفظ المستخدمون بالحق في طلب الوصول إلى معلوماتهم الشخصية أو تصحيحها أو حذفها في أي وقت من خلال بوابة الهندسة الخاصة بنا.' }
     ],
     termsContent: [
-      { h: 'الملكية الفكرية', p: 'تظل جميع البرامج والهياكل والتصاميم التي تنتجها سمارت سوليوشنز ملكية حصرية لشركة سمارت سوليوشنز المحدودة حتى التسليم الكامل ونقل الحقوق.' },
-      { h: 'رخصة الاستخدام', p: 'يُمنح العملاء رخصة غير قابلة للتحويل لاستخدام المنتجات الرقمية المسلمة وفقاً لاتفاقيات مستوى الخدمة المحددة الموقعة.' },
-      { h: 'المسؤولية', p: 'سمارت سوليوشنز غير مسؤولة عن الأضرار غير المباشرة أو التبعية الناشئة عن استخدام خدمات الهندسة الرقمية الخاصة بنا.' },
-      { h: 'القانون الواجب التطبيق', p: 'تخضع هذه الشروط لقوانين جمهورية مصر العربية، وتحديداً اختصاص محاكم القاهرة الجديدة.' }
+      { h: '1. الملكية الفكرية', p: 'تظل جميع البرامج والهياكل البرمجية والتصاميم المخصصة التي تنتجها سمارت سوليوشنز ملكية حصرية لشركة سمارت سوليوشنز المحدودة حتى التسليم الكامل ونقل الحقوق رسمياً وفقاً لعقود المشاريع.' },
+      { h: '2. رخصة الاستخدام', p: 'يُمنح العملاء والمستخدمون رخصة غير قابلة للتحويل لاستخدام المنتجات الرقمية المسلمة وفقاً لاتفاقيات مستوى الخدمة المحددة. يُمنع منعاً باتاً أي هندسة عكسية أو إعادة إنتاج لمنطقنا البرمجي المملوك للشركة.' },
+      { h: '3. الدعم الفني والدورات التطويرية', p: 'يتم تقديم خدمات الدعم في دورات تطويرية رشيقة (Agile Sprints). تلتزم سمارت سوليوشنز بنسبة تشغيل عالية (99.9%) وتكرار سريع للتحديثات الهامة المتعلقة بالأداء.' },
+      { h: '4. المسؤولية والأداء', p: 'سمارت سوليوشنز غير مسؤولة عن أي أضرار غير مباشرة أو تبعية ناشئة عن استخدام خدماتنا. وبينما نهندس تطبيقاتنا لتعمل بدون تأخير، قد يتأثر الأداء بالبنية التحتية للأطراف الخارجية والقيود الخاصة بالأجهزة.' },
+      { h: '5. إلغاء المشاريع', p: 'قد يتم تعليق المشاريع التي بدأت بالفعل أو إنهاؤها وفقاً للشروط المحددة في مخطط المشروع والعقد الفردي.' },
+      { h: '6. القانون الواجب التطبيق', p: 'تخضع هذه الشروط لقوانين جمهورية مصر العربية. وتتم تسوية أي نزاعات تحت الاختصاص الحصري لمحاكم القاهرة الجديدة.' }
     ]
   }
 };
@@ -386,7 +394,7 @@ const ru = {
   portfolio: {
     badge: 'Кейсы', title: 'Инженерное совершенство.', desc: 'Точная архитектура в каждом продукте.',
     app1: { cat: 'Обучение', title: 'My Wonder Books', desc: 'Интерактивная библиотека для детей.', stat: '500k пользователей' },
-    app2: { cat: 'Игры', title: 'Engine Quest', desc: 'Движок для развития детского мышления.', stat: 'Рейтинг 4.9' },
+    app2: { cat: 'Услуги', title: 'Engine Quest', desc: 'Движок для развития детского мышления.', stat: 'Рейтинг 4.9' },
     app3: { cat: 'Творчество', title: 'Canvas Pro', desc: 'Векторный движок для рисования.', stat: 'Премиум-приложение' }
   },
   monetization: {
@@ -476,16 +484,14 @@ const ru = {
     rights: 'Smart Solutions Ltd.', privacy: 'Конфиденциальность', terms: 'Условия', scroll: 'Наверх',
     links: { security: 'Безопасность', perf: 'Скорость', monetization: 'Монетизация', design: 'Дизайн-мышление', industry: 'Индустрия' },
     privacyContent: [
-      { h: 'Управление данными', p: 'Smart Solutions работает в соответствии со строгими протоколами защиты данных. Все данные пользователей шифруются по стандарту AES-256.' },
-      { h: 'Сбор информации', p: 'Мы собираем информацию исключительно с целью улучшения пользовательского опыта и поддержки наших клиентов.' },
-      { h: 'Раскрытие третьим лицам', p: 'Мы не продаем и не передаем вашу личную информацию сторонним лицам без вашего явного согласия.' },
-      { h: 'Безопасность детей', p: 'В соответствии с COPPA наши образовательные платформы не собирают личные данные несовершеннолетных без согласия родителей.' }
+      { h: '1. Управление данными', p: 'Smart Solutions работает в соответствии со строгими протоколами защиты данных. Все данные пользователей шифруются по стандарту AES-256.' },
+      { h: '2. Сбор информации', p: 'Мы собираем информацию исключительно с целью улучшения пользовательского опыта и поддержки наших клиентов.' },
+      { h: '3. Безопасность детей', p: 'В соответствии с COPPA наши образовательные платформы не собирают личные данные несовершеннолетных без согласия родителей.' }
     ],
     termsContent: [
-      { h: 'Интеллектуальная собственность', p: 'Все программное обеспечение и дизайн, созданные Smart Solutions, остаются исключительной собственностью Smart Solutions Ltd. до полной передачи прав.' },
-      { h: 'Лицензия на использование', p: 'Клиентам предоставляется непередаваемая лицензия на использование продуктов в соответствии с подписанными соглашениями (SLA).' },
-      { h: 'Ответственность', p: 'Smart Solutions не несет ответственности за косвенные убытки, возникшие в результате использования наших цифровых услуг.' },
-      { h: 'Применимое право', p: 'Эти условия регулируются законодательством Арабской Республики Египет, юрисдикция Нового Каира.' }
+      { h: '1. Интеллектуальная собственность', p: 'Все программное обеспечение и дизайн, созданные Smart Solutions, остаются исключительной собственностью Smart Solutions Ltd. до полной передачи прав.' },
+      { h: '2. Лицензия на использование', p: 'Клиентам предоставляется непередаваемая лицензия на использование продуктов в соответствии с подписанными соглашениями (SLA).' },
+      { h: '3. Применимое право', p: 'Эти условия регулируются законодательством Арабской Республики Египет, юрисдикция Нового Каира.' }
     ]
   }
 };
@@ -543,13 +549,13 @@ const es = {
   anatomy: {
     badge: 'Inmersión Educativa', title: 'Anatomía del Rendimiento.',
     l1T: 'La Interfaz', l1D: 'Frontend de alta velocidad con React para respuesta instantánea.', l1L: ['Componentes UI', 'Gestión de Estado', 'Animaciones'],
-    l2T: 'El Cerebro', l2D: 'Lógica segura y algoritmos complejos.', l2L: ['Capa API', 'Lógica de Negocio', 'Microservicios'],
+    l2T: 'El Cerebro', l2D: 'Lógica segura y algoritmos complejos.', l2L: ['Capa API', 'Lógica de Negocio', 'Microservices'],
     l3T: 'La Memoria', l3D: 'Almacenamiento escalable con sincronización.', l3L: ['Sincronización', 'Cifrado', 'Nube']
   },
   portfolio: {
     badge: 'Casos de Estudio', title: 'Excelencia en Ingeniería.', desc: 'Arquitectura de precisión en cada producto.',
     app1: { cat: 'Educación', title: 'My Wonder Books', desc: 'Biblioteca interactiva para niños.', stat: '500k usuarios' },
-    app2: { cat: 'Juegos', title: 'Engine Quest', desc: 'Motor cognitivo para mentes jóvenes.', stat: 'Nota 4.9' },
+    app2: { cat: 'Servicios', title: 'Engine Quest', desc: 'Motor cognitivo para mentes jóvenes.', stat: 'Nota 4.9' },
     app3: { cat: 'Creatividad', title: 'Canvas Pro', desc: 'Motor vectorial para ilustración digital.', stat: 'App Premium' }
   },
   monetization: {
@@ -561,7 +567,7 @@ const es = {
     dashTitle: 'Analítica de Ingresos', dashGrowth: '↑ Crecimiento 24%', metric1: 'Rendimiento Activo', metric2: 'Valor de Usuario', badgeLabel: 'ESCALADO', badgeSub: 'Arquitectura de Ingresos'
   },
   designThinking: {
-    badge: 'Estrategia de Producto', title: 'Pensamiento de Diseño.', desc: 'Ingeniería basada en la lógica humana.',
+    badge: 'Producto Strategy', title: 'Pensamiento de Diseño.', desc: 'Ingeniería basada en la lógica humana.',
     p1: 'Empatizar', p1D: 'Observación de humanos reales.',
     p2: 'Definir', p2D: 'Sintetizar en un problema claro.',
     p3: 'Idear', p3D: 'Generación de ideas sin juicio.',
@@ -630,7 +636,7 @@ const es = {
     successTitle: 'Brief Registrado', successDesc: 'Transmitido a Google Sheets.',
     newSub: 'Nueva Solicitud', fullName: 'Nombre Completo', email: 'Email', mobile: 'Móvil', category: 'Categoría', brief: 'Brief',
     briefPlaceholder: 'Describe tu visión...', submit: 'Iniciar', transmitting: 'Enviando...',
-    cat1: 'Desارrollo de Apps Móviles', cat2: 'Plataforma Educativa', cat3: 'Motor de Juegos'
+    cat1: 'Desarrollo de Apps Móviles', cat2: 'Plataforma Educativa', cat3: 'Motor de Juegos'
   },
   footer: {
     desc: 'Estudio de ingeniería en Nuevo Cairo.',
@@ -639,16 +645,16 @@ const es = {
     rights: 'Smart Solutions Ltd.', privacy: 'Privacidad', terms: 'Términos', scroll: 'Summit',
     links: { security: 'Seguridad', perf: 'Rendimiento', monetization: 'Monetización', design: 'Diseño Thinking', industry: 'Industria' },
     privacyContent: [
-      { h: 'Gobernanza de Datos', p: 'Smart Solutions opera bajo estrictos protocolos de protección. Todos los datos procesados en nuestra sede de Nuevo Cairo están cifrados mediante estándares AES-256.' },
-      { h: 'Recopilación de Información', p: 'Recopilamos información únicamente con el propósito de diseñar mejores experiencias de usuario y brindar soporte a nuestros clientes.' },
-      { h: 'Divulgación a Terceros', p: 'No vendemos ni transferimos su información personal identificable a terceros sin su consentimiento explícito.' },
-      { h: 'Seguridad Infantil', p: 'De acuerdo con COPPA, nuestras plataformas educativas no recopilan datos personales de menores sin el consentimiento verificado de los padres.' }
+      { h: '1. Gobernanza de Datos', p: 'Smart Solutions opera bajo estrictos protocolos de protección. Todos los datos procesados en nuestra sede de Nuevo Cairo están cifrados mediante estándares AES-256.' },
+      { h: '2. Recopilación de Información', p: 'Recopilamos información únicamente con el propósito de diseñar mejores experiencias de usuario y brindar soporte a nuestros clientes.' },
+      { h: '3. Seguridad Infantil', p: 'De acuerdo con COPPA, nuestras plataformas educativas no recopilan datos personales de menores sin el consentimiento verificado de los padres.' },
+      { h: '4. Derechos del Usuario', p: 'Usted tiene derecho a acceder, rectificar o eliminar sus datos personales de nuestros sistemas en cualquier momento.' }
     ],
     termsContent: [
-      { h: 'Propiedad Intelectual', p: 'Todo el software y los diseños producidos por Smart Solutions siguen siendo propiedad exclusiva de Smart Solutions Ltd. hasta la transferencia total de derechos.' },
-      { h: 'Licencia de Uso', p: 'Se otorga a los clientes una licencia no transferible para usar los productos digitales según los acuerdos de nivel de servicio (SLA) firmados.' },
-      { h: 'Responsabilidad', p: 'Smart Solutions no es responsable de daños indirectos resultantes del uso de nuestros servicios de ingeniería digital.' },
-      { h: 'Ley Aplicable', p: 'Estos términos se rigen por las leyes de la República Árabe de Egipto, específicamente la jurisdicción de Nuevo Cairo.' }
+      { h: '1. Propiedad Intelectual', p: 'Todo el software y los diseños producidos por Smart Solutions siguen siendo propiedad exclusiva de Smart Solutions Ltd. hasta la transferencia total de derechos.' },
+      { h: '2. Licencia de Uso', p: 'Se otorga a los clientes una licencia no transferible para usar los productos digitales según los acuerdos de nivel de servicio (SLA) firmados.' },
+      { h: '3. Limitación de Responsabilidad', p: 'Smart Solutions no se hace responsable de daños indirectos derivados del uso de sus plataformas digitales.' },
+      { h: '4. Ley Aplicable', p: 'Estos términos se rigen por las leyes de la República Árبة de Egipto, específicamente la jurisdicción de Nuevo Cairo.' }
     ]
   }
 };
@@ -687,7 +693,7 @@ const fr = {
     tabDev: 'Développement', tabDes: 'Design', tabInt: 'Intelligence',
     devH4: 'Frontend Haute Vitesse', devP: 'Performance native sur tous les appareils via React modulaire',
     desH4: 'Design d\'Expérience', desP: 'Micro-interactions de précision pour le plaisir de l\'utilisateur',
-    intH4: 'Moteurs d\'IA', intP: 'Intégration de Gemini pour un apprentissage adaptatif qui évolue avec vous',
+    intH4: 'Moteurs d\'IA', intP: 'Integración de Gemini pour un apprentissage adaptatif qui évolue avec vous',
     intQuote: '"Architecturer la logique de demain."'
   },
   lifecycle: {
@@ -707,12 +713,12 @@ const fr = {
     badge: 'Immersion Éducative', title: 'Anatomie de la Performance.',
     l1T: 'L\'Interface', l1D: 'Frontend haute vitesse avec React pour une réponse instantanée.', l1L: ['Composants UI', 'Gestion d\'État', 'Animations'],
     l2T: 'Le Cerveau', l2D: 'Logique sécurisée et algorithmes complexes.', l2L: ['Couche API', 'Logique Métier', 'Microservices'],
-    l3T: 'La Mémoire', l3D: 'Stockage scalable avec synchronisation.', l3L: ['Sincronisation', 'Cryptage', 'Cloud']
+    l3T: 'La Memoria', l3D: 'Stockage scalable avec synchronisation.', l3L: ['Sincronisation', 'Cryptage', 'Cloud']
   },
   portfolio: {
     badge: 'Études de Cas', title: 'Excellence Ingénierie.', desc: 'Architecture de précision pour chaque produit.',
     app1: { cat: 'Éducation', title: 'My Wonder Books', desc: 'Bibliothèque interactive pour enfants.', stat: '500k utilisateurs' },
-    app2: { cat: 'Jeux', title: 'Engine Quest', desc: 'Moteur cognitif pour jeunes esprits.', stat: 'Note 4.9' },
+    app2: { cat: 'Service', title: 'Engine Quest', desc: 'Moteur cognitif pour jeunes esprits.', stat: 'Note 4.9' },
     app3: { cat: 'Créativité', title: 'Canvas Pro', desc: 'Moteur vectoriel pour illustration numérique.', stat: 'App Premium' }
   },
   monetization: {
@@ -784,12 +790,12 @@ const fr = {
   education: {
     badge: 'Insights', title: 'Anatomie du Succès.',
     h1: 'Cœur Invisible', p1: 'L\'âme est dans l\'architecture backend.',
-    h2: 'Design d\'Expérience', p2: 'UX est une science psychologique.',
+    h2: 'Design d\'Expérience', p2: 'UX est una science psychologique.',
     h3: 'Assurance Qualité', p3: 'Gérer les entrées inattendues.',
     factTitle: 'Le saviez-vous ?', factDesc: 'Une app typique contient 10k+ lignes de code d\'interface.'
   },
   contact: {
-    portal: 'Portail Ingénierie', title: 'Lancer Projet.', subtitle: 'Discutez avec notre responsable.',
+    portal: 'Portail Ingénierie', title: 'Lancer Projet.', subtitle: 'Décrivez votre vision.',
     successTitle: 'Brief Enregistré', successDesc: 'Transmis à Google Sheets.',
     newSub: 'Nouveau Brief', fullName: 'Nom Complet', email: 'Email', mobile: 'Mobile', category: 'Catégorie', brief: 'Brief',
     briefPlaceholder: 'Décrivez votre vision...', submit: 'Lancer', transmitting: 'Envoi...',
@@ -802,16 +808,14 @@ const fr = {
     rights: 'Smart Solutions Ltd.', privacy: 'Confidentialité', terms: 'Conditions', scroll: 'Sommet',
     links: { security: 'Sécurité', perf: 'Performance', monetization: 'Monétisation', design: 'Design Thinking', industry: 'Aperçus' },
     privacyContent: [
-      { h: 'Gouvernance des Données', p: 'Smart Solutions opère selon des protocoles stricts de protection des données. Toutes les données traitées via notre siège social au Nouveau Caire sont cryptées selon les normes AES-256.' },
-      { h: 'Collecte d\'Informations', p: 'Nous collectons des informations uniquement dans le but de concevoir de meilleures expériences utilisateur et de fournir un support à nos clients.' },
-      { h: 'Divulgation à des Tiers', p: 'Nous ne vendons pas, n\'échangeons pas et ne transférons pas vos informations personnelles identifiables à des tiers sans consentement explicite.' },
-      { h: 'Sécurité des Enfants', p: 'Conformément à la COPPA, nos plateformes éducatives ne collectent pas de données personnelles de mineurs sans le consentement parental vérifié.' }
+      { h: '1. Gouvernance des Données', p: 'Smart Solutions opère selon des protocoles stricts de protection des données. Toutes les données traitées via notre siège social au Nouveau Caire sont cryptées selon les normes AES-256.' },
+      { h: '2. Collecte d\'Informations', p: 'Nous collectons des informations uniquement dans le but de concevoir de meilleures expériences utilisateur et de fournir un support à nos clients.' },
+      { h: '3. Sécurité des Enfants', p: 'Conformément à la COPPA, nos plateformes éducatives ne collectent pas de données personnelles de mineurs sans le consentement parental vérifié.' }
     ],
     termsContent: [
-      { h: 'Propriété Intellectuelle', p: 'Tous les logiciels et designs produits par Smart Solutions restent la propriété exclusive de Smart Solutions Ltd. jusqu\'au transfert complet des droits.' },
-      { h: 'Licence d\'Utilisation', p: 'Les clients bénéficient d\'une licence non transférable pour utiliser les produits numériques livrés selon les accords de niveau de service (SLA) signés.' },
-      { h: 'Responsabilité', p: 'Smart Solutions n\'est pas responsable des dommages indirects ou consécutifs résultant de l\'utilisation de nos services d\'ingénierie numérique.' },
-      { h: 'Loi Applicable', p: 'Ces conditions sont régies par les lois de la République Arabe d\'Égypte, spécifiquement la juridiction du Nouveau Caire.' }
+      { h: '1. Propriété Intellectuelle', p: 'Tous les logiciels et designs produits par Smart Solutions restent la propriété exclusive de Smart Solutions Ltd. jusqu\'au transfert complet des droits.' },
+      { h: '2. Licence d\'Utilisation', p: 'Les clients bénéficient d\'une licence non transférable pour utiliser les produits numériques livrés selon les accords de niveau de servicio (SLA) signés.' },
+      { h: '3. Loi Applicable', p: 'Ces conditions sont régies par les lois de la République Arabe d\'Égypte, spécifiquement la juridiction du Nouveau Caire.' }
     ]
   }
 };
